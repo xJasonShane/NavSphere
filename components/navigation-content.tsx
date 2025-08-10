@@ -141,7 +141,7 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
             <div className="flex items-center gap-1">
               <ModeToggle />
               <Link
-                href="https://github.com/tianyaxiang/NavSphere"
+                href="https://github.com/xJasonShane/NavSphere"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="访问 GitHub 仓库"
@@ -152,20 +152,6 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
                   className="hover:bg-accent hover:text-accent-foreground"
                 >
                   <Github className="h-5 w-5" />
-                </Button>
-              </Link>
-              <Link
-                href="https://mp.weixin.qq.com/s/90LUmKilfLZfc5L63Ej3Sg"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="查看帮助文档"
-              >
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:bg-accent hover:text-accent-foreground"
-                >
-                  <HelpCircle className="h-5 w-5" />
                 </Button>
               </Link>
               <Button
