@@ -1,3 +1,13 @@
 {
-  "navigationItems": []
+  "navigationItems": [
+    {
+      "id": "1755833857553",
+      "title": "AI领域",
+      "icon": "Star",
+      "description": "包含当前热度较高且国内友好的平台以及资源",
+      "enabled": true,
+      "items": [],
+      "subCategories": []
+    }
+  ]
 }
