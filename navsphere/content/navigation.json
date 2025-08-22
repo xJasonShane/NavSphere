@@ -14,7 +14,16 @@
           "icon": "Folder",
           "description": "包含当前国内或国际较为出色的AI大模型",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "1755834278097",
+              "title": "DeepSeek | 深度求索",
+              "href": "https://www.deepseek.com/",
+              "description": "探索未至之境",
+              "icon": "/assets/img_1755834395419.png",
+              "enabled": true
+            }
+          ]
         }
       ]
     }
