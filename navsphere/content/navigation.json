@@ -1,7 +1,7 @@
 {
   "navigationItems": [
     {
-      "id": "1755833857553",
+      "id": "1",
       "title": "AI领域",
       "icon": "Star",
       "description": "包含当前热度较高且国内友好的平台以及资源",
@@ -9,18 +9,42 @@
       "items": [],
       "subCategories": [
         {
-          "id": "033fe3b3-5392-49c7-bf9d-173894702831",
+          "id": "1-1",
           "title": "AI大模型",
           "icon": "Folder",
           "description": "包含当前国内或国际较为出色的AI大模型",
           "enabled": true,
           "items": [
             {
-              "id": "1755834278097",
+              "id": "1-1-1",
               "title": "DeepSeek | 深度求索",
               "href": "https://www.deepseek.com/",
               "description": "探索未至之境",
-              "icon": "/assets/img_1755834395419.png",
+              "icon": "/assets/deepseek.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-1-2",
+              "title": "MiniMax",
+              "href": "https://chat.minimaxi.com/",
+              "description": "全球首个开源大规模混合架构的推理模型",
+              "icon": "/assets/minimax.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-1-3",
+              "title": "豆包",
+              "href": "https://www.doubao.com/chat/",
+              "description": "全球首个开源大规模混合架构的推理模型",
+              "icon": "/assets/doubao.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-1-4",
+              "title": "Kimi",
+              "href": "https://www.kimi.com/",
+              "description": "由 Moonshot 自研的大语言模型驱动，支持在线搜索、深度思考、多模态推理和超长文本对话",
+              "icon": "/assets/kimi.ico",
               "enabled": true
             }
           ]
