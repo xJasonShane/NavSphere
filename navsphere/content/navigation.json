@@ -12,7 +12,7 @@
           "id": "1-1",
           "title": "AI大模型",
           "icon": "Folder",
-          "description": "包含当前国内或国际较为出色的AI大模型",
+          "description": "包含当前国内或国际较为出色的 AI 大模型",
           "enabled": true,
           "items": [
             {
@@ -35,7 +35,7 @@
               "id": "1-1-3",
               "title": "豆包",
               "href": "https://www.doubao.com/chat/",
-              "description": "全球首个开源大规模混合架构的推理模型",
+              "description": "字节跳动旗下 AI 智能助手",
               "icon": "/assets/doubao.ico",
               "enabled": true
             },
@@ -45,6 +45,64 @@
               "href": "https://www.kimi.com/",
               "description": "由 Moonshot 自研的大语言模型驱动，支持在线搜索、深度思考、多模态推理和超长文本对话",
               "icon": "/assets/kimi.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "1-2",
+          "title": "AI绘图",
+          "icon": "Folder",
+          "description": "包含当前国内或国际较为成熟的 AI 绘图平台",
+          "enabled": true,
+          "items": [
+            {
+              "id": "1-2-1",
+              "title": "吐司",
+              "href": "https://tusi.cn/",
+              "description": "国内优秀的在线 AI 制图平台",
+              "icon": "/assets/tusi.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-2-2",
+              "title": "AIGODLIKE",
+              "href": "https://www.aigodlike.com/",
+              "description": "开源AI冒险社区",
+              "icon": "/assets/aigodlike.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-2-3",
+              "title": "哩布哩布AI",
+              "href": "https://www.liblib.art/",
+              "description": "国内在线综合性 AI 绘图平台",
+              "icon": "/assets/liblib.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "1-3",
+          "title": "AI综合",
+          "icon": "Folder",
+          "description": "包含当前国内或国际较为成熟的 AI 综合平台",
+          "enabled": true,
+          "items": [
+            {
+              "id": "1-3-1",
+              "title": "ima",
+              "href": "https://ima.qq.com/",
+              "description": "腾讯 AI 工作台",
+              "icon": "/assets/ima.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-3-2",
+              "title": "Coze 扣子",
+              "href": "https://www.coze.cn/home",
+              "description": "新一代 AI Agent 开发平台",
+              "icon": "/assets/ima.ico",
               "enabled": true
             }
           ]
