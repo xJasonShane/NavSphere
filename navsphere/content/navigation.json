@@ -102,12 +102,54 @@
               "title": "Coze 扣子",
               "href": "https://www.coze.cn/home",
               "description": "新一代 AI Agent 开发平台",
-              "icon": "/assets/ima.ico",
+              "icon": "/assets/coze.ico",
               "enabled": true
             }
           ]
         }
       ]
+    },
+    {
+      "id": "2",
+      "title": "综合娱乐",
+      "icon": "Palette",
+      "description": "包含当前热度较高且国内友好的平台以及资源",
+      "enabled": true,
+      "items": [],
+      "subCategories": 
+        {
+          "id": "2-1",
+          "title": "游戏平台",
+          "icon": "Box",
+          "description": "国内外优秀的综合性游戏平台",
+          "enabled": true,
+          "items": [
+            {
+              "id": "2-1-1",
+              "title": "Steam",
+              "href": "https://store.steampowered.com/",
+              "description": "国际著名游戏平台",
+              "icon": "/assets/steam.ico",
+              "enabled": true
+            },
+            {
+              "id": "2-1-2",
+              "title": "Epic",
+              "href": "https://store.epicgames.com/zh-CN/",
+              "description": "虚幻引擎 & 综合性游戏平台",
+              "icon": "/assets/epic.ico",
+              "enabled": true
+            },
+            {
+              "id": "2-1-3",
+              "title": "GAMEBANANA",
+              "href": "https://gamebanana.com/",
+              "description": "国际大型游戏 mod 平台",
+              "icon": "/assets/gamebanana.ico",
+              "enabled": true
+            }
+          ]
+        }
     }
   ]
 }
