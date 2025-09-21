@@ -50,6 +50,33 @@
       ],
       "description": "",
       "enabled": true
+    },
+    {
+      "id": "2",
+      "title": "编程集合",
+      "icon": "Code",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "2-1",
+          "title": "版本管理",
+          "icon": "GitBranch",
+          "description": "代码版本控制和管理工具",
+          "enabled": true,
+          "items": [
+            {
+              "id": "2-1-1",
+              "title": "Github",
+              "href": "https://github.com/",
+              "description": "GitHub是一项基于云的服务，为软件开发和Git版本控制提供Internet托管。",
+              "icon": "/assets/github.ico",
+              "enabled": true
+            }
+          ]
+        }
+      ],
+      "description": "编程相关的工具、资源和学习平台",
+      "enabled": true
     }
   ]
 }
