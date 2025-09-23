@@ -98,9 +98,76 @@
               "enabled": true
             }
           ]
+        },
+        {
+          "id": "2-3",
+          "title": "编程语言",
+          "icon": "FileCode",
+          "description": "各种编程语言的官方网站和学习资源",
+          "enabled": true,
+          "items": [
+            {
+              "id": "2-3-1",
+              "title": "Python",
+              "href": "https://www.python.org/",
+              "description": "Python编程语言官方网站",
+              "icon": "/assets/python.ico",
+              "enabled": true
+            },
+            {
+              "id": "2-3-2",
+              "title": "Java",
+              "href": "https://www.java.com/",
+              "description": "Java编程语言官方网站",
+              "icon": "/assets/java.ico",
+              "enabled": true
+            }
+          ]
         }
       ],
       "description": "编程相关的工具、资源和学习平台",
+      "enabled": true
+    },
+    {
+      "id": "3",
+      "title": "游戏领域",
+      "icon": "Gamepad",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "3-1",
+          "title": "综合平台",
+          "icon": "Globe",
+          "description": "综合性游戏平台和门户网站",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "3-2",
+          "title": "游戏百科",
+          "icon": "BookOpen",
+          "description": "游戏相关的百科全书和资料库",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "3-3",
+          "title": "资源网站",
+          "icon": "Database",
+          "description": "提供游戏资源下载和素材的网站",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "3-4",
+          "title": "游戏官方",
+          "icon": "Building2",
+          "description": "各大游戏公司和游戏的官方网站",
+          "enabled": true,
+          "items": []
+        }
+      ],
+      "description": "游戏开发、设计和相关资源",
       "enabled": true
     }
   ]
