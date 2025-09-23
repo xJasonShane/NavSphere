@@ -169,6 +169,125 @@
       ],
       "description": "游戏开发、设计和相关资源",
       "enabled": true
+    },
+    {
+      "id": "4",
+      "title": "番剧领域",
+      "icon": "Tv",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "4-1",
+          "title": "资源下载",
+          "icon": "Download",
+          "description": "动漫资源下载网站",
+          "enabled": true,
+          "items": [
+            {
+              "id": "4-1-1",
+              "title": "爱恋动漫",
+              "href": "https://www.kisssub.org/",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "4-1-2",
+              "title": "蜜柑计划",
+              "href": "https://mikanime.tv/",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "4-2",
+          "title": "动漫资讯",
+          "icon": "Newspaper",
+          "description": "动漫新闻和资讯网站",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "4-3",
+          "title": "综合百科",
+          "icon": "BookOpen",
+          "description": "动漫综合百科和资料网站",
+          "enabled": true,
+          "items": []
+        }
+      ],
+      "description": "动漫番剧相关的资源和资讯",
+      "enabled": true
+    },
+    {
+      "id": "5",
+      "title": "网络相关",
+      "icon": "Wifi",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "5-1",
+          "title": "云服务平台",
+          "icon": "Cloud",
+          "description": "各类云计算平台和服务",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "5-2",
+          "title": "建站优选",
+          "icon": "Globe",
+          "description": "网站建设相关的优质服务和工具",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "5-3",
+          "title": "网盘平台",
+          "icon": "Database",
+          "description": "云存储和文件分享平台",
+          "enabled": true,
+          "items": []
+        }
+      ],
+      "description": "网络技术、工具和资源",
+      "enabled": true
+    },
+    {
+      "id": "6",
+      "title": "优质工具",
+      "icon": "Tool",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "6-1",
+          "title": "笔记工具",
+          "icon": "PencilRuler",
+          "description": "各类笔记应用和记录工具",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "6-2",
+          "title": "在线文档",
+          "icon": "FileText",
+          "description": "在线文档编辑和协作平台",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "6-3",
+          "title": "综合分享",
+          "icon": "Share2",
+          "description": "内容分享和资源共享平台",
+          "enabled": true,
+          "items": []
+        }
+      ],
+      "description": "各类提高工作和生活效率的优质工具",
+      "enabled": true
     }
   ]
 }
