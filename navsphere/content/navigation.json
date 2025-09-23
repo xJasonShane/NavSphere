@@ -68,8 +68,33 @@
               "id": "2-1-1",
               "title": "Github",
               "href": "https://github.com/",
-              "description": "GitHub是一项基于云的服务，为软件开发和Git版本控制提供Internet托管。",
+              "description": "GitHub是一项基于云的服务，为软件开发和Git版本控制提供Internet托管",
               "icon": "/assets/github.ico",
+              "enabled": true
+            },
+            {
+              "id": "2-1-2",
+              "title": "Git",
+              "href": "https://git-scm.com/",
+              "description": "Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理",
+              "icon": "/assets/git.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "2-2",
+          "title": "辅助工具",
+          "icon": "Tool",
+          "description": "提高编程效率的辅助工具和实用软件",
+          "enabled": true,
+          "items": [
+            {
+              "id": "2-2-1",
+              "title": "shields.io",
+              "href": "https://shields.io/",
+              "description": "自定义个性徽章，提升文档实用性和美观性",
+              "icon": "/assets/shields.ico",
               "enabled": true
             }
           ]
