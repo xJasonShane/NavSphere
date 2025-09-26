@@ -44,6 +44,47 @@
               "description": "由 Moonshot 自研的大语言模型驱动，支持在线搜索、深度思考、多模态推理和超长文本对话",
               "icon": "/assets/kimi.ico",
               "enabled": true
+            },
+            {
+              "id": "1-1-5",
+              "title": "讯飞星火",
+              "href": "https://xinghuo.xfyun.cn/desk",
+              "description": "讯飞星火认知大模型是科大讯飞发布的大模型。该模型具有7大核心能力，即文本生成、语言理解、知识问答、逻辑推理、数学能力、代码能力、多模交互，该模型对标ChatGPT",
+              "icon": "/assets/xunfei.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "1-2",
+          "title": "AI绘图",
+          "icon": "Image",
+          "description": "AI图像生成和绘图工具",
+          "enabled": true,
+          "items": [
+            {
+              "id": "1-2-1",
+              "title": "吐司",
+              "href": "https://tusi.cn/",
+              "description": "吐司是由上海必有回响智能科技有限公司提供的 AI 模型分享社区和在线运行平台",
+              "icon": "/assets/tusi.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-2-2",
+              "title": "AIGODLIKE",
+              "href": "https://www.aigodlike.com/",
+              "description": "开源AI冒险社区",
+              "icon": "/assets/aigodlike.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-2-3",
+              "title": "哩布哩布AI",
+              "href": "https://www.liblib.art/",
+              "description": "中国领先的AI创作平台",
+              "icon": "/assets/liblib.ico",
+              "enabled": true
             }
           ]
         }
