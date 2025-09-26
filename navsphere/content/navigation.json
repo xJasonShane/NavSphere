@@ -214,7 +214,16 @@
           "icon": "Globe",
           "description": "综合性游戏平台和门户网站",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "5-2-1",
+              "title": "Cloudflare",
+              "href": "https://www.cloudflare-cn.com/",
+              "description": "Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务",
+              "icon": "/assets/cloudflare.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "3-2",
@@ -307,13 +316,30 @@
           "icon": "Cloud",
           "description": "各类云计算平台和服务",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "5-1-1",
+              "title": "阿里云",
+              "href": "https://www.aliyun.com/",
+              "description": "计算，为了无法计算的价值",
+              "icon": "/assets/aliyun.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-1-2",
+              "title": "腾讯云",
+              "href": "https://cloud.tencent.com/",
+              "description": "腾讯云是腾讯公司旗下的产品，为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案",
+              "icon": "/assets/tengxunyun.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "5-2",
-          "title": "建站优选",
+          "title": "托管平台",
           "icon": "Globe",
-          "description": "网站建设相关的优质服务和工具",
+          "description": "网站、程序托管相关的优质服务和工具",
           "enabled": true,
           "items": []
         },
@@ -378,6 +404,24 @@
         }
       ],
       "description": "各类提高工作和生活效率的优质工具",
+      "enabled": true
+    },
+    {
+      "id": "7",
+      "title": "优质开源",
+      "icon": "Github",
+      "items": [
+        {
+          "id": "7-1",
+          "title": "Cloudreve网盘",
+          "href": "https://docs.cloudreve.org/zh/",
+          "description": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统",
+          "icon": "/assets/cloudreve.ico",
+          "enabled": true
+        }
+      ],
+      "subCategories": [],
+      "description": "精选的开源项目、工具和资源",
       "enabled": true
     }
   ]
