@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "AI领域",
-      "icon": "Star",
+      "icon": "Brain",
       "items": [],
       "subCategories": [
         {
@@ -214,16 +214,7 @@
           "icon": "Globe",
           "description": "综合性游戏平台和门户网站",
           "enabled": true,
-          "items": [
-            {
-              "id": "5-2-1",
-              "title": "Cloudflare",
-              "href": "https://www.cloudflare-cn.com/",
-              "description": "Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务",
-              "icon": "/assets/cloudflare.ico",
-              "enabled": true
-            }
-          ]
+          "items": []
         },
         {
           "id": "3-2",
@@ -341,7 +332,32 @@
           "icon": "Globe",
           "description": "网站、程序托管相关的优质服务和工具",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "5-2-1",
+              "title": "Cloudflare",
+              "href": "https://www.cloudflare-cn.com/",
+              "description": "Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务",
+              "icon": "/assets/cloudflare.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-2-2",
+              "title": "EdgeOne",
+              "href": "https://console.tencentcloud.com/edgeone",
+              "description": "EdgeOne是腾讯基于20余年安全技术积累面向全球发布的边缘安全加速平台，集成DNS解析、四层代理、智能加速、DDoS防护、Web防护、Bot防护等十余项功能，提供安全与性能加速一体化服务",
+              "icon": "/assets/tengxunyun.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-2-3",
+              "title": "Vercel",
+              "href": "https://vercel.com/",
+              "description": "Vercel专注于提供前端应用托管、无服务器函数部署及全球CDN加速服务，支持GitHub存储库自动构建并与Next.js框架深度集成",
+              "icon": "/assets/vercel.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "5-3",
