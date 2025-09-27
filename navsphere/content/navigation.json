@@ -214,7 +214,24 @@
           "icon": "Globe",
           "description": "综合性游戏平台和门户网站",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "3-1-1",
+              "title": "Steam",
+              "href": "https://store.steampowered.com/",
+              "description": "Steam平台是全球最大的综合性数字发行平台之一，支持主流硬件平台。玩家可以在该平台购买、下载、讨论、上传和分享游戏及软件",
+              "icon": "/assets/steam.ico",
+              "enabled": true
+            },
+            {
+              "id": "3-1-2",
+              "title": "Epic",
+              "href": "https://store.epicgames.com/zh-CN/",
+              "description": "游戏界的善人，无需多言",
+              "icon": "/assets/epic.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "3-2",
@@ -303,7 +320,7 @@
       "subCategories": [
         {
           "id": "5-1",
-          "title": "云服务平台",
+          "title": "云服务综合",
           "icon": "Cloud",
           "description": "各类云计算平台和服务",
           "enabled": true,
@@ -366,6 +383,31 @@
           "description": "云存储和文件分享平台",
           "enabled": true,
           "items": []
+        },
+        {
+          "id": "5-4",
+          "title": "域名服务",
+          "icon": "Globe",
+          "description": "域名注册、管理和相关服务",
+          "enabled": true,
+          "items": [
+            {
+              "id": "5-4-1",
+              "title": "EU.org",
+              "href": "https://nic.eu.org/",
+              "description": "EU.org主要为无法承担NIC费用的用户和非营利性组织提供免费子域名服务",
+              "icon": "/assets/euorg.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-4-2",
+              "title": "DNSHE",
+              "href": "https://my.dnshe.com/",
+              "description": "国外稳定的DNS和域名注册服务商",
+              "icon": "/assets/dnshe.ico",
+              "enabled": true
+            }
+          ]
         }
       ],
       "description": "网络技术、工具和资源",

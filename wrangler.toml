@@ -8,6 +8,5 @@ GITHUB_ID = "Ov23lifzWqxz9qwwuJsN"
 GITHUB_OWNER = "xJasonShane"
 GITHUB_REPO = "NavSphere"
 GITHUB_BRANCH = "main"
-NEXTAUTH_URL = "https://nav.conanclub.eu.org/api/auth"
-NEXT_PUBLIC_API_URL="https://nav.conanclub.eu.org"
-
+NEXTAUTH_URL = "https://nav.xshan.top/api/auth"
+NEXT_PUBLIC_API_URL="https://nav.xshan.top"
