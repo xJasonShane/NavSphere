@@ -373,6 +373,14 @@
               "description": "Vercel专注于提供前端应用托管、无服务器函数部署及全球CDN加速服务，支持GitHub存储库自动构建并与Next.js框架深度集成",
               "icon": "/assets/vercel.ico",
               "enabled": true
+            },
+            {
+              "id": "5-2-4",
+              "title": "Netlify",
+              "href": "https://www.netlify.com/",
+              "description": "专注于提供基于内容分发网络的静态网站托管服务，其核心业务包括自动化构建部署工具和前端应用托管平台",
+              "icon": "/assets/netlify.ico",
+              "enabled": true
             }
           ]
         },
@@ -475,6 +483,14 @@
           "href": "https://docs.cloudreve.org/zh/",
           "description": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统",
           "icon": "/assets/cloudreve.ico",
+          "enabled": true
+        },
+        {
+          "id": "7-2",
+          "title": "Xget URL 转换器",
+          "href": "https://xuc.xi-xu.me/",
+          "description": "将支持平台的 URL 转换为加速的 Xget 格式",
+          "icon": "/assets/xget.ico",
           "enabled": true
         }
       ],
