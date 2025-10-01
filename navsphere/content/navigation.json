@@ -386,11 +386,20 @@
         },
         {
           "id": "5-3",
-          "title": "网盘平台",
-          "icon": "Database",
-          "description": "云存储和文件分享平台",
+          "title": "优质服务",
+          "icon": "Star",
+          "description": "精选各类优质的在线服务和工具",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "5-3-1",
+              "title": "jsDelivr",
+              "href": "https://www.jsdelivr.com/",
+              "description": "jsDelivr是一个免费、开源的内容分发网络（CDN）平台，专注于为开发者提供静态资源的全球加速服务‌",
+              "icon": "/assets/jsdelivr.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "5-4",
