@@ -239,7 +239,24 @@
           "icon": "BookOpen",
           "description": "游戏相关的百科全书和资料库",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "3-2-1",
+              "title": "MC百科",
+              "href": "https://www.mcmod.cn/",
+              "description": "最大的Minecraft中文MOD百科",
+              "icon": "/assets/mcwiki.ico",
+              "enabled": true
+            },
+            {
+              "id": "3-2-2",
+              "title": "中文 Minecraft Wiki",
+              "href": "https://zh.minecraft.wiki/",
+              "description": "最大的Minecraft中文百科",
+              "icon": "/assets/minecraftwiki.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "3-3",
@@ -247,13 +264,30 @@
           "icon": "Database",
           "description": "提供游戏资源下载和素材的网站",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "3-3-1",
+              "title": "GameBanana",
+              "href": "https://gamebanana.com/",
+              "description": "全球最大的游戏模组创作平台",
+              "icon": "/assets/gamebanana.ico",
+              "enabled": true
+            },
+            {
+              "id": "3-3-2",
+              "title": "crowdin",
+              "href": "https://zh.crowdin.com/",
+              "description": "Crowdin是一款面向团队和企业的本地化软件，主要提供多语言内容管理和自动化翻译服务",
+              "icon": "/assets/crowdin.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "3-4",
-          "title": "游戏官方",
+          "title": "游戏工具",
           "icon": "Building2",
-          "description": "各大游戏公司和游戏的官方网站",
+          "description": "各大游戏的工具网站",
           "enabled": true,
           "items": []
         }
