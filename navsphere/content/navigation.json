@@ -423,6 +423,14 @@
               "description": "国外稳定的DNS和域名注册服务商",
               "icon": "/assets/dnshe.ico",
               "enabled": true
+            },
+            {
+              "id": "5-4-3",
+              "title": "domain",
+              "href": "https://domain.digitalplat.org/",
+              "description": "A Free name for everyone",
+              "icon": "/assets/domain.ico",
+              "enabled": true
             }
           ]
         }
