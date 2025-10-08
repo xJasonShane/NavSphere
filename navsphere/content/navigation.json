@@ -289,7 +289,24 @@
           "icon": "Building2",
           "description": "各大游戏的工具网站",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "3-4-1",
+              "title": "玉衡杯数据库",
+              "href": "https://homdgcat.wiki/home",
+              "description": "米哈游游戏解包数据资讯平台",
+              "icon": "/assets/homdgcat.ico",
+              "enabled": true
+            },
+            {
+              "id": "3-4-2",
+              "title": "FHSRO",
+              "href": "https://fribbels.github.io/hsr-optimizer#main",
+              "description": "崩坏星穹铁道练度优化平台",
+              "icon": "/assets/fhsro.ico",
+              "enabled": true
+            }
+          ]
         }
       ],
       "description": "游戏开发、设计和相关资源",
