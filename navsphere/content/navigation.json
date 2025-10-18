@@ -170,6 +170,14 @@
               "description": "自定义个性徽章，提升文档实用性和美观性",
               "icon": "/assets/shields.ico",
               "enabled": true
+            },
+            {
+              "id": "2-2-2",
+              "title": "WakaTime",
+              "href": "https://wakatime.com/",
+              "description": "WakaTime 致力于为每个程序员提供全自动的时间跟踪",
+              "icon": "/assets/wakatime.ico",
+              "enabled": true
             }
           ]
         },
@@ -522,19 +530,20 @@
         },
         {
           "id": "6-2",
-          "title": "在线文档",
-          "icon": "FileText",
-          "description": "在线文档编辑和协作平台",
-          "enabled": true,
-          "items": []
-        },
-        {
-          "id": "6-3",
           "title": "综合分享",
           "icon": "Share2",
           "description": "内容分享和资源共享平台",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "6-2-1",
+              "title": "iconfont",
+              "href": "https://www.iconfont.cn/",
+              "description": "阿里巴巴矢量图标库",
+              "icon": "/assets/iconfont.ico",
+              "enabled": true
+            }
+          ]
         }
       ],
       "description": "各类提高工作和生活效率的优质工具",
