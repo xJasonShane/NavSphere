@@ -288,6 +288,14 @@
               "description": "Crowdin是一款面向团队和企业的本地化软件，主要提供多语言内容管理和自动化翻译服务",
               "icon": "/assets/crowdin.ico",
               "enabled": true
+            },
+            {
+              "id": "3-3-3",
+              "title": "忧郁的loli",
+              "href": "https://www.ttloli.com/",
+              "description": "国内丰富的Galgame资源站，为站长的无私奉献致以崇高的敬意",
+              "icon": "/assets/galgame.ico",
+              "enabled": true
             }
           ]
         },
@@ -348,6 +356,14 @@
               "description": "",
               "icon": "",
               "enabled": true
+            },
+            {
+              "id": "4-1-3",
+              "title": "VCB-Studio",
+              "href": "https://vcb-s.com/",
+              "description": "",
+              "icon": "",
+              "enabled": true
             }
           ]
         },
@@ -357,7 +373,16 @@
           "icon": "Newspaper",
           "description": "动漫新闻和资讯网站",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "4-2-1",
+              "title": "Bangumi",
+              "href": "https://bgm.tv/",
+              "description": "Bangumi是专注于动漫、音乐、游戏领域，帮助你分享、发现与结识同好的ACGN网络",
+              "icon": "/assets/bangumi.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "4-3",
@@ -373,19 +398,44 @@
     },
     {
       "id": "5",
+      "title": "影视领域",
+      "icon": "Video",
+      "description": "电影、电视剧、动漫等影视资源和服务",
+      "enabled": true,
+      "subCategories": [
+        {
+          "id": "5-1",
+          "title": "综合平台",
+          "icon": "Monitor",
+          "description": "提供电影、电视剧等综合服务的平台",
+          "enabled": true,
+          "items": []
+        },
+        {
+          "id": "5-2",
+          "title": "资源站点",
+          "icon": "Download",
+          "description": "影视资源下载和分享站点",
+          "enabled": true,
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "6",
       "title": "网络相关",
       "icon": "Wifi",
       "items": [],
       "subCategories": [
         {
-          "id": "5-1",
+          "id": "6-1",
           "title": "云服务综合",
           "icon": "Cloud",
           "description": "各类云计算平台和服务",
           "enabled": true,
           "items": [
             {
-              "id": "5-1-1",
+              "id": "6-1-1",
               "title": "阿里云",
               "href": "https://www.aliyun.com/",
               "description": "计算，为了无法计算的价值",
@@ -393,7 +443,7 @@
               "enabled": true
             },
             {
-              "id": "5-1-2",
+              "id": "6-1-2",
               "title": "腾讯云",
               "href": "https://cloud.tencent.com/",
               "description": "腾讯云是腾讯公司旗下的产品，为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案",
@@ -403,14 +453,14 @@
           ]
         },
         {
-          "id": "5-2",
+          "id": "6-2",
           "title": "托管平台",
           "icon": "Globe",
           "description": "网站、程序托管相关的优质服务和工具",
           "enabled": true,
           "items": [
             {
-              "id": "5-2-1",
+              "id": "6-2-1",
               "title": "Cloudflare",
               "href": "https://www.cloudflare-cn.com/",
               "description": "Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务",
@@ -418,7 +468,7 @@
               "enabled": true
             },
             {
-              "id": "5-2-2",
+              "id": "6-2-2",
               "title": "EdgeOne",
               "href": "https://console.tencentcloud.com/edgeone",
               "description": "EdgeOne是腾讯基于20余年安全技术积累面向全球发布的边缘安全加速平台，集成DNS解析、四层代理、智能加速、DDoS防护、Web防护、Bot防护等十余项功能，提供安全与性能加速一体化服务",
@@ -426,7 +476,7 @@
               "enabled": true
             },
             {
-              "id": "5-2-3",
+              "id": "6-2-3",
               "title": "Vercel",
               "href": "https://vercel.com/",
               "description": "Vercel专注于提供前端应用托管、无服务器函数部署及全球CDN加速服务，支持GitHub存储库自动构建并与Next.js框架深度集成",
@@ -434,7 +484,7 @@
               "enabled": true
             },
             {
-              "id": "5-2-4",
+              "id": "6-2-4",
               "title": "Netlify",
               "href": "https://www.netlify.com/",
               "description": "专注于提供基于内容分发网络的静态网站托管服务，其核心业务包括自动化构建部署工具和前端应用托管平台",
@@ -444,14 +494,14 @@
           ]
         },
         {
-          "id": "5-3",
+          "id": "6-3",
           "title": "优质服务",
           "icon": "Star",
           "description": "精选各类优质的在线服务和工具",
           "enabled": true,
           "items": [
             {
-              "id": "5-3-1",
+              "id": "6-3-1",
               "title": "jsDelivr",
               "href": "https://www.jsdelivr.com/",
               "description": "jsDelivr是一个免费、开源的内容分发网络（CDN）平台，专注于为开发者提供静态资源的全球加速服务‌",
@@ -461,14 +511,14 @@
           ]
         },
         {
-          "id": "5-4",
+          "id": "6-4",
           "title": "域名服务",
           "icon": "Globe",
           "description": "域名注册、管理和相关服务",
           "enabled": true,
           "items": [
             {
-              "id": "5-4-1",
+              "id": "6-4-1",
               "title": "EU.org",
               "href": "https://nic.eu.org/",
               "description": "EU.org主要为无法承担NIC费用的用户和非营利性组织提供免费子域名服务",
@@ -476,7 +526,7 @@
               "enabled": true
             },
             {
-              "id": "5-4-2",
+              "id": "6-4-2",
               "title": "DNSHE",
               "href": "https://my.dnshe.com/",
               "description": "国外稳定的DNS和域名注册服务商",
@@ -484,7 +534,7 @@
               "enabled": true
             },
             {
-              "id": "5-4-3",
+              "id": "6-4-3",
               "title": "domain",
               "href": "https://domain.digitalplat.org/",
               "description": "A Free name for everyone",
@@ -498,20 +548,20 @@
       "enabled": true
     },
     {
-      "id": "6",
+      "id": "7",
       "title": "优质工具",
       "icon": "Tool",
       "items": [],
       "subCategories": [
         {
-          "id": "6-1",
+          "id": "7-1",
           "title": "笔记工具",
           "icon": "PencilRuler",
           "description": "各类笔记应用和记录工具",
           "enabled": true,
           "items": [
             {
-              "id": "6-1-1",
+              "id": "7-1-1",
               "title": "Notion",
               "href": "https://www.notion.so/",
               "description": "Notion是一款整合笔记、任务管理、数据库和团队协作功能的全平台工作空间应用",
@@ -519,7 +569,7 @@
               "enabled": true
             },
             {
-              "id": "6-1-2",
+              "id": "7-1-2",
               "title": "Obsidian",
               "href": "https://obsidian.md/",
               "description": "强大、免费且开源的知识管理和笔记应用",
@@ -529,14 +579,14 @@
           ]
         },
         {
-          "id": "6-2",
+          "id": "7-2",
           "title": "综合分享",
           "icon": "Share2",
           "description": "内容分享和资源共享平台",
           "enabled": true,
           "items": [
             {
-              "id": "6-2-1",
+              "id": "7-2-1",
               "title": "iconfont",
               "href": "https://www.iconfont.cn/",
               "description": "阿里巴巴矢量图标库",
@@ -550,12 +600,12 @@
       "enabled": true
     },
     {
-      "id": "7",
+      "id": "8",
       "title": "优质开源",
       "icon": "Github",
       "items": [
         {
-          "id": "7-1",
+          "id": "8-1",
           "title": "Cloudreve网盘",
           "href": "https://docs.cloudreve.org/zh/",
           "description": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统",
@@ -563,7 +613,7 @@
           "enabled": true
         },
         {
-          "id": "7-2",
+          "id": "8-2",
           "title": "Xget URL 转换器",
           "href": "https://xuc.xi-xu.me/",
           "description": "将支持平台的 URL 转换为加速的 Xget 格式",
