@@ -263,6 +263,14 @@
               "description": "最大的Minecraft中文百科",
               "icon": "/assets/minecraftwiki.ico",
               "enabled": true
+            },
+            {
+              "id": "3-2-3",
+              "title": "GAMEKEE",
+              "href": "https://www.gamekee.com/",
+              "description": "国内外多端游戏wiki平台",
+              "icon": "/assets/gamekee.ico",
+              "enabled": true
             }
           ]
         },
@@ -409,7 +417,24 @@
           "icon": "Monitor",
           "description": "提供电影、电视剧等综合服务的平台",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "5-1-1",
+              "title": "豆瓣",
+              "href": "https://www.douban.com/",
+              "description": "国内著名的影视、书籍、音乐和游戏等信息资源网站，由用户评价和维护",
+              "icon": "/assets/douban.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-1-2",
+              "title": "TMDB",
+              "href": "https://www.themoviedb.org/",
+              "description": "国际独立非营利性的公共影视数据库网站",
+              "icon": "/assets/tmdb.ico",
+              "enabled": true
+            }
+          ]
         },
         {
           "id": "5-2",
@@ -417,7 +442,16 @@
           "icon": "Download",
           "description": "影视资源下载和分享站点",
           "enabled": true,
-          "items": []
+          "items": [
+            {
+              "id": "5-2-1",
+              "title": "SeedHub",
+              "href": "https://www.seedhub.cc/",
+              "description": "电影&动漫资源下载网站",
+              "icon": "/assets/seedhub.ico",
+              "enabled": true
+            }
+          ]
         }
       ]
     },
@@ -507,6 +541,14 @@
               "description": "jsDelivr是一个免费、开源的内容分发网络（CDN）平台，专注于为开发者提供静态资源的全球加速服务‌",
               "icon": "/assets/jsdelivr.ico",
               "enabled": true
+            },
+            {
+              "id": "6-3-2",
+              "title": "ITDOG",
+              "href": "https://www.itdog.cn/",
+              "description": "‌ITDOG是综合性站长服务网站，提供Ping、DNS追踪、网站测速等诸多工具",
+              "icon": "/assets/itdog.ico",
+              "enabled": true
             }
           ]
         },
@@ -591,6 +633,23 @@
               "href": "https://www.iconfont.cn/",
               "description": "阿里巴巴矢量图标库",
               "icon": "/assets/iconfont.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "7-3",
+          "title": "其他分类",
+          "icon": "Share2",
+          "description": "不属于上述分类的工具和软件",
+          "enabled": true,
+          "items": [
+            {
+              "id": "7-3-1",
+              "title": "IAutodraw",
+              "href": "https://www.iautodraw.com/",
+              "description": "面向全球5000万各行业工程师的高效的流程绘图以流程模拟软件",
+              "icon": "/assets/iautodraw.ico",
               "enabled": true
             }
           ]
