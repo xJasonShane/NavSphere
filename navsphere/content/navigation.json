@@ -80,18 +80,26 @@
             },
             {
               "id": "1-2-2",
-              "title": "AIGODLIKE",
-              "href": "https://www.aigodlike.com/",
-              "description": "开源AI冒险社区",
-              "icon": "/assets/aigodlike.ico",
-              "enabled": true
-            },
-            {
-              "id": "1-2-3",
               "title": "哩布哩布AI",
               "href": "https://www.liblib.art/",
               "description": "中国领先的AI创作平台",
               "icon": "/assets/liblib.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-2-3",
+              "title": "RunningHub",
+              "href": "https://www.runninghub.cn/",
+              "description": "RunningHub是一个基于云端ComfyUI的AI应用创作平台，具备高可用性的开发环境和强大算力支撑，支持在线编辑和运行ComfyUI工作流和AI应用",
+              "icon": "/assets/runninghub.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-2-4",
+              "title": "即梦AI",
+              "href": "https://jimeng.jianying.com/ai-tool/home/",
+              "description": "即梦AI支持根据中文提示词进行创作,拥有更好的语义理解能力,准确把握你的需求,将抽象的思路转化为视觉作品",
+              "icon": "/assets/jimeng.ico",
               "enabled": true
             }
           ]
@@ -145,6 +153,14 @@
             },
             {
               "id": "1-3-6",
+              "title": "HF-Mirror",
+              "href": "https://hf-mirror.com/",
+              "description": "Hugging Face国内镜像",
+              "icon": "/assets/huggingface.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-3-7",
               "title": "魔搭社区",
               "href": "https://www.modelscope.cn/",
               "description": "魔搭社区（ModelScope）是由阿里达摩院联手中国计算机学会（CCF）开源发展委员会推出的AI大模型开源社区",
@@ -152,11 +168,19 @@
               "enabled": true
             },
             {
-              "id": "1-3-7",
+              "id": "1-3-8",
               "title": "Latent Box",
               "href": "https://latentbox.com/zh",
               "description": "ai、创意和艺术领域的精选合集",
               "icon": "/assets/latentbox.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-3-9",
+              "title": "AIGODLIKE",
+              "href": "https://www.aigodlike.com/",
+              "description": "开源AI冒险社区",
+              "icon": "/assets/aigodlike.ico",
               "enabled": true
             }
           ]
@@ -192,6 +216,14 @@
               "href": "https://git-scm.com/",
               "description": "Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理",
               "icon": "/assets/git.ico",
+              "enabled": true
+            },
+            {
+              "id": "2-1-3",
+              "title": "腾讯云CNB",
+              "href": "https://cnb.cool/",
+              "description": "云原生构建（Cloud Native Build，CNB）提供代码托管、云原生构建、云原生开发、AI 代码助手和制品库等功能。基于 Docker 生态，对环境、缓存、插件进行抽象，通过声明式的语法，帮助开发者以更酷的方式构建软件",
+              "icon": "/assets/cnb.ico",
               "enabled": true
             }
           ]
