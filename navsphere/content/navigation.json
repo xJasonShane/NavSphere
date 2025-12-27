@@ -225,38 +225,6 @@
               "description": "云原生构建（Cloud Native Build，CNB）提供代码托管、云原生构建、云原生开发、AI 代码助手和制品库等功能。基于 Docker 生态，对环境、缓存、插件进行抽象，通过声明式的语法，帮助开发者以更酷的方式构建软件",
               "icon": "/assets/cnb.ico",
               "enabled": true
-            },
-            {
-              "id": "1763352554793",
-              "title": "Shadcn Marketing Blocks | Tailark",
-              "href": "https://tailark.com/",
-              "description": "Speed up your workflow with responsive, pre-built UI blocks designed for marketing websites.",
-              "icon": "/assets/favicon_1763352557389.svg",
-              "enabled": true
-            },
-            {
-              "id": "1763380040947",
-              "title": "IndieHub ",
-              "href": "https://indiehub.best/tool?category=ui-component",
-              "description": "IndieHub is a community for Indie Makers to discover tools, launch products, and ship applications faster and better.",
-              "icon": "/assets/favicon_1763380043621.webp",
-              "enabled": true
-            },
-            {
-              "id": "1765416694684",
-              "title": "Find your Template",
-              "href": "https://vercel.com/templates",
-              "description": "Jumpstart your app development process with pre-built solutions from Vercel and our community.",
-              "icon": "/assets/favicon_1765416698840.webp",
-              "enabled": true
-            },
-            {
-              "id": "item-1765594481103",
-              "enabled": true,
-              "title": "Multi-Platform Theme Generator & Converter",
-              "href": "https://www.tinte.dev/",
-              "description": "Create, convert, and export beautiful themes for VS Code, shadcn/ui, Rayso, TweakCN, terminals, and more. Generate semantic color palettes using OKLCH color space with live previews.",
-              "icon": "/assets/favicon_1765594470605.webp"
             }
           ]
         },

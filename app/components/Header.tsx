@@ -4,7 +4,7 @@ export default function Header() {
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <div className="flex items-center">
           <div className="hidden md:flex items-center space-x-4">
-            <a href="https://github.com/tianyaxiang/CoderNavigation" 
+            <a href="https://github.com/xJasonShane/NavSphere" 
                target="_blank" 
                rel="noopener noreferrer"
                className="text-gray-600 hover:text-gray-900">
