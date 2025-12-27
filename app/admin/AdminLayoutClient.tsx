@@ -144,7 +144,7 @@ export function AdminLayoutClient({ children, user }: AdminLayoutClientProps) {
                         )}>
                           <div className="relative w-8 h-8 overflow-hidden rounded-md">
                             <img
-                              src="/assets/images/alogo.webp"
+                              src="/assets/images/alogo.png"
                               alt="Logo"
                               className="object-cover"
                             />
