@@ -17,11 +17,39 @@ function getData() {
         siteDataRaw.appearance.theme === 'system')
         ? siteDataRaw.appearance.theme
         : 'system'
+    },
+    navigation: {
+      linkTarget: (siteDataRaw.navigation?.linkTarget === '_blank' ||
+        siteDataRaw.navigation?.linkTarget === '_self')
+        ? siteDataRaw.navigation.linkTarget
+        : '_blank'
     }
   }
 
+  // 过滤只显示启用的分类和网站
+  const filteredNavigationData = {
+    navigationItems: navigationData.navigationItems
+      .filter(category => (category as any).enabled !== false) // 过滤启用的分类
+      .map(category => {
+        const filteredSubCategories = category.subCategories
+          ? (category.subCategories as any[])
+              .filter(sub => sub.enabled !== false) // 过滤启用的子分类
+              .map(sub => ({
+                ...sub,
+                items: sub.items?.filter((item: any) => item.enabled !== false) // 过滤启用的网站
+              }))
+          : undefined
+        
+        return {
+          ...category,
+          items: category.items?.filter(item => item.enabled !== false), // 过滤启用的网站
+          subCategories: filteredSubCategories
+        }
+      })
+  }
+
   return {
-    navigationData: navigationData || { navigationItems: [] },
+    navigationData: filteredNavigationData || { navigationItems: [] },
     siteData: siteData || {
       basic: {
         title: 'NavSphere',
@@ -32,6 +60,9 @@ function getData() {
         logo: '',
         favicon: '',
         theme: 'system' as const
+      },
+      navigation: {
+        linkTarget: '_blank' as const
       }
     }
   }
