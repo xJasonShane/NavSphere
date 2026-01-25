@@ -200,6 +200,31 @@
               "enabled": true
             }
           ]
+        },
+        {
+          "id": "1-4",
+          "title": "AI辅助",
+          "icon": "Grid",
+          "description": "AI辅助工具",
+          "enabled": true,
+          "items": [
+            {
+              "id": "1-4-1",
+              "title": "skill0",
+              "href": "https://skill0.io/zh",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "1-4-2",
+              "title": "Agent skills 市场",
+              "href": "https://skillsmp.com/zh",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            }
+          ]
         }
       ],
       "description": "",
