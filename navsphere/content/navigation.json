@@ -143,40 +143,9 @@
               "icon": "/assets/coze.ico",
               "enabled": true
             },
+            
             {
               "id": "1-3-4",
-              "title": "硅基流动",
-              "href": "https://www.siliconflow.cn/",
-              "description": "致力于成为全球领先的AI能力提供商",
-              "icon": "/assets/siliconflow.ico",
-              "enabled": true
-            },
-            {
-              "id": "1-3-5",
-              "title": "Hugging Face",
-              "href": "https://huggingface.co/",
-              "description": "Hugging Face（抱抱脸）是一个机器学习（ML）和数据科学平台和社区，帮助用户构建，部署和训练机器学习模型",
-              "icon": "/assets/huggingface.ico",
-              "enabled": true
-            },
-            {
-              "id": "1-3-6",
-              "title": "HF-Mirror",
-              "href": "https://hf-mirror.com/",
-              "description": "Hugging Face国内镜像",
-              "icon": "/assets/huggingface.ico",
-              "enabled": true
-            },
-            {
-              "id": "1-3-7",
-              "title": "魔搭社区",
-              "href": "https://www.modelscope.cn/",
-              "description": "魔搭社区（ModelScope）是由阿里达摩院联手中国计算机学会（CCF）开源发展委员会推出的AI大模型开源社区",
-              "icon": "/assets/modelscope.ico",
-              "enabled": true
-            },
-            {
-              "id": "1-3-8",
               "title": "Latent Box",
               "href": "https://latentbox.com/zh",
               "description": "ai、创意和艺术领域的精选合集",
@@ -184,7 +153,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-9",
+              "id": "1-3-5",
               "title": "AIGODLIKE",
               "href": "https://www.aigodlike.com/",
               "description": "开源AI冒险社区",
@@ -192,24 +161,81 @@
               "enabled": true
             },
             {
-              "id": "1-3-10",
+              "id": "1-3-6",
               "title": "Datawhale",
               "href": "https://www.datawhale.cn/",
               "description": "Datawhale是一个专注于AI领域的开源组织，致力于构建一个纯粹的学习圈子，帮助学习者更好地成长",
               "icon": "/assets/datawhale.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-3-7",
+              "title": "openrouter",
+              "href": "https://openrouter.ai/",
+              "description": "综合AI大模型API平台",
+              "icon": "/assets/openrouter.ico",
               "enabled": true
             }
           ]
         },
         {
           "id": "1-4",
-          "title": "AI辅助",
+          "title": "模型API平台",
           "icon": "Grid",
           "description": "AI辅助工具",
           "enabled": true,
           "items": [
             {
               "id": "1-4-1",
+              "title": "硅基流动",
+              "href": "https://www.siliconflow.cn/",
+              "description": "致力于成为全球领先的AI能力提供商",
+              "icon": "/assets/siliconflow.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-4-2",
+              "title": "Hugging Face",
+              "href": "https://huggingface.co/",
+              "description": "Hugging Face（抱抱脸）是一个机器学习（ML）和数据科学平台和社区，帮助用户构建，部署和训练机器学习模型",
+              "icon": "/assets/huggingface.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-4-3",
+              "title": "HF-Mirror",
+              "href": "https://hf-mirror.com/",
+              "description": "Hugging Face国内镜像",
+              "icon": "/assets/huggingface.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-4-4",
+              "title": "魔搭社区",
+              "href": "https://www.modelscope.cn/",
+              "description": "魔搭社区（ModelScope）是由阿里达摩院联手中国计算机学会（CCF）开源发展委员会推出的AI大模型开源社区",
+              "icon": "/assets/modelscope.ico",
+              "enabled": true
+            },
+            {
+              "id": "1-4-5",
+              "title": "阿里云百炼",
+              "href": "https://bailian.console.aliyun.com/cn-beijing/#/home",
+              "description": "阿里云百炼是专为企业打造的大模型服务与平台开发平台",
+              "icon": "/assets/bailian.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "1-5",
+          "title": "AI辅助",
+          "icon": "Grid",
+          "description": "AI辅助工具",
+          "enabled": true,
+          "items": [
+            {
+              "id": "1-5-1",
               "title": "skill0",
               "href": "https://skill0.io/zh",
               "description": "",
@@ -217,7 +243,7 @@
               "enabled": true
             },
             {
-              "id": "1-4-2",
+              "id": "1-5-2",
               "title": "Agent skills 市场",
               "href": "https://skillsmp.com/zh",
               "description": "",
@@ -358,6 +384,14 @@
               "href": "https://store.epicgames.com/zh-CN/",
               "description": "游戏界的善人，无需多言",
               "icon": "/assets/epic.ico",
+              "enabled": true
+            },
+            {
+              "id": "3-1-3",
+              "title": "蒸汽游戏宝库",
+              "href": "https://www.steambk.com/",
+              "description": "玩家自制的单机游戏资源平台",
+              "icon": "/assets/steambk.ico",
               "enabled": true
             }
           ]
