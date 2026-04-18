@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import { useEffect } from 'react'
 
 export default function Error({

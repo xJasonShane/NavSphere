@@ -1,5 +1,5 @@
 import { auth } from '@/lib/auth'
-import { stringToBase64 } from '@/lib/buffer-utils'
+import { stringToBase64, uint8ArrayToBase64 } from '@/lib/buffer-utils'
 
 export async function getFileContent(path: string) {
   const owner = process.env.GITHUB_OWNER!
@@ -20,7 +20,6 @@ export async function getFileContent(path: string) {
     })
 
     if (response.status === 404) {
-      console.log(`File not found: ${path}, returning default data`)
       if (path.includes('navigation.json')) {
         return { navigationItems: [] }
       }
@@ -95,7 +94,6 @@ export async function commitFile(
       if (!response.ok) {
         const error = await response.json()
         if (attempt < retryCount && error.message?.includes('sha')) {
-          console.log(`Attempt ${attempt} failed, retrying after delay...`)
           await delay(1000 * attempt) // 指数退避
           continue
         }
@@ -108,8 +106,47 @@ export async function commitFile(
         console.error('Error in commitFile:', error)
         throw error
       }
-      console.log(`Attempt ${attempt} failed, retrying...`)
       await delay(1000 * attempt)
     }
   }
-} 
+}
+
+export async function uploadImageToGitHub(
+  binaryData: Uint8Array,
+  token: string,
+  extension: string = 'png',
+  prefix: string = 'favicon'
+): Promise<{ path: string; commitHash: string }> {
+  const owner = process.env.GITHUB_OWNER!
+  const repo = process.env.GITHUB_REPO!
+  const branch = process.env.GITHUB_BRANCH || 'main'
+  const path = `/assets/${prefix}_${Date.now()}.${extension}`
+  const githubPath = 'public' + path
+
+  const base64String = uint8ArrayToBase64(binaryData)
+  const currentFileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${githubPath}?ref=${branch}`
+
+  const response = await fetch(currentFileUrl, {
+    method: 'PUT',
+    headers: {
+      Authorization: `token ${token}`,
+      Accept: 'application/vnd.github.v3+json',
+    },
+    body: JSON.stringify({
+      message: `Upload ${githubPath}`,
+      content: base64String,
+      branch: branch,
+    }),
+  })
+
+  if (!response.ok) {
+    const errorData = await response.json()
+    console.error('Failed to upload image to GitHub:', errorData)
+    throw new Error(`Failed to upload image to GitHub: ${errorData.message || 'Unknown error'}`)
+  }
+
+  const responseData = await response.json()
+  const commitHash = responseData.commit.sha
+
+  return { path, commitHash }
+}

@@ -6,10 +6,10 @@ import { useEffect, useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Card, CardContent } from "@/registry/new-york/ui/card"
-import { Input } from "@/registry/new-york/ui/input"
-import { Button } from "@/registry/new-york/ui/button"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
+import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/use-toast"
 
 import {
   Loader2,
@@ -31,7 +31,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/registry/new-york/ui/dialog"
+} from "@/components/ui/dialog"
 
 import {
   Form,
@@ -41,8 +41,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/new-york/ui/form"
-import { Toaster } from "@/registry/new-york/ui/toaster"
+} from "@/components/ui/form"
+import { Toaster } from "@/components/ui/toaster"
 
 const Icons = {
   loader2: Loader2,

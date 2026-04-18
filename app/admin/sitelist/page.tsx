@@ -4,10 +4,11 @@ export const runtime = 'edge'
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from "@/registry/new-york/ui/button"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
-import { Input } from "@/registry/new-york/ui/input"
+import { Input } from "@/components/ui/input"
+import { isValidUrl } from "@/lib/utils"
 import {
   Dialog,
   DialogContent,
@@ -16,7 +17,7 @@ import {
   DialogTrigger,
   DialogDescription,
   DialogFooter,
-} from "@/registry/new-york/ui/dialog"
+} from "@/components/ui/dialog"
 
 import {
   Table,
@@ -25,8 +26,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/registry/new-york/ui/table"
-import { Checkbox } from "@/registry/new-york/ui/checkbox"
+} from "@/components/ui/table"
+import { Checkbox } from "@/components/ui/checkbox"
 import {
   AlertDialog,
   AlertDialogAction,
@@ -36,22 +37,22 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "@/registry/new-york/ui/alert-dialog"
+} from "@/components/ui/alert-dialog"
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/registry/new-york/ui/select"
-import { Label } from "@/registry/new-york/ui/label"
-import { Textarea } from "@/registry/new-york/ui/textarea"
+} from "@/components/ui/select"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/registry/new-york/ui/tooltip"
+} from "@/components/ui/tooltip"
 
 import { NavigationSubItem } from '@/types/navigation'
 
@@ -80,9 +81,6 @@ interface Site {
 }
 
 export default function SiteListPage() {
-  console.log('Component rendering')
-
-
   const { toast } = useToast()
   const [sites, setSites] = useState<Site[]>([])
   const [searchQuery, setSearchQuery] = useState("")
@@ -126,7 +124,6 @@ export default function SiteListPage() {
 
 
   useEffect(() => {
-    console.log('useEffect triggered')
     fetchSites()
   }, [])
 
@@ -209,19 +206,15 @@ export default function SiteListPage() {
   const fetchSites = async () => {
     if (!isInitialLoading) setIsLoading(true);
     try {
-      console.log('Making API request');
       const response = await fetch('/api/navigation');
-      console.log('API response received:', response.status);
       if (!response.ok) throw new Error('Failed to fetch');
       const data = await response.json();
-      console.log('Received data:', data);
 
       // Store navigation data for category selection
       setNavigationData(data.navigationItems);
 
       // Extract all sites from the navigation structure
       const allSites = extractSites(data.navigationItems);
-      console.log('Extracted sites:', allSites);
       setSites(allSites);
     } catch (error) {
       console.error('Fetch error:', error);
@@ -857,15 +850,6 @@ export default function SiteListPage() {
         </TooltipContent>
       </Tooltip>
     )
-  }
-
-  const isValidUrl = (string: string): boolean => {
-    try {
-      new URL(string)
-      return true
-    } catch (_) {
-      return false
-    }
   }
 
   const fetchWebsiteMetadata = async (url: string, isEdit: boolean = false, forceUpdate: boolean = false) => {

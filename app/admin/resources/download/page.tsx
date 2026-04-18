@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState } from 'react';
 export const runtime = 'edge'
+
+import React, { useState } from 'react';
 
 const FaviconDownloader: React.FC = () => {
     const [url, setUrl] = useState('');
@@ -17,9 +18,7 @@ const FaviconDownloader: React.FC = () => {
             : `/api/favicon-im?domain=${url}`;
 
         try {
-            console.log(`Fetching favicon ${method === 'direct' ? 'directly' : 'from HTML'}: ${apiUrl}`);
             const response = await fetch(apiUrl);
-            console.log(`Response status: ${response.status}`);
 
             if (!response.ok) {
                 throw new Error('无法访问该网站或未找到 Favicon');

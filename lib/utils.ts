@@ -5,3 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+export function isValidUrl(string: string): boolean {
+  try {
+    new URL(string)
+    return true
+  } catch {
+    return false
+  }
+}
+

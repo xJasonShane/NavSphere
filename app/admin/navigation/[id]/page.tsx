@@ -2,116 +2,108 @@
 
 export const runtime = 'edge'
 
-import { useState, useEffect } from 'react'
-import { useParams, useRouter } from 'next/navigation'
-import { Button } from "@/registry/new-york/ui/button"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
-import { NavigationItem } from '@/types/navigation'
-import { Icons } from '@/components/icons'
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/registry/new-york/ui/table"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
-import { Skeleton } from "@/registry/new-york/ui/skeleton"
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Button } from "@/components/ui/button"
 import { 
-  MoreHorizontal, 
-  Search, 
-  Inbox,
-  FolderTree,
-  Edit,
-  Trash2
-} from "lucide-react"
+  Dialog, 
+  DialogContent, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogFooter, 
+  DialogDescription, 
+} from "@/components/ui/dialog"
+import { useToast } from "@/components/ui/use-toast"
+import { AddNavigationForm } from '../components/AddNavigationForm'
+import { Draggable } from "@hello-pangea/dnd"
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
+import { NavigationItem } from '@/types/navigation'
+import { navigationIcons, type IconType } from '@/lib/icons'
+import { 
+  Folder, 
+  FolderOpen, 
+  List, 
+  Image, 
+  Pencil, 
+  Trash, 
+  ChevronsUp, 
+  ChevronsDown 
+} from 'lucide-react'
+import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 
-export default function NavigationPage() {
-  const params = useParams()
+interface NavigationCardProps {
+  item: NavigationItem
+  index: number
+  onUpdate: () => void
+  onMoveToTop?: () => void
+  onMoveToBottom?: () => void
+  showMoveToTop?: boolean
+  showMoveToBottom?: boolean
+}
+
+function NavigationCard({
+  item, 
+  index,
+  onUpdate,
+  onMoveToTop,
+  onMoveToBottom,
+  showMoveToTop,
+  showMoveToBottom
+}: NavigationCardProps) {
   const router = useRouter()
   const { toast } = useToast()
-  const [items, setItems] = useState<NavigationItem[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [searchQuery, setSearchQuery] = useState("")
+  const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
+  
+  const Icon = item.icon && navigationIcons[item.icon as IconType] ? navigationIcons[item.icon as IconType] : navigationIcons.Folder
 
-  useEffect(() => {
-    if (!params?.id) {
-      router.push('/admin/navigation')
-      return
-    }
-    fetchItems()
-  }, [params?.id, router])
-
-  const fetchItems = async () => {
+  const handleEdit = async (values: { 
+    title: string; 
+    description?: string; 
+    icon: string;
+    enabled: boolean;
+  }) => {
     try {
-      setIsLoading(true)
-      const response = await fetch(`/api/navigation/${params!.id}/items`)
-      if (!response.ok) throw new Error('Failed to fetch')
-      const data = await response.json()
-      setItems(data)
-    } catch (error) {
-      toast({
-        title: "错误",
-        description: "加载数据失败",
-        variant: "destructive"
-      })
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
-  const handleItemsManage = (itemId: string) => {
-    router.push(`/admin/navigation/${params!.id}/items/${itemId}`)
-  }
-
-  const handleCategoryManage = (itemId: string) => {
-    router.push(`/admin/navigation/${params!.id}/categories/${itemId}`)
-  }
-
-  const handleEdit = async (item: NavigationItem) => {
-    try {
-      const response = await fetch(`/api/navigation/${params!.id}`, {
+      const response = await fetch(`/api/navigation/${item.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item)
+        body: JSON.stringify({
+          ...item,
+          title: values.title,
+          description: values.description,
+          icon: values.icon,
+          enabled: values.enabled
+        })
       })
 
-      if (!response.ok) throw new Error('Failed to update')
+      if (!response.ok) throw new Error('Failed to save')
 
-      await fetchItems()
+      setIsEditDialogOpen(false)
+      onUpdate()
       toast({
         title: "成功",
-        description: "更新成功"
+        description: "保存成功"
       })
     } catch (error) {
       toast({
         title: "错误",
-        description: "更新失败",
+        description: "保存失败",
         variant: "destructive"
       })
     }
   }
 
-  const handleDelete = async (itemId: string) => {
-    if (!confirm('确定要删除这个导航吗？')) return
-
+  const handleDelete = async () => {
     try {
-      const response = await fetch(`/api/navigation/${params!.id}`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: itemId })
+      const response = await fetch(`/api/navigation/${item.id}`, {
+        method: 'DELETE'
       })
 
       if (!response.ok) throw new Error('Failed to delete')
 
-      await fetchItems()
+      setIsDeleteDialogOpen(false)
+      onUpdate()
       toast({
         title: "成功",
         description: "删除成功"
@@ -125,93 +117,182 @@ export default function NavigationPage() {
     }
   }
 
-  const filteredItems = items.filter(item => 
-    item.title.toLowerCase().includes(searchQuery.toLowerCase())
-  )
-
   return (
-    <div className="space-y-6">
-      <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>ID</TableHead>
-              <TableHead>标题</TableHead>
-              <TableHead>子分类数</TableHead>
-              <TableHead className="text-right">操作</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {filteredItems.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={4} className="text-center py-8">
-                  {searchQuery ? (
-                    <div className="text-muted-foreground">
-                      <Search className="mx-auto h-12 w-12 opacity-50" />
-                      <p className="mt-2">没有找到匹配的导航</p>
-                    </div>
-                  ) : (
-                    <div className="text-muted-foreground">
-                      <Inbox className="mx-auto h-12 w-12 opacity-50" />
-                      <p className="mt-2">暂无导航数据</p>
-                    </div>
+    <Draggable draggableId={item.id} index={index}>
+      {(provided, snapshot) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          className={`flex items-center justify-between p-4 rounded-lg border bg-card text-card-foreground shadow-sm hover:border-primary/50 transition-colors ${
+            snapshot.isDragging ? 'bg-gray-50' : ''
+          }`}
+        >
+          <div className="flex items-center space-x-4">
+            <Icon className="h-6 w-6 text-muted-foreground" />
+            <div className="flex-1">
+              <div className="flex items-center gap-2">
+                <h3 className="text-sm font-medium">{item.title}</h3>
+                <Badge 
+                  variant={(item.enabled ?? true) ? "default" : "secondary"}
+                  className={cn(
+                    "text-xs",
+                    (item.enabled ?? true)
+                      ? "bg-green-100 text-green-800 hover:bg-green-100" 
+                      : "bg-gray-100 text-gray-600 hover:bg-gray-100"
                   )}
-                </TableCell>
-              </TableRow>
-            ) : (
-              filteredItems.map((item, index) => (
-                <TableRow key={item.id}>
-                  <TableCell>{index + 1}</TableCell>
-                  <TableCell>{item.title}</TableCell>
-                  <TableCell>{item.subCategories?.length || 0}</TableCell>
-                  <TableCell className="text-right">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="h-8 w-8 p-0 hover:bg-muted"
-                        >
-                          <MoreHorizontal className="h-4 w-4" />
-                          <span className="sr-only">打开菜单</span>
-                        </Button>
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end" className="w-[160px]">
-                        <DropdownMenuItem
-                          onClick={() => handleItemsManage(item.id)}
-                        >
-                          <Icons.list className="mr-2 h-4 w-4" />
-                          子项目管理
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                          onClick={() => handleCategoryManage(item.id)}
-                        >
-                          <FolderTree className="mr-2 h-4 w-4" />
-                          分类管理
-                        </DropdownMenuItem>
-                        <DropdownMenuItem
-                          onClick={() => handleEdit(item)}
-                        >
-                          <Edit className="mr-2 h-4 w-4" />
-                          编辑导航
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem
-                          onClick={() => handleDelete(item.id)}
-                          className="text-destructive focus:text-destructive"
-                        >
-                          <Trash2 className="mr-2 h-4 w-4" />
-                          删除导航
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </TableCell>
-                </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
-      </div>
-    </div>
+                >
+                  {(item.enabled ?? true) ? "已启用" : "已禁用"}
+                </Badge>
+              </div>
+              <p className="text-xs text-muted-foreground">{item.description}</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => router.push(`/admin/navigation/${item.id}/categories`)}
+                    className="h-8 w-8"
+                  >
+                    <FolderOpen className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>分类管理</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => router.push(`/admin/navigation/${item.id}/items`)}
+                    className="h-8 w-8"
+                  >
+                    <List className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>站点管理</p>
+                </TooltipContent>
+              </Tooltip>
+              {showMoveToTop && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={onMoveToTop}
+                      className="h-8 w-8"
+                    >
+                      <ChevronsUp className="h-4 w-4" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>置顶</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
+              {showMoveToBottom && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={onMoveToBottom}
+                      className="h-8 w-8"
+                    >
+                      <ChevronsDown className="h-4 w-4" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>置底</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setIsEditDialogOpen(true)}
+                    className="h-8 w-8"
+                  >
+                    <Pencil className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>编辑</p>
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => setIsDeleteDialogOpen(true)}
+                    className="h-8 w-8"
+                  >
+                    <Trash className="h-4 w-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>删除</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+
+          <Dialog open={isEditDialogOpen} onOpenChange={setIsEditDialogOpen}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>编辑分类</DialogTitle>
+              </DialogHeader>
+              <AddNavigationForm
+                defaultValues={{
+                  title: item.title,
+                  description: item.description || '',
+                  icon: item.icon || '',
+                  enabled: item.enabled ?? true
+                }}
+                onSubmit={handleEdit}
+                onCancel={() => setIsEditDialogOpen(false)}
+              />
+            </DialogContent>
+          </Dialog>
+
+          <Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>确认删除</DialogTitle>
+                <DialogDescription>
+                  确定要删除这个导航吗？此操作无法撤消，所有相关的分类和子项目都将被删除。
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter className="gap-2 sm:gap-0">
+                <Button variant="outline" onClick={() => setIsDeleteDialogOpen(false)}>
+                  取消
+                </Button>
+                <Button variant="destructive" onClick={handleDelete}>
+                  删除
+                </Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
+      )}
+    </Draggable>
   )
+}
+
+/**
+ * Next.js 页面默认导出组件
+ * 该路由由父级导航管理页面处理，此处仅提供空页面占位
+ */
+export default function Page() {
+  return null
 }

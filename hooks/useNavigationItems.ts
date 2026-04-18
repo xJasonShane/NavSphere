@@ -10,7 +10,6 @@ async function fetchNavigationItems(): Promise<NavigationItem[]> {
       throw new Error('获取导航项失败')
     }
     const data = await res.json()
-    console.log('获取到的导航数据:', data)
     return data.navigationItems || []
   } catch (error) {
     console.error('获取导航项时发生错误:', error)

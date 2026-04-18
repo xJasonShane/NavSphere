@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { uint8ArrayToBase64 } from '@/lib/buffer-utils'
+import { unauthorizedResponse } from '@/lib/api-response'
+import { uploadImageToGitHub } from '@/lib/github'
+import { isValidUrl } from '@/lib/utils'
 
 export const runtime = 'edge'
 
@@ -14,7 +16,7 @@ export async function POST(request: Request) {
     try {
         const session = await auth()
         if (!session?.user?.accessToken) {
-            return new Response('Unauthorized', { status: 401 })
+            return unauthorizedResponse()
         }
 
         const { url } = await request.json()
@@ -57,15 +59,6 @@ export async function POST(request: Request) {
             { error: error instanceof Error ? error.message : '获取网站信息失败' },
             { status: 500 }
         )
-    }
-}
-
-function isValidUrl(string: string): boolean {
-    try {
-        new URL(string)
-        return true
-    } catch (_) {
-        return false
     }
 }
 
@@ -307,44 +300,8 @@ function getFileExtension(url: string): string {
         if (extension && ['png', 'jpg', 'jpeg', 'gif', 'svg', 'ico'].includes(extension)) {
             return extension
         }
-        return 'png' // 默认扩展名
+        return 'png'
     } catch {
         return 'png'
     }
-}
-
-async function uploadImageToGitHub(binaryData: Uint8Array, token: string, extension: string = 'png'): Promise<{ path: string, commitHash: string }> {
-    const owner = process.env.GITHUB_OWNER!
-    const repo = process.env.GITHUB_REPO!
-    const branch = process.env.GITHUB_BRANCH || 'main'
-    const path = `/assets/favicon_${Date.now()}.${extension}`
-    const githubPath = 'public' + path
-
-    // Convert Uint8Array to Base64
-    const base64String = uint8ArrayToBase64(binaryData)
-    const currentFileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${githubPath}?ref=${branch}`
-
-    const response = await fetch(currentFileUrl, {
-        method: 'PUT',
-        headers: {
-            'Authorization': `token ${token}`,
-            'Accept': 'application/vnd.github.v3+json',
-        },
-        body: JSON.stringify({
-            message: `Upload favicon ${githubPath}`,
-            content: base64String,
-            branch: branch,
-        }),
-    })
-
-    if (!response.ok) {
-        const errorData = await response.json()
-        console.error('Failed to upload image to GitHub:', errorData)
-        throw new Error(`Failed to upload image to GitHub: ${errorData.message || 'Unknown error'}`)
-    }
-
-    const responseData = await response.json()
-    const commitHash = responseData.commit.sha
-
-    return { path, commitHash }
 }

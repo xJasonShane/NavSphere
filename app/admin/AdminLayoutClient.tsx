@@ -4,8 +4,8 @@ import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
-import { Button } from "@/registry/new-york/ui/button"
-import { Separator } from "@/registry/new-york/ui/separator"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
 import {
   LayoutDashboard,
   ListTodo,
@@ -31,8 +31,8 @@ import {
   DropdownMenuSub,
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
-import { Avatar, AvatarImage, AvatarFallback } from "@/registry/new-york/ui/avatar"
+} from "@/components/ui/dropdown-menu"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { useTheme } from "next-themes"
 
 interface AdminLayoutClientProps {

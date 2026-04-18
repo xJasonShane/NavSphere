@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     }
 
     // 构建 favicon.im 的 URL
-    const faviconUrl = `https://favicon.im/zh/${domain}?larger=true' }`;
+    const faviconUrl = `https://favicon.im/${domain}${larger ? '?larger=true' : ''}`;
 
     try {
         const response = await fetch(faviconUrl);

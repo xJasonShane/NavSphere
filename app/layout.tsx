@@ -1,12 +1,12 @@
 import "@/styles/globals.css"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "@/components/ui/toaster"
-import { ThemeToggle } from '@/components/theme-toggle'
 import { Providers } from '@/components/providers'
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import localFont from 'next/font/local'
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID
 
 const inter = localFont({
   src: './fonts/inter-var-latin.woff2',
@@ -34,23 +34,26 @@ export default function RootLayout({
     <html lang="zh-CN" suppressHydrationWarning className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        {/* Google Analytics */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-QG9PGG4K13"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-QG9PGG4K13');
-            `,
-          }}
-        />
+        {GA_ID && (
+          <>
+            <Script
+              strategy="afterInteractive"
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_ID}');
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body suppressHydrationWarning>
         <ThemeProvider
@@ -62,7 +65,6 @@ export default function RootLayout({
           <Providers>
             {children}
           </Providers>
-          <Toaster />
         </ThemeProvider>
       </body>
     </html>
