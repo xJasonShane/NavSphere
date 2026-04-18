@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
+import { unauthorizedResponse } from '@/lib/api-response'
 import { commitFile, getFileContent } from '@/lib/github'
 
 export const runtime = 'edge'
@@ -8,7 +9,7 @@ export async function POST() {
   try {
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     // 检查默认数据文件是否存在

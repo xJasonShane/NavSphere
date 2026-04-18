@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
+import { unauthorizedResponse } from '@/lib/api-response'
 import { commitFile, getFileContent } from '@/lib/github'
 import type { NavigationData, NavigationItem } from '@/types/navigation'
 
@@ -19,9 +20,6 @@ export async function GET() {
 }
 
 async function validateAndSaveNavigationData(data: any, accessToken: string) {
-  // 详细的数据结构验证和日志
-  console.log('Received navigation data:', JSON.stringify(data, null, 2))
-  
   // 严格验证数据结构
   if (!data || typeof data !== 'object') {
     console.error('Invalid data: not an object')
@@ -63,7 +61,7 @@ export async function POST(request: Request) {
   try {
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     const data = await request.json()
@@ -86,7 +84,7 @@ export async function PUT(request: Request) {
   try {
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     const data = await request.json()

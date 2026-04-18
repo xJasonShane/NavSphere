@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
-import { commitFile, getFileContent } from '@/lib/github'
+import { unauthorizedResponse } from '@/lib/api-response'
+import { commitFile, getFileContent, uploadImageToGitHub } from '@/lib/github'
 import type { ResourceMetadata } from '@/types/resource-metadata'
-import { uint8ArrayToBase64 } from '@/lib/buffer-utils'
 
 export const runtime = 'edge'
 
@@ -25,15 +25,14 @@ export async function POST(request: Request) {
     try {
         const session = await auth();
         if (!session?.user?.accessToken) {
-            return new Response('Unauthorized', { status: 401 });
+            return unauthorizedResponse();
         }
 
-        const { image } = await request.json(); // Get the Base64 image
-        const base64Data = image.split(",")[1]; // Extract the Base64 part
-        const binaryData = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0)); // Convert Base64 to binary
+        const { image } = await request.json();
+        const base64Data = image.split(",")[1];
+        const binaryData = Uint8Array.from(atob(base64Data), c => c.charCodeAt(0));
 
-        // 获取上传结果，包含路径和 commit hash
-        const { path: imageUrl, commitHash } = await uploadImageToGitHub(binaryData, session.user.accessToken);
+        const { path: imageUrl, commitHash } = await uploadImageToGitHub(binaryData, session.user.accessToken, 'png', 'img');
 
         // Handle metadata
         const metadata = await getFileContent('navsphere/content/resource-metadata.json') as ResourceMetadata;
@@ -60,47 +59,11 @@ export async function POST(request: Request) {
     }
 }
 
-// Function to upload image to GitHub
-async function uploadImageToGitHub(binaryData: Uint8Array, token: string): Promise<{ path: string, commitHash: string }> {
-    const owner = process.env.GITHUB_OWNER!;
-    const repo = process.env.GITHUB_REPO!;
-    const branch = process.env.GITHUB_BRANCH || 'main'
-    const path = `/assets/img_${Date.now()}.png`; // Generate a unique path for the image
-    const githubPath = 'public' + path;
-
-    // Convert Uint8Array to Base64
-    const base64String = uint8ArrayToBase64(binaryData); // Use Buffer to convert to Base64
-    const currentFileUrl = `https://api.github.com/repos/${owner}/${repo}/contents/${githubPath}?ref=${branch}`
-    // Use fetch to upload the file to GitHub
-    const response = await fetch(currentFileUrl, {
-        method: 'PUT',
-        headers: {
-            'Authorization': `token ${token}`,
-            'Accept': 'application/vnd.github.v3+json',
-        },
-        body: JSON.stringify({
-            message: `Upload ${githubPath}`,
-            content: base64String, // Send only the Base64 string
-            branch: branch, // Explicitly specify the branch
-        }),
-    });
-    if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Failed to upload image to GitHub:', errorData);
-        throw new Error(`Failed to upload image to GitHub: ${errorData.message || 'Unknown error'}`);
-    }
-
-    const responseData = await response.json();
-    const commitHash = responseData.commit.sha; // 获取 commit hash
-
-    return { path, commitHash }; // Return the URL of the uploaded image
-}
-
 export async function DELETE(request: Request) {
     try {
         const session = await auth();
         if (!session?.user?.accessToken) {
-            return new Response('Unauthorized', { status: 401 });
+            return unauthorizedResponse();
         }
 
         const { resourceHashes } = await request.json();

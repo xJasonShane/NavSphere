@@ -1,19 +1,17 @@
 'use client'
 
-export const runtime = 'edge'
-
 import { useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
-import { Card, CardContent, CardHeader, CardTitle } from "@/registry/new-york/ui/card"
-import { Input } from "@/registry/new-york/ui/input"
-import { Button } from "@/registry/new-york/ui/button"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/new-york/ui/tabs"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { useToast } from "@/components/ui/use-toast"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Icons } from "@/components/icons"
-import { Textarea } from "@/registry/new-york/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/registry/new-york/ui/select"
+import { Textarea } from "@/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   Form,
   FormControl,
@@ -22,10 +20,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/registry/new-york/ui/form"
+} from "@/components/ui/form"
 import { SiteConfigService} from "@/services/siteConfigService"
 import type { SiteConfig } from "@/types/site"
-import { Toaster } from "@/registry/new-york/ui/toaster"
+import { Toaster } from "@/components/ui/toaster"
 
 const formSchema = z.object({
   basic: z.object({

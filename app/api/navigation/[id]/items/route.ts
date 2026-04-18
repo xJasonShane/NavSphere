@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
+import { unauthorizedResponse } from '@/lib/api-response'
 import { commitFile, getFileContent } from '@/lib/github'
 import type { NavigationData, NavigationItem, NavigationSubItem } from '@/types/navigation'
 
@@ -32,7 +33,7 @@ export async function POST(
     const { id } = await params
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     const newItem: NavigationSubItem = await request.json()
@@ -69,7 +70,7 @@ export async function PUT(
     const { id } = await params
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     const { index, item }: { index: number, item: NavigationSubItem } = await request.json()
@@ -114,7 +115,7 @@ export async function DELETE(
     const { id } = await params
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     const { index } = await request.json()

@@ -1,5 +1,4 @@
 'use client'
-export const runtime = 'edge'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -21,10 +20,8 @@ export default function AdminDashboard() {
   const fetchStats = async (showLoading = false) => {
     try {
       if (showLoading) setIsRefreshing(true)
-      console.log('Fetching stats...')
       const response = await fetch('/api/admin/stats')
       const data = await response.json()
-      console.log('Received stats:', data)
       setStats(data)
     } catch (error) {
       console.error('Failed to fetch stats:', error)

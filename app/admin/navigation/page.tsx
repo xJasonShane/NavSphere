@@ -1,20 +1,18 @@
 'use client'
 
-export const runtime = 'edge'
-
 import { useState } from "react"
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import { NavigationCard } from "./components/NavigationCard"
 import { AddNavigationForm } from "./components/AddNavigationForm"
-import { Input } from "@/registry/new-york/ui/input"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/registry/new-york/ui/dialog"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
-import { Skeleton } from "@/registry/new-york/ui/skeleton"
+import { Input } from "@/components/ui/input"
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { useToast } from "@/components/ui/use-toast"
+import { Skeleton } from "@/components/ui/skeleton"
 import useSWR from 'swr'
 import { NavigationItem } from "@/types/navigation"
 import { DragDropContext, Droppable } from '@hello-pangea/dnd'
 import { Plus, AlertTriangle, Inbox } from 'lucide-react'
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/registry/new-york/ui/select"
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 
 
 async function fetcher(url: string): Promise<NavigationItem[]> {

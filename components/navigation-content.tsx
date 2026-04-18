@@ -9,7 +9,7 @@ import { SearchBar } from '@/components/search-bar'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Footer } from '@/components/footer'
 import { Github, HelpCircle, Puzzle } from 'lucide-react'
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
@@ -80,22 +80,6 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
         })
       }
     })
-
-    // 调试信息
-    if (query && results.length > 0) {
-      console.log('搜索结果:', {
-        query,
-        totalResults: results.length,
-        results: results.map(r => ({
-          category: r.category.title,
-          mainItems: r.items.length,
-          subCategories: r.subCategories.map(s => ({
-            title: s.title,
-            items: s.items.length
-          }))
-        }))
-      })
-    }
 
     return results
   }, [navigationData, searchQuery])

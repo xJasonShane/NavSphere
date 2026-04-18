@@ -1,9 +1,9 @@
 'use client'
 
 import * as React from 'react'
-import { Button } from "@/registry/new-york/ui/button"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/registry/new-york/ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "@/registry/new-york/ui/popover"
+import { Button } from "@/components/ui/button"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from "@/components/ui/command"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { cn } from "@/lib/utils"
 import { Check, ChevronsUpDown } from "lucide-react"
 import { navigationIcons, type IconType } from '@/lib/icons'

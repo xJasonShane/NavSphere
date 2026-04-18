@@ -1,10 +1,10 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Input } from '@/registry/new-york/ui/input'
-import { Command, CommandList, CommandGroup, CommandItem } from '@/registry/new-york/ui/command'
+import { Input } from '@/components/ui/input'
+import { Command, CommandList, CommandGroup, CommandItem } from '@/components/ui/command'
 import { Search, X } from 'lucide-react'
-import { Button } from '@/registry/new-york/ui/button'
+import { Button } from '@/components/ui/button'
 import type { NavigationData, NavigationItem, NavigationSubItem } from '@/types/navigation'
 import type { SiteConfig } from '@/types/site'
 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from "@/components/ui/button"
 import { 
   Dialog, 
   DialogContent, 
@@ -10,11 +10,11 @@ import {
   DialogTitle, 
   DialogFooter, 
   DialogDescription, 
-} from "@/registry/new-york/ui/dialog"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
+} from "@/components/ui/dialog"
+import { useToast } from "@/components/ui/use-toast"
 import { AddNavigationForm } from './AddNavigationForm'
 import { Draggable } from "@hello-pangea/dnd"
-import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/registry/new-york/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
 import { NavigationItem } from '@/types/navigation'
 import { navigationIcons, type IconType } from '@/lib/icons'
 import { 
@@ -28,7 +28,7 @@ import {
   ChevronsDown 
 } from 'lucide-react'
 import { cn } from "@/lib/utils"
-import { Badge } from "@/registry/new-york/ui/badge"
+import { Badge } from "@/components/ui/badge"
 
 interface NavigationCardProps {
   item: NavigationItem

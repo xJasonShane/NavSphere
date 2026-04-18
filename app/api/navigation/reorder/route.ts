@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { auth } from '@/lib/auth'
+import { unauthorizedResponse } from '@/lib/api-response'
 import { commitFile, getFileContent } from '@/lib/github'
 import type { NavigationData, NavigationItem } from '@/types/navigation'
 
@@ -9,7 +10,7 @@ export async function POST(request: Request) {
   try {
     const session = await auth()
     if (!session?.user?.accessToken) {
-      return new Response('Unauthorized', { status: 401 })
+      return unauthorizedResponse()
     }
 
     const { sourceIndex, destinationIndex, itemId } = await request.json()

@@ -3,8 +3,8 @@
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Button } from "@/registry/new-york/ui/button"
-import { Input } from "@/registry/new-york/ui/input"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 import {
   Form,
   FormControl,
@@ -13,13 +13,14 @@ import {
   FormLabel,
   FormMessage,
   FormDescription,
-} from "@/registry/new-york/ui/form"
+} from "@/components/ui/form"
 import { NavigationSubItem } from "@/types/navigation"
 import { Icons } from "@/components/icons"
-import { Textarea } from "@/registry/new-york/ui/textarea"
-import { Switch } from "@/registry/new-york/ui/switch"
+import { Textarea } from "@/components/ui/textarea"
+import { Switch } from "@/components/ui/switch"
 import { useState, useEffect } from "react"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
+import { useToast } from "@/components/ui/use-toast"
+import { useWebsiteMetadata } from "@/hooks/useWebsiteMetadata"
 
 const formSchema = z.object({
   id: z.string().optional(),
@@ -52,50 +53,8 @@ export function AddItemForm({ onSubmit, onCancel, defaultValues }: AddItemFormPr
 
   const isSubmitting = form.formState.isSubmitting
   const [isUploading, setIsUploading] = useState(false)
-  const [isFetchingMetadata, setIsFetchingMetadata] = useState(false)
-
-  // 监听 href 字段变化，自动获取网站信息
-  const hrefValue = form.watch("href")
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (hrefValue && isValidUrl(hrefValue) && !defaultValues) {
-        fetchWebsiteMetadata(hrefValue)
-      }
-    }, 1000) // 延迟1秒执行，避免频繁请求
-
-    return () => clearTimeout(timeoutId)
-  }, [hrefValue, defaultValues])
-
-  const isValidUrl = (string: string): boolean => {
-    try {
-      new URL(string)
-      return true
-    } catch (_) {
-      return false
-    }
-  }
-
-  const fetchWebsiteMetadata = async (url: string) => {
-    if (isFetchingMetadata) return
-
-    setIsFetchingMetadata(true)
-    try {
-      const response = await fetch('/api/website-metadata', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ url }),
-      })
-
-      if (!response.ok) {
-        throw new Error('获取网站信息失败')
-      }
-
-      const metadata = await response.json()
-
-      // 只在字段为空时自动填充
+  const { isFetching: isFetchingMetadata, fetchMetadata } = useWebsiteMetadata({
+    onSuccess: (metadata) => {
       if (!form.getValues('title')) {
         form.setValue('title', metadata.title)
       }
@@ -105,22 +64,24 @@ export function AddItemForm({ onSubmit, onCancel, defaultValues }: AddItemFormPr
       if (!form.getValues('icon') && metadata.icon) {
         form.setValue('icon', metadata.icon)
       }
-
-      toast({
-        title: "成功",
-        description: "已自动获取网站信息"
-      })
-    } catch (error) {
-      console.error('Failed to fetch website metadata:', error)
-      toast({
-        title: "提示",
-        description: "自动获取网站信息失败，请手动填写",
-        variant: "destructive"
-      })
-    } finally {
-      setIsFetchingMetadata(false)
+      toast({ title: "成功", description: "已自动获取网站信息" })
+    },
+    onError: () => {
+      toast({ title: "提示", description: "自动获取网站信息失败，请手动填写", variant: "destructive" })
     }
-  }
+  })
+
+  const hrefValue = form.watch("href")
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (hrefValue && !defaultValues) {
+        fetchMetadata(hrefValue)
+      }
+    }, 1000)
+
+    return () => clearTimeout(timeoutId)
+  }, [hrefValue, defaultValues])
 
   return (
     <Form {...form}>
@@ -159,8 +120,8 @@ export function AddItemForm({ onSubmit, onCancel, defaultValues }: AddItemFormPr
                     type="button"
                     variant="outline"
                     size="sm"
-                    disabled={!field.value || !isValidUrl(field.value) || isFetchingMetadata}
-                    onClick={() => fetchWebsiteMetadata(field.value)}
+                    disabled={!field.value || isFetchingMetadata}
+                    onClick={() => fetchMetadata(field.value)}
                   >
                     {isFetchingMetadata ? (
                       <Icons.loader2 className="h-4 w-4 animate-spin" />

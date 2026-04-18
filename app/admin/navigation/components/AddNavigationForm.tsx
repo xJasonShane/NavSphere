@@ -3,10 +3,10 @@
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Button } from "@/registry/new-york/ui/button"
-import { Input } from "@/registry/new-york/ui/input"
-import { Switch } from "@/registry/new-york/ui/switch"
-import { Textarea } from "@/registry/new-york/ui/textarea"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Switch } from "@/components/ui/switch"
+import { Textarea } from "@/components/ui/textarea"
 
 import { IconSelector } from './IconSelector'
 import {
@@ -17,8 +17,8 @@ import {
   FormLabel,
   FormMessage,
   FormDescription,
-} from "@/registry/new-york/ui/form"
-import { useToast } from "@/registry/new-york/hooks/use-toast"
+} from "@/components/ui/form"
+import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   title: z.string().min(2, { message: "标题至少需要2个字符" }),
