@@ -68,6 +68,14 @@
               "description": "",
               "icon": "/assets/zhipu.ico",
               "enabled": true
+            },
+            {
+              "id": "1-1-8",
+              "title": "小米MiMo",
+              "href": "https://mimo.xiaomi.com/zh",
+              "description": "小米自研大模型系列，旗舰模型MiMo-V2.5支持原生多模态理解与1M超长上下文，Agent能力进入全球顶尖水平",
+              "icon": "/assets/mimo.ico",
+              "enabled": true
             }
           ]
         },
