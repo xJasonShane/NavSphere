@@ -3,6 +3,10 @@ const nextConfig = {
   // Docker 部署支持
   output: 'standalone',
 
+  turbopack: {
+    root: '/workspace',
+  },
+
   images: {
     domains: [
       'dash.cloudflare.com',
