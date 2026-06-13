@@ -1,6 +1,7 @@
 import { AdminLayoutClient } from './AdminLayoutClient'
 import { Toaster } from "@/components/ui/toaster"
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'NavSphere Admin',
@@ -17,6 +18,11 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
+  // 仅开发环境可用
+  if (process.env.NODE_ENV !== 'development') {
+    notFound()
+  }
+
   return (
     <>
       <AdminLayoutClient

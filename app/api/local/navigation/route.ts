@@ -5,6 +5,14 @@ import type { NavigationData, NavigationItem } from '@/types/navigation'
 
 const NAVIGATION_FILE = join(process.cwd(), 'navsphere/content/navigation.json')
 
+// 仅开发环境可用
+function devOnly() {
+  if (process.env.NODE_ENV !== 'development') {
+    return NextResponse.json({ error: '该功能仅在开发环境可用' }, { status: 403 })
+  }
+  return null
+}
+
 async function readNavigationData(): Promise<NavigationData> {
   try {
     const content = await readFile(NAVIGATION_FILE, 'utf-8')
@@ -20,6 +28,8 @@ async function writeNavigationData(data: NavigationData): Promise<void> {
 
 // 获取全部导航数据
 export async function GET() {
+  const blocked = devOnly()
+  if (blocked) return blocked
   try {
     const data = await readNavigationData()
     return NextResponse.json(data)
@@ -30,6 +40,8 @@ export async function GET() {
 
 // 保存全部导航数据（整体替换）
 export async function POST(request: Request) {
+  const blocked = devOnly()
+  if (blocked) return blocked
   try {
     const data: NavigationData = await request.json()
 
@@ -46,6 +58,8 @@ export async function POST(request: Request) {
 
 // 更新单个导航分类
 export async function PUT(request: Request) {
+  const blocked = devOnly()
+  if (blocked) return blocked
   try {
     const updatedItem: NavigationItem = await request.json()
     const data = await readNavigationData()
@@ -65,6 +79,8 @@ export async function PUT(request: Request) {
 
 // 删除单个导航分类
 export async function DELETE(request: Request) {
+  const blocked = devOnly()
+  if (blocked) return blocked
   try {
     const { id } = await request.json()
     const data = await readNavigationData()

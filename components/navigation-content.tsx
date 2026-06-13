@@ -127,16 +127,18 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
               />
             </div>
             <div className="flex items-center gap-1">
-              <Link href="/admin/navigation">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="hover:bg-accent hover:text-accent-foreground"
-                  aria-label="管理导航"
-                >
-                  <Settings className="h-5 w-5" />
-                </Button>
-              </Link>
+              {process.env.NODE_ENV === 'development' && (
+                <Link href="/admin/navigation">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-accent hover:text-accent-foreground"
+                    aria-label="管理导航"
+                  >
+                    <Settings className="h-5 w-5" />
+                  </Button>
+                </Link>
+              )}
               <ModeToggle />
               <Link
                 href="https://github.com/xJasonShane/NavSphere"
