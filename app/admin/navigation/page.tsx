@@ -13,8 +13,9 @@ import { Skeleton } from "@/components/ui/skeleton"
 import useSWR from 'swr'
 import { NavigationItem } from "@/types/navigation"
 import { DragDropContext, Droppable } from '@hello-pangea/dnd'
-import { Plus, AlertTriangle, Inbox } from 'lucide-react'
+import { Plus, AlertTriangle, Inbox, Sparkles } from 'lucide-react'
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
+import { VisualAddSiteDialog } from './components/VisualAddSiteDialog'
 
 
 async function fetcher(url: string): Promise<NavigationItem[]> {
@@ -26,6 +27,7 @@ async function fetcher(url: string): Promise<NavigationItem[]> {
 
 export default function NavigationPage() {
   const [isDialogOpen, setIsDialogOpen] = useState(false)
+  const [isVisualDialogOpen, setIsVisualDialogOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [showEnabled, setShowEnabled] = useState<boolean | null>(null)
   const { toast } = useToast()
@@ -234,6 +236,10 @@ export default function NavigationPage() {
           <Plus className="mr-2 h-4 w-4" />
           添加分类
         </Button>
+        <Button variant="outline" onClick={() => setIsVisualDialogOpen(true)}>
+          <Sparkles className="mr-2 h-4 w-4" />
+          可视化添加站点
+        </Button>
       </div>
       <div className="space-y-4">
         {error ? (
@@ -320,6 +326,12 @@ export default function NavigationPage() {
           />
         </DialogContent>
       </Dialog>
+      <VisualAddSiteDialog
+        open={isVisualDialogOpen}
+        onOpenChange={setIsVisualDialogOpen}
+        navigationData={{ navigationItems: items }}
+        onSuccess={() => mutate()}
+      />
     </div>
   )
 }
