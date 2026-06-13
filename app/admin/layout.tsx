@@ -1,8 +1,7 @@
-import { redirect } from 'next/navigation'
-import { auth } from '@/lib/auth'
 import { AdminLayoutClient } from './AdminLayoutClient'
 import { Toaster } from "@/components/ui/toaster"
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 export const metadata: Metadata = {
   title: 'NavSphere Admin',
@@ -19,19 +18,18 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await auth()
-
-  if (!session?.user) {
-    redirect('/auth/signin')
+  // 仅开发环境可用
+  if (process.env.NODE_ENV !== 'development') {
+    notFound()
   }
 
   return (
     <>
       <AdminLayoutClient
         user={{
-          name: session.user.name,
-          email: session.user.email,
-          image: session.user.image
+          name: 'Local Dev',
+          email: 'dev@localhost',
+          image: null
         }}
       >
         {children}
@@ -39,4 +37,4 @@ export default async function AdminLayout({
       <Toaster />
     </>
   )
-} 
+}

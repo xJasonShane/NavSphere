@@ -1,16 +1,13 @@
-import { auth } from '@/lib/auth'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/admin')) {
-    const session = await auth()
+  const isDev = process.env.NODE_ENV === 'development'
 
-    if (!session?.user) {
-      const callbackUrl = request.url
-      return NextResponse.redirect(
-        new URL(`/auth/signin?callbackUrl=${encodeURIComponent(callbackUrl)}`, request.url)
-      )
+  // 生产环境拦截管理后台和本地 API 路由
+  if (!isDev) {
+    if (request.nextUrl.pathname.startsWith('/admin') || request.nextUrl.pathname.startsWith('/api/local')) {
+      return NextResponse.rewrite(new URL('/not-found', request.url))
     }
   }
 
@@ -18,5 +15,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*']
+  matcher: ['/admin/:path*', '/api/local/:path*']
 }

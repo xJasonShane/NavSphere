@@ -3,6 +3,17 @@ const nextConfig = {
   // Docker 部署支持
   output: 'standalone',
 
+  turbopack: {
+    root: '/workspace',
+  },
+
+  allowedDevOrigins: [
+    'run-agent-6a2cc0c3cc974039d1dfafbd-mqbqn41t-preview.agent-sandbox-bj-a2-gw.trae.cn',
+    '.trae.cn',
+    'localhost',
+    '127.0.0.1',
+  ],
+
   images: {
     domains: [
       'dash.cloudflare.com',
@@ -32,7 +43,7 @@ const nextConfig = {
   // Cloudflare Pages configuration
   experimental: {
     serverActions: {
-      allowedOrigins: ['localhost', 'newkit.site']
+      allowedOrigins: ['localhost', 'newkit.site', '.trae.cn', '.agent-sandbox-bj-a2-gw.trae.cn']
     },
     optimizePackageImports: ['lucide-react', 'date-fns', 'lodash']
   }
