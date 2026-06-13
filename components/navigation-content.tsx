@@ -8,7 +8,7 @@ import { Sidebar } from '@/components/sidebar'
 import { SearchBar } from '@/components/search-bar'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Footer } from '@/components/footer'
-import { Github, HelpCircle, Puzzle } from 'lucide-react'
+import { Github, HelpCircle, Puzzle, Settings } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -127,6 +127,16 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
               />
             </div>
             <div className="flex items-center gap-1">
+              <Link href="/admin/navigation">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-accent hover:text-accent-foreground"
+                  aria-label="管理导航"
+                >
+                  <Settings className="h-5 w-5" />
+                </Button>
+              </Link>
               <ModeToggle />
               <Link
                 href="https://github.com/xJasonShane/NavSphere"
