@@ -3,8 +3,11 @@ import { Metadata } from 'next/types'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { Container } from '@/components/ui/container'
 import type { SiteConfig } from '@/types/site'
-import navigationData from '@/navsphere/content/navigation.json'
+import type { NavigationData } from '@/types/navigation'
+import navigationDataRaw from '@/navsphere/content/navigation.json'
 import siteDataRaw from '@/navsphere/content/site.json'
+
+const navigationData = navigationDataRaw as NavigationData
 
 function getData() {
   // 确保 theme 类型正确
@@ -26,23 +29,22 @@ function getData() {
     }
   }
 
-  // 过滤只显示启用的分类和网站
   const filteredNavigationData = {
     navigationItems: navigationData.navigationItems
-      .filter(category => (category as any).enabled !== false) // 过滤启用的分类
+      .filter(category => category.enabled !== false)
       .map(category => {
         const filteredSubCategories = category.subCategories
-          ? (category.subCategories as any[])
-              .filter(sub => sub.enabled !== false) // 过滤启用的子分类
+          ? category.subCategories
+              .filter(sub => sub.enabled !== false)
               .map(sub => ({
                 ...sub,
-                items: sub.items?.filter((item: any) => item.enabled !== false) // 过滤启用的网站
+                items: sub.items?.filter(item => item.enabled !== false)
               }))
           : undefined
-        
+
         return {
           ...category,
-          items: category.items?.filter(item => item.enabled !== false), // 过滤启用的网站
+          items: category.items?.filter(item => item.enabled !== false),
           subCategories: filteredSubCategories
         }
       })
