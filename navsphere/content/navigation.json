@@ -10,7 +10,7 @@
           "id": "1-1",
           "title": "大模型对话",
           "icon": "MessageSquare",
-          "description": "国内外主流 AI 大语言模型对话平台",
+          "description": "国内外主流 AI 大模型，一站式对话体验",
           "enabled": true,
           "items": [
             {
@@ -41,7 +41,7 @@
               "id": "1-1-4",
               "title": "Kimi",
               "href": "https://www.kimi.com/",
-              "description": "由 Moonshot 自研的大语言模型驱动，支持在线搜索、深度思考、多模态推理和超长文本对话",
+              "description": "Moonshot AI打造，支持超长上下文与多模态推理的智能助手",
               "icon": "/assets/kimi.ico",
               "enabled": true
             },
@@ -49,7 +49,7 @@
               "id": "1-1-5",
               "title": "讯飞星火",
               "href": "https://xinghuo.xfyun.cn/desk",
-              "description": "讯飞星火认知大模型是科大讯飞发布的大模型。该模型具有7大核心能力，即文本生成、语言理解、知识问答、逻辑推理、数学能力、代码能力、多模交互，该模型对标ChatGPT",
+              "description": "科大讯飞认知大模型，对标ChatGPT的AI对话助手",
               "icon": "/assets/xunfei.ico",
               "enabled": true
             },
@@ -57,15 +57,15 @@
               "id": "1-1-6",
               "title": "阿里千问",
               "href": "https://chat.qwen.ai/",
-              "description": "千问是阿里巴巴全新推出的AI对话助手，使用阿里全新Qwen大模型，让你无门槛地体验超级AI技术带来的智能升级，旨在成为你在工作、学习、生活中的超级AI助手",
+              "description": "阿里巴巴AI助手，体验Qwen大模型的智能对话能力",
               "icon": "/assets/qwen.ico",
               "enabled": true
             },
             {
               "id": "1-1-7",
-              "title": "智谱AI开放平台",
+              "title": "智谱AI",
               "href": "https://open.bigmodel.cn/",
-              "description": "",
+              "description": "国产大模型开放平台，提供API与应用开发",
               "icon": "/assets/zhipu.ico",
               "enabled": true
             },
@@ -220,7 +220,7 @@
               "id": "1-4-2",
               "title": "Hugging Face",
               "href": "https://huggingface.co/",
-              "description": "Hugging Face（抱抱脸）是一个机器学习（ML）和数据科学平台和社区，帮助用户构建，部署和训练机器学习模型",
+              "description": "全球最大的ML模型社区与开源模型库",
               "icon": "/assets/huggingface.ico",
               "enabled": true
             },
@@ -271,7 +271,7 @@
               "id": "2-1-1",
               "title": "Github",
               "href": "https://github.com/",
-              "description": "GitHub是一项基于云的服务，为软件开发和Git版本控制提供Internet托管",
+              "description": "全球最大代码托管与协作平台",
               "icon": "/assets/github.ico",
               "enabled": true
             },
@@ -380,7 +380,7 @@
               "id": "3-1-2",
               "title": "腾讯云",
               "href": "https://cloud.tencent.com/",
-              "description": "腾讯云是腾讯公司旗下的产品，为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案",
+              "description": "一站式云服务与解决方案提供商",
               "icon": "/assets/tengxunyun.ico",
               "enabled": true
             }
@@ -397,7 +397,7 @@
               "id": "3-2-1",
               "title": "Cloudflare",
               "href": "https://www.cloudflare-cn.com/",
-              "description": "Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务",
+              "description": "全球领先的网站安全与CDN加速服务",
               "icon": "/assets/cloudflare.ico",
               "enabled": true
             },
@@ -429,7 +429,7 @@
               "id": "3-2-5",
               "title": "Netlify",
               "href": "https://www.netlify.com/",
-              "description": "专注于提供基于内容分发网络的静态网站托管服务，其核心业务包括自动化构建部署工具和前端应用托管平台",
+              "description": "静态网站托管与自动化部署平台",
               "icon": "/assets/netlify.ico",
               "enabled": true
             }
@@ -650,7 +650,7 @@
               "id": "6-1-1",
               "title": "Steam",
               "href": "https://store.steampowered.com/",
-              "description": "Steam平台是全球最大的综合性数字发行平台之一，支持主流硬件平台。玩家可以在该平台购买、下载、讨论、上传和分享游戏及软件",
+              "description": "全球最大综合性游戏发行平台",
               "icon": "/assets/steam.ico",
               "enabled": true
             },
@@ -759,7 +759,7 @@
               "id": "7-1-1",
               "title": "豆瓣",
               "href": "https://www.douban.com/",
-              "description": "国内著名的影视、书籍、音乐和游戏等信息资源网站，由用户评价和维护",
+              "description": "记录电影、书籍、音乐，发现同好",
               "icon": "/assets/douban.ico",
               "enabled": true
             },
