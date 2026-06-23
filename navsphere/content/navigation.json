@@ -391,30 +391,6 @@
               "description": "字节跳动云服务平台，企业级云端智能服务",
               "icon": "/assets/volcengine.ico",
               "enabled": true
-            },
-            {
-              "id": "3-1-4",
-              "title": " volcengine控制台",
-              "href": "https://console.volcengine.com/",
-              "description": "火山引擎统一控制台，管理所有云服务",
-              "icon": "/assets/volcengine.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-1-5",
-              "title": "豆包大模型",
-              "href": "https://www.volcengine.com/product/doubao",
-              "description": "字节跳动自研大模型，强大的语言理解和生成能力",
-              "icon": "/assets/volcengine.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-1-6",
-              "title": "veMIX视频处理",
-              "href": "https://www.volcengine.com/product/mix",
-              "description": "高效视频转码与处理服务",
-              "icon": "/assets/volcengine.ico",
-              "enabled": true
             }
           ]
         },
