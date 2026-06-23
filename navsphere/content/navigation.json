@@ -2,15 +2,15 @@
   "navigationItems": [
     {
       "id": "1",
-      "title": "AI领域",
+      "title": "AI 工具",
       "icon": "Brain",
       "items": [],
       "subCategories": [
         {
           "id": "1-1",
-          "title": "AI大模型",
-          "icon": "Folder",
-          "description": "包含当前国内或国际较为出色的 AI 大模型",
+          "title": "大模型对话",
+          "icon": "MessageSquare",
+          "description": "国内外主流 AI 大语言模型对话平台",
           "enabled": true,
           "items": [
             {
@@ -81,7 +81,7 @@
         },
         {
           "id": "1-2",
-          "title": "AI绘图",
+          "title": "AI绘画",
           "icon": "Image",
           "description": "AI图像生成和绘图工具",
           "enabled": true,
@@ -122,9 +122,9 @@
         },
         {
           "id": "1-3",
-          "title": "综合平台",
-          "icon": "Grid",
-          "description": "综合性AI服务与工具平台",
+          "title": "AI平台",
+          "icon": "Layers",
+          "description": "综合性AI服务平台与AI插件市场",
           "enabled": true,
           "items": [
             {
@@ -151,7 +151,6 @@
               "icon": "/assets/coze.ico",
               "enabled": true
             },
-            
             {
               "id": "1-3-4",
               "title": "Latent Box",
@@ -183,14 +182,30 @@
               "description": "综合AI大模型API平台",
               "icon": "/assets/openrouter.ico",
               "enabled": true
+            },
+            {
+              "id": "1-3-8",
+              "title": "skill0",
+              "href": "https://skill0.io/zh",
+              "description": "AI技能市场",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "1-3-9",
+              "title": "Agent skills 市场",
+              "href": "https://skillsmp.com/zh",
+              "description": "Agent 技能交易平台",
+              "icon": "",
+              "enabled": true
             }
           ]
         },
         {
           "id": "1-4",
-          "title": "模型API平台",
-          "icon": "Grid",
-          "description": "AI辅助工具",
+          "title": "模型服务",
+          "icon": "Server",
+          "description": "AI模型API平台与开源模型社区",
           "enabled": true,
           "items": [
             {
@@ -234,39 +249,14 @@
               "enabled": true
             }
           ]
-        },
-        {
-          "id": "1-5",
-          "title": "AI辅助",
-          "icon": "Grid",
-          "description": "AI辅助工具",
-          "enabled": true,
-          "items": [
-            {
-              "id": "1-5-1",
-              "title": "skill0",
-              "href": "https://skill0.io/zh",
-              "description": "",
-              "icon": "",
-              "enabled": true
-            },
-            {
-              "id": "1-5-2",
-              "title": "Agent skills 市场",
-              "href": "https://skillsmp.com/zh",
-              "description": "",
-              "icon": "",
-              "enabled": true
-            }
-          ]
         }
       ],
-      "description": "",
+      "description": "AI相关的大模型、绘画、平台与模型服务",
       "enabled": true
     },
     {
       "id": "2",
-      "title": "编程集合",
+      "title": "开发编程",
       "icon": "Code",
       "items": [],
       "subCategories": [
@@ -305,8 +295,8 @@
         },
         {
           "id": "2-2",
-          "title": "辅助工具",
-          "icon": "Tool",
+          "title": "开发工具",
+          "icon": "Wrench",
           "description": "提高编程效率的辅助工具和实用软件",
           "enabled": true,
           "items": [
@@ -367,247 +357,19 @@
     },
     {
       "id": "3",
-      "title": "游戏领域",
-      "icon": "Gamepad",
+      "title": "云服务网络",
+      "icon": "Cloud",
       "items": [],
       "subCategories": [
         {
           "id": "3-1",
-          "title": "综合平台",
-          "icon": "Globe",
-          "description": "综合性游戏平台和门户网站",
-          "enabled": true,
-          "items": [
-            {
-              "id": "3-1-1",
-              "title": "Steam",
-              "href": "https://store.steampowered.com/",
-              "description": "Steam平台是全球最大的综合性数字发行平台之一，支持主流硬件平台。玩家可以在该平台购买、下载、讨论、上传和分享游戏及软件",
-              "icon": "/assets/steam.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-1-2",
-              "title": "Epic",
-              "href": "https://store.epicgames.com/zh-CN/",
-              "description": "游戏界的善人，无需多言",
-              "icon": "/assets/epic.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-1-3",
-              "title": "蒸汽游戏宝库",
-              "href": "https://www.steambk.com/",
-              "description": "玩家自制的单机游戏资源平台",
-              "icon": "/assets/steambk.ico",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "3-2",
-          "title": "游戏百科",
-          "icon": "BookOpen",
-          "description": "游戏相关的百科全书和资料库",
-          "enabled": true,
-          "items": [
-            {
-              "id": "3-2-1",
-              "title": "MC百科",
-              "href": "https://www.mcmod.cn/",
-              "description": "最大的Minecraft中文MOD百科",
-              "icon": "/assets/mcwiki.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-2-2",
-              "title": "中文 Minecraft Wiki",
-              "href": "https://zh.minecraft.wiki/",
-              "description": "最大的Minecraft中文百科",
-              "icon": "/assets/minecraftwiki.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-2-3",
-              "title": "GAMEKEE",
-              "href": "https://www.gamekee.com/",
-              "description": "国内外多端游戏wiki平台",
-              "icon": "/assets/gamekee.ico",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "3-3",
-          "title": "资源网站",
-          "icon": "Database",
-          "description": "提供游戏资源下载和素材的网站",
-          "enabled": true,
-          "items": [
-            {
-              "id": "3-3-1",
-              "title": "GameBanana",
-              "href": "https://gamebanana.com/",
-              "description": "全球最大的游戏模组创作平台",
-              "icon": "/assets/gamebanana.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-3-2",
-              "title": "crowdin",
-              "href": "https://zh.crowdin.com/",
-              "description": "Crowdin是一款面向团队和企业的本地化软件，主要提供多语言内容管理和自动化翻译服务",
-              "icon": "/assets/crowdin.ico",
-              "enabled": true
-            },
-            {
-              "id": "3-3-3",
-              "title": "忧郁的loli",
-              "href": "https://www.ttloli.com/",
-              "description": "国内丰富的Galgame资源站，为站长的无私奉献致以崇高的敬意",
-              "icon": "/assets/galgame.ico",
-              "enabled": true
-            }
-          ]
-        }
-      ],
-      "description": "游戏开发、设计和相关资源",
-      "enabled": true
-    },
-    {
-      "id": "4",
-      "title": "番剧领域",
-      "icon": "Tv",
-      "items": [],
-      "subCategories": [
-        {
-          "id": "4-1",
-          "title": "资源下载",
-          "icon": "Download",
-          "description": "动漫资源下载网站",
-          "enabled": true,
-          "items": [
-            {
-              "id": "4-1-1",
-              "title": "爱恋动漫",
-              "href": "https://www.kisssub.org/",
-              "description": "",
-              "icon": "",
-              "enabled": true
-            },
-            {
-              "id": "4-1-2",
-              "title": "蜜柑计划",
-              "href": "https://mikanime.tv/",
-              "description": "",
-              "icon": "",
-              "enabled": true
-            },
-            {
-              "id": "4-1-3",
-              "title": "VCB-Studio",
-              "href": "https://vcb-s.com/",
-              "description": "",
-              "icon": "",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "4-2",
-          "title": "动漫资讯",
-          "icon": "Newspaper",
-          "description": "动漫新闻和资讯网站",
-          "enabled": true,
-          "items": [
-            {
-              "id": "4-2-1",
-              "title": "Bangumi",
-              "href": "https://bgm.tv/",
-              "description": "Bangumi是专注于动漫、音乐、游戏领域，帮助你分享、发现与结识同好的ACGN网络",
-              "icon": "/assets/bangumi.ico",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "4-3",
-          "title": "综合百科",
-          "icon": "BookOpen",
-          "description": "动漫综合百科和资料网站",
-          "enabled": true,
-          "items": []
-        }
-      ],
-      "description": "动漫番剧相关的资源和资讯",
-      "enabled": true
-    },
-    {
-      "id": "5",
-      "title": "影视领域",
-      "icon": "Video",
-      "description": "电影、电视剧、动漫等影视资源和服务",
-      "enabled": true,
-      "subCategories": [
-        {
-          "id": "5-1",
-          "title": "综合平台",
-          "icon": "Monitor",
-          "description": "提供电影、电视剧等综合服务的平台",
-          "enabled": true,
-          "items": [
-            {
-              "id": "5-1-1",
-              "title": "豆瓣",
-              "href": "https://www.douban.com/",
-              "description": "国内著名的影视、书籍、音乐和游戏等信息资源网站，由用户评价和维护",
-              "icon": "/assets/douban.ico",
-              "enabled": true
-            },
-            {
-              "id": "5-1-2",
-              "title": "TMDB",
-              "href": "https://www.themoviedb.org/",
-              "description": "国际独立非营利性的公共影视数据库网站",
-              "icon": "/assets/tmdb.ico",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "5-2",
-          "title": "资源站点",
-          "icon": "Download",
-          "description": "影视资源下载和分享站点",
-          "enabled": true,
-          "items": [
-            {
-              "id": "5-2-1",
-              "title": "SeedHub",
-              "href": "https://www.seedhub.cc/",
-              "description": "电影&动漫资源下载网站",
-              "icon": "/assets/seedhub.ico",
-              "enabled": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "title": "网络相关",
-      "icon": "Wifi",
-      "items": [],
-      "subCategories": [
-        {
-          "id": "6-1",
-          "title": "云服务综合",
-          "icon": "Cloud",
+          "title": "云服务商",
+          "icon": "CloudCog",
           "description": "各类云计算平台和服务",
           "enabled": true,
           "items": [
             {
-              "id": "6-1-1",
+              "id": "3-1-1",
               "title": "阿里云",
               "href": "https://www.aliyun.com/",
               "description": "计算，为了无法计算的价值",
@@ -615,7 +377,7 @@
               "enabled": true
             },
             {
-              "id": "6-1-2",
+              "id": "3-1-2",
               "title": "腾讯云",
               "href": "https://cloud.tencent.com/",
               "description": "腾讯云是腾讯公司旗下的产品，为开发者及企业提供云服务、云数据、云运营等整体一站式服务方案",
@@ -625,14 +387,14 @@
           ]
         },
         {
-          "id": "6-2",
-          "title": "托管平台",
-          "icon": "Globe",
+          "id": "3-2",
+          "title": "托管部署",
+          "icon": "Rocket",
           "description": "网站、程序托管相关的优质服务和工具",
           "enabled": true,
           "items": [
             {
-              "id": "6-2-1",
+              "id": "3-2-1",
               "title": "Cloudflare",
               "href": "https://www.cloudflare-cn.com/",
               "description": "Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务",
@@ -640,7 +402,7 @@
               "enabled": true
             },
             {
-              "id": "6-2-2",
+              "id": "3-2-2",
               "title": "EdgeOne",
               "href": "https://console.tencentcloud.com/edgeone",
               "description": "EdgeOne是腾讯基于20余年安全技术积累面向全球发布的边缘安全加速平台，集成DNS解析、四层代理、智能加速、DDoS防护、Web防护、Bot防护等十余项功能，提供安全与性能加速一体化服务",
@@ -648,7 +410,7 @@
               "enabled": true
             },
             {
-              "id": "6-2-3",
+              "id": "3-2-3",
               "title": "ESA",
               "href": "https://esa.console.aliyun.com/",
               "description": "阿里云边缘安全加速（ESA）是一个全球分布式的边缘网络平台，旨在为用户提供网络加速、安全防护和边缘计算服务。它通过全球3200多个边缘节点，覆盖70多个国家和地区，提供低延迟、高可用的访问体验",
@@ -656,7 +418,7 @@
               "enabled": true
             },
             {
-              "id": "6-2-4",
+              "id": "3-2-4",
               "title": "Vercel",
               "href": "https://vercel.com/",
               "description": "Vercel专注于提供前端应用托管、无服务器函数部署及全球CDN加速服务，支持GitHub存储库自动构建并与Next.js框架深度集成",
@@ -664,7 +426,7 @@
               "enabled": true
             },
             {
-              "id": "6-2-5",
+              "id": "3-2-5",
               "title": "Netlify",
               "href": "https://www.netlify.com/",
               "description": "专注于提供基于内容分发网络的静态网站托管服务，其核心业务包括自动化构建部署工具和前端应用托管平台",
@@ -674,14 +436,14 @@
           ]
         },
         {
-          "id": "6-3",
-          "title": "优质服务",
-          "icon": "Star",
+          "id": "3-3",
+          "title": "网络工具",
+          "icon": "Network",
           "description": "精选各类优质的在线服务和工具",
           "enabled": true,
           "items": [
             {
-              "id": "6-3-1",
+              "id": "3-3-1",
               "title": "jsDelivr",
               "href": "https://www.jsdelivr.com/",
               "description": "jsDelivr是一个免费、开源的内容分发网络（CDN）平台，专注于为开发者提供静态资源的全球加速服务‌",
@@ -689,7 +451,7 @@
               "enabled": true
             },
             {
-              "id": "6-3-2",
+              "id": "3-3-2",
               "title": "ITDOG",
               "href": "https://www.itdog.cn/",
               "description": "‌ITDOG是综合性站长服务网站，提供Ping、DNS追踪、网站测速等诸多工具",
@@ -699,14 +461,14 @@
           ]
         },
         {
-          "id": "6-4",
+          "id": "3-4",
           "title": "域名服务",
           "icon": "Globe",
           "description": "域名注册、管理和相关服务",
           "enabled": true,
           "items": [
             {
-              "id": "6-4-1",
+              "id": "3-4-1",
               "title": "EU.org",
               "href": "https://nic.eu.org/",
               "description": "EU.org主要为无法承担NIC费用的用户和非营利性组织提供免费子域名服务",
@@ -714,7 +476,7 @@
               "enabled": true
             },
             {
-              "id": "6-4-2",
+              "id": "3-4-2",
               "title": "DNSHE",
               "href": "https://my.dnshe.com/",
               "description": "国外稳定的DNS和域名注册服务商",
@@ -722,7 +484,7 @@
               "enabled": true
             },
             {
-              "id": "6-4-3",
+              "id": "3-4-3",
               "title": "domain",
               "href": "https://domain.digitalplat.org/",
               "description": "A Free name for everyone",
@@ -732,24 +494,24 @@
           ]
         }
       ],
-      "description": "网络技术、工具和资源",
+      "description": "云服务、网络工具与域名资源",
       "enabled": true
     },
     {
-      "id": "7",
-      "title": "优质工具",
-      "icon": "Tool",
+      "id": "4",
+      "title": "效率工具",
+      "icon": "Zap",
       "items": [],
       "subCategories": [
         {
-          "id": "7-1",
-          "title": "笔记工具",
-          "icon": "PencilRuler",
-          "description": "各类笔记应用和记录工具",
+          "id": "4-1",
+          "title": "笔记知识",
+          "icon": "BookMarked",
+          "description": "各类笔记应用和知识管理工具",
           "enabled": true,
           "items": [
             {
-              "id": "7-1-1",
+              "id": "4-1-1",
               "title": "Notion",
               "href": "https://www.notion.so/",
               "description": "Notion是一款整合笔记、任务管理、数据库和团队协作功能的全平台工作空间应用",
@@ -757,7 +519,7 @@
               "enabled": true
             },
             {
-              "id": "7-1-2",
+              "id": "4-1-2",
               "title": "Obsidian",
               "href": "https://obsidian.md/",
               "description": "强大、免费且开源的知识管理和笔记应用",
@@ -767,22 +529,31 @@
           ]
         },
         {
-          "id": "7-2",
-          "title": "综合分享",
-          "icon": "Share2",
-          "description": "内容分享和资源共享平台",
+          "id": "4-2",
+          "title": "设计素材",
+          "icon": "Palette",
+          "description": "设计资源与素材工具",
           "enabled": true,
           "items": [
             {
-              "id": "7-2-1",
+              "id": "4-2-1",
               "title": "iconfont",
               "href": "https://www.iconfont.cn/",
               "description": "阿里巴巴矢量图标库",
               "icon": "/assets/iconfont.ico",
               "enabled": true
-            },
+            }
+          ]
+        },
+        {
+          "id": "4-3",
+          "title": "实用工具",
+          "icon": "Tool",
+          "description": "各类实用的在线工具和服务",
+          "enabled": true,
+          "items": [
             {
-              "id": "7-2-2",
+              "id": "4-3-1",
               "title": "IT Tools",
               "href": "https://it-tools.tech/",
               "description": "IT工作者的瑞士军刀",
@@ -790,24 +561,15 @@
               "enabled": true
             },
             {
-              "id": "7-2-3",
+              "id": "4-3-2",
               "title": "Green Video",
               "href": "https://greenvideo.cc/",
               "description": "Green Video免费提供全球网站视频解析下载服务",
               "icon": "/assets/greenvideo.ico",
               "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "7-3",
-          "title": "其他分类",
-          "icon": "Share2",
-          "description": "不属于上述分类的工具和软件",
-          "enabled": true,
-          "items": [
+            },
             {
-              "id": "7-3-1",
+              "id": "4-3-3",
               "title": "IAutodraw",
               "href": "https://www.iautodraw.com/",
               "description": "面向全球5000万各行业工程师的高效的流程绘图以流程模拟软件",
@@ -821,45 +583,256 @@
       "enabled": true
     },
     {
-      "id": "8",
-      "title": "优质开源",
+      "id": "5",
+      "title": "开源精选",
       "icon": "Github",
-      "items": [
+      "items": [],
+      "subCategories": [
         {
-          "id": "8-1",
-          "title": "Cloudreve网盘",
-          "href": "https://docs.cloudreve.org/zh/",
-          "description": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统",
-          "icon": "/assets/cloudreve.ico",
-          "enabled": true
-        },
-        {
-          "id": "8-2",
-          "title": "Xget URL 转换器",
-          "href": "https://xuc.xi-xu.me/",
-          "description": "将支持平台的 URL 转换为加速的 Xget 格式",
-          "icon": "/assets/xget.ico",
-          "enabled": true
-        },
-        {
-          "id": "8-3",
-          "title": "AlternativeTo",
-          "href": "https://alternativeto.net/",
-          "description": "国际优质的同类软件平替查找平台",
-          "icon": "/assets/alternativeto.ico",
-          "enabled": true
-        },
-        {
-          "id": "8-4",
-          "title": "Zread",
-          "href": "https://zread.ai/",
-          "description": "zread.ai是智谱AI推出的基于大模型的Github智能阅读平台，为用户提供高效、智能的阅读体验",
-          "icon": "/assets/zread.ico",
-          "enabled": true
+          "id": "5-1",
+          "title": "精选推荐",
+          "icon": "Star",
+          "description": "精选的优质开源项目和工具",
+          "enabled": true,
+          "items": [
+            {
+              "id": "5-1-1",
+              "title": "Cloudreve网盘",
+              "href": "https://docs.cloudreve.org/zh/",
+              "description": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统",
+              "icon": "/assets/cloudreve.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-1-2",
+              "title": "Xget URL 转换器",
+              "href": "https://xuc.xi-xu.me/",
+              "description": "将支持平台的 URL 转换为加速的 Xget 格式",
+              "icon": "/assets/xget.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-1-3",
+              "title": "AlternativeTo",
+              "href": "https://alternativeto.net/",
+              "description": "国际优质的同类软件平替查找平台",
+              "icon": "/assets/alternativeto.ico",
+              "enabled": true
+            },
+            {
+              "id": "5-1-4",
+              "title": "Zread",
+              "href": "https://zread.ai/",
+              "description": "zread.ai是智谱AI推出的基于大模型的Github智能阅读平台，为用户提供高效、智能的阅读体验",
+              "icon": "/assets/zread.ico",
+              "enabled": true
+            }
+          ]
         }
       ],
-      "subCategories": [],
       "description": "精选的开源项目、工具和资源",
+      "enabled": true
+    },
+    {
+      "id": "6",
+      "title": "游戏世界",
+      "icon": "Gamepad",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "6-1",
+          "title": "游戏平台",
+          "icon": "MonitorPlay",
+          "description": "综合性游戏平台和门户网站",
+          "enabled": true,
+          "items": [
+            {
+              "id": "6-1-1",
+              "title": "Steam",
+              "href": "https://store.steampowered.com/",
+              "description": "Steam平台是全球最大的综合性数字发行平台之一，支持主流硬件平台。玩家可以在该平台购买、下载、讨论、上传和分享游戏及软件",
+              "icon": "/assets/steam.ico",
+              "enabled": true
+            },
+            {
+              "id": "6-1-2",
+              "title": "Epic",
+              "href": "https://store.epicgames.com/zh-CN/",
+              "description": "游戏界的善人，无需多言",
+              "icon": "/assets/epic.ico",
+              "enabled": true
+            },
+            {
+              "id": "6-1-3",
+              "title": "蒸汽游戏宝库",
+              "href": "https://www.steambk.com/",
+              "description": "玩家自制的单机游戏资源平台",
+              "icon": "/assets/steambk.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "6-2",
+          "title": "游戏百科",
+          "icon": "BookOpen",
+          "description": "游戏相关的百科全书和资料库",
+          "enabled": true,
+          "items": [
+            {
+              "id": "6-2-1",
+              "title": "MC百科",
+              "href": "https://www.mcmod.cn/",
+              "description": "最大的Minecraft中文MOD百科",
+              "icon": "/assets/mcwiki.ico",
+              "enabled": true
+            },
+            {
+              "id": "6-2-2",
+              "title": "中文 Minecraft Wiki",
+              "href": "https://zh.minecraft.wiki/",
+              "description": "最大的Minecraft中文百科",
+              "icon": "/assets/minecraftwiki.ico",
+              "enabled": true
+            },
+            {
+              "id": "6-2-3",
+              "title": "GAMEKEE",
+              "href": "https://www.gamekee.com/",
+              "description": "国内外多端游戏wiki平台",
+              "icon": "/assets/gamekee.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "6-3",
+          "title": "游戏资源",
+          "icon": "Package",
+          "description": "提供游戏资源下载和素材的网站",
+          "enabled": true,
+          "items": [
+            {
+              "id": "6-3-1",
+              "title": "GameBanana",
+              "href": "https://gamebanana.com/",
+              "description": "全球最大的游戏模组创作平台",
+              "icon": "/assets/gamebanana.ico",
+              "enabled": true
+            },
+            {
+              "id": "6-3-2",
+              "title": "crowdin",
+              "href": "https://zh.crowdin.com/",
+              "description": "Crowdin是一款面向团队和企业的本地化软件，主要提供多语言内容管理和自动化翻译服务",
+              "icon": "/assets/crowdin.ico",
+              "enabled": true
+            },
+            {
+              "id": "6-3-3",
+              "title": "忧郁的loli",
+              "href": "https://www.ttloli.com/",
+              "description": "国内丰富的Galgame资源站，为站长的无私奉献致以崇高的敬意",
+              "icon": "/assets/galgame.ico",
+              "enabled": true
+            }
+          ]
+        }
+      ],
+      "description": "游戏平台、百科与资源",
+      "enabled": true
+    },
+    {
+      "id": "7",
+      "title": "影视动漫",
+      "icon": "Clapperboard",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "7-1",
+          "title": "影视资讯",
+          "icon": "Newspaper",
+          "description": "影视评分、资讯与数据库网站",
+          "enabled": true,
+          "items": [
+            {
+              "id": "7-1-1",
+              "title": "豆瓣",
+              "href": "https://www.douban.com/",
+              "description": "国内著名的影视、书籍、音乐和游戏等信息资源网站，由用户评价和维护",
+              "icon": "/assets/douban.ico",
+              "enabled": true
+            },
+            {
+              "id": "7-1-2",
+              "title": "TMDB",
+              "href": "https://www.themoviedb.org/",
+              "description": "国际独立非营利性的公共影视数据库网站",
+              "icon": "/assets/tmdb.ico",
+              "enabled": true
+            },
+            {
+              "id": "7-1-3",
+              "title": "Bangumi",
+              "href": "https://bgm.tv/",
+              "description": "Bangumi是专注于动漫、音乐、游戏领域，帮助你分享、发现与结识同好的ACGN网络",
+              "icon": "/assets/bangumi.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "7-2",
+          "title": "动漫番剧",
+          "icon": "Tv",
+          "description": "动漫番剧资源下载网站",
+          "enabled": true,
+          "items": [
+            {
+              "id": "7-2-1",
+              "title": "爱恋动漫",
+              "href": "https://www.kisssub.org/",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "7-2-2",
+              "title": "蜜柑计划",
+              "href": "https://mikanime.tv/",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "7-2-3",
+              "title": "VCB-Studio",
+              "href": "https://vcb-s.com/",
+              "description": "",
+              "icon": "",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "7-3",
+          "title": "影视资源",
+          "icon": "Film",
+          "description": "影视资源下载和分享站点",
+          "enabled": true,
+          "items": [
+            {
+              "id": "7-3-1",
+              "title": "SeedHub",
+              "href": "https://www.seedhub.cc/",
+              "description": "电影&动漫资源下载网站",
+              "icon": "/assets/seedhub.ico",
+              "enabled": true
+            }
+          ]
+        }
+      ],
+      "description": "影视、动漫、番剧相关的资源和资讯",
       "enabled": true
     }
   ]
