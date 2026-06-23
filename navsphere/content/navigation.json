@@ -17,7 +17,7 @@
               "id": "1-1-1",
               "title": "DeepSeek | 深度求索",
               "href": "https://www.deepseek.com/",
-              "description": "探索未至之境",
+              "description": "前沿AI大模型，探索智能边界",
               "icon": "/assets/deepseek.ico",
               "enabled": true
             },
@@ -25,7 +25,7 @@
               "id": "1-1-2",
               "title": "MiniMax",
               "href": "https://chat.minimaxi.com/",
-              "description": "全球首个开源大规模混合架构的推理模型",
+              "description": "开源混合架构大模型，免费商用",
               "icon": "/assets/minimax.ico",
               "enabled": true
             },
@@ -33,7 +33,7 @@
               "id": "1-1-3",
               "title": "豆包",
               "href": "https://www.doubao.com/chat/",
-              "description": "字节跳动旗下 AI 智能助手",
+              "description": "字节跳动AI助手，多场景智能交互",
               "icon": "/assets/doubao.ico",
               "enabled": true
             },
@@ -73,7 +73,7 @@
               "id": "1-1-8",
               "title": "小米MiMo",
               "href": "https://mimo.xiaomi.com/zh",
-              "description": "小米自研大模型系列，旗舰模型MiMo-V2.5支持原生多模态理解与1M超长上下文，Agent能力进入全球顶尖水平",
+              "description": "小米自研大模型，1M超长上下文",
               "icon": "/assets/mimo.ico",
               "enabled": true
             }
@@ -90,7 +90,7 @@
               "id": "1-2-1",
               "title": "吐司",
               "href": "https://tusi.cn/",
-              "description": "吐司是由上海必有回响智能科技有限公司提供的 AI 模型分享社区和在线运行平台",
+              "description": "AI模型分享社区，在线运行平台",
               "icon": "/assets/tusi.ico",
               "enabled": true
             },
@@ -106,7 +106,7 @@
               "id": "1-2-3",
               "title": "RunningHub",
               "href": "https://www.runninghub.cn/",
-              "description": "RunningHub是一个基于云端ComfyUI的AI应用创作平台，具备高可用性的开发环境和强大算力支撑，支持在线编辑和运行ComfyUI工作流和AI应用",
+              "description": "云端ComfyUI创作平台，强大算力支撑",
               "icon": "/assets/runninghub.ico",
               "enabled": true
             },
@@ -114,7 +114,7 @@
               "id": "1-2-4",
               "title": "即梦AI",
               "href": "https://jimeng.jianying.com/ai-tool/home/",
-              "description": "即梦AI支持根据中文提示词进行创作,拥有更好的语义理解能力,准确把握你的需求,将抽象的思路转化为视觉作品",
+              "description": "中文提示词创作，精准视觉转化",
               "icon": "/assets/jimeng.ico",
               "enabled": true
             }
@@ -171,7 +171,7 @@
               "id": "1-3-6",
               "title": "Datawhale",
               "href": "https://www.datawhale.cn/",
-              "description": "Datawhale是一个专注于AI领域的开源组织，致力于构建一个纯粹的学习圈子，帮助学习者更好地成长",
+              "description": "AI学习社区，共建成长圈子",
               "icon": "/assets/datawhale.ico",
               "enabled": true
             },
@@ -212,7 +212,7 @@
               "id": "1-4-1",
               "title": "硅基流动",
               "href": "https://www.siliconflow.cn/",
-              "description": "致力于成为全球领先的AI能力提供商",
+              "description": "全球领先的AI能力与模型提供商",
               "icon": "/assets/siliconflow.ico",
               "enabled": true
             },
@@ -236,7 +236,7 @@
               "id": "1-4-4",
               "title": "魔搭社区",
               "href": "https://www.modelscope.cn/",
-              "description": "魔搭社区（ModelScope）是由阿里达摩院联手中国计算机学会（CCF）开源发展委员会推出的AI大模型开源社区",
+              "description": "阿里达摩院开源AI大模型社区",
               "icon": "/assets/modelscope.ico",
               "enabled": true
             },
@@ -244,7 +244,7 @@
               "id": "1-4-5",
               "title": "阿里云百炼",
               "href": "https://bailian.console.aliyun.com/cn-beijing/#/home",
-              "description": "阿里云百炼是专为企业打造的大模型服务与平台开发平台",
+              "description": "企业级大模型服务与平台开发",
               "icon": "/assets/bailian.ico",
               "enabled": true
             }
@@ -279,7 +279,7 @@
               "id": "2-1-2",
               "title": "Git",
               "href": "https://git-scm.com/",
-              "description": "Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理",
+              "description": "分布式版本控制系统，高效项目管理",
               "icon": "/assets/git.ico",
               "enabled": true
             },
@@ -287,7 +287,7 @@
               "id": "2-1-3",
               "title": "腾讯云CNB",
               "href": "https://cnb.cool/",
-              "description": "云原生构建（Cloud Native Build，CNB）提供代码托管、云原生构建、云原生开发、AI 代码助手和制品库等功能。基于 Docker 生态，对环境、缓存、插件进行抽象，通过声明式的语法，帮助开发者以更酷的方式构建软件",
+              "description": "云原生构建平台，AI代码助手助力开发",
               "icon": "/assets/cnb.ico",
               "enabled": true
             }
@@ -312,7 +312,7 @@
               "id": "2-2-2",
               "title": "WakaTime",
               "href": "https://wakatime.com/",
-              "description": "WakaTime 致力于为每个程序员提供全自动的时间跟踪",
+              "description": "自动编程时间追踪，提升效率",
               "icon": "/assets/wakatime.ico",
               "enabled": true
             }
@@ -405,7 +405,7 @@
               "id": "3-2-2",
               "title": "EdgeOne",
               "href": "https://console.tencentcloud.com/edgeone",
-              "description": "EdgeOne是腾讯基于20余年安全技术积累面向全球发布的边缘安全加速平台，集成DNS解析、四层代理、智能加速、DDoS防护、Web防护、Bot防护等十余项功能，提供安全与性能加速一体化服务",
+              "description": "腾讯边缘安全加速平台，一站式防护",
               "icon": "/assets/tengxunyun.ico",
               "enabled": true
             },
@@ -413,7 +413,7 @@
               "id": "3-2-3",
               "title": "ESA",
               "href": "https://esa.console.aliyun.com/",
-              "description": "阿里云边缘安全加速（ESA）是一个全球分布式的边缘网络平台，旨在为用户提供网络加速、安全防护和边缘计算服务。它通过全球3200多个边缘节点，覆盖70多个国家和地区，提供低延迟、高可用的访问体验",
+              "description": "阿里云边缘安全加速，全球3200+节点",
               "icon": "/assets/aliyun.ico",
               "enabled": true
             },
@@ -421,7 +421,7 @@
               "id": "3-2-4",
               "title": "Vercel",
               "href": "https://vercel.com/",
-              "description": "Vercel专注于提供前端应用托管、无服务器函数部署及全球CDN加速服务，支持GitHub存储库自动构建并与Next.js框架深度集成",
+              "description": "Next.js首选托管平台，自动构建部署",
               "icon": "/assets/vercel.ico",
               "enabled": true
             },
@@ -446,7 +446,7 @@
               "id": "3-3-1",
               "title": "jsDelivr",
               "href": "https://www.jsdelivr.com/",
-              "description": "jsDelivr是一个免费、开源的内容分发网络（CDN）平台，专注于为开发者提供静态资源的全球加速服务‌",
+              "description": "免费开源CDN，静态资源全球加速",
               "icon": "/assets/jsdelivr.ico",
               "enabled": true
             },
@@ -454,7 +454,7 @@
               "id": "3-3-2",
               "title": "ITDOG",
               "href": "https://www.itdog.cn/",
-              "description": "‌ITDOG是综合性站长服务网站，提供Ping、DNS追踪、网站测速等诸多工具",
+              "description": "站长工具合集，Ping/DNS/测速一站式",
               "icon": "/assets/itdog.ico",
               "enabled": true
             }
@@ -471,7 +471,7 @@
               "id": "3-4-1",
               "title": "EU.org",
               "href": "https://nic.eu.org/",
-              "description": "EU.org主要为无法承担NIC费用的用户和非营利性组织提供免费子域名服务",
+              "description": "免费子域名服务，非营利性组织专用",
               "icon": "/assets/euorg.ico",
               "enabled": true
             },
@@ -514,7 +514,7 @@
               "id": "4-1-1",
               "title": "Notion",
               "href": "https://www.notion.so/",
-              "description": "Notion是一款整合笔记、任务管理、数据库和团队协作功能的全平台工作空间应用",
+              "description": "全平台工作空间，笔记协作一体化",
               "icon": "/assets/notion.ico",
               "enabled": true
             },
@@ -564,7 +564,7 @@
               "id": "4-3-2",
               "title": "Green Video",
               "href": "https://greenvideo.cc/",
-              "description": "Green Video免费提供全球网站视频解析下载服务",
+              "description": "全球网站视频解析下载服务",
               "icon": "/assets/greenvideo.ico",
               "enabled": true
             },
@@ -572,7 +572,7 @@
               "id": "4-3-3",
               "title": "IAutodraw",
               "href": "https://www.iautodraw.com/",
-              "description": "面向全球5000万各行业工程师的高效的流程绘图以流程模拟软件",
+              "description": "工程师流程绘图与模拟软件",
               "icon": "/assets/iautodraw.ico",
               "enabled": true
             }
@@ -599,7 +599,7 @@
               "id": "5-1-1",
               "title": "Cloudreve网盘",
               "href": "https://docs.cloudreve.org/zh/",
-              "description": "Cloudreve 可以让您快速搭建起公私兼备的网盘系统",
+              "description": "快速搭建公私兼备的网盘系统",
               "icon": "/assets/cloudreve.ico",
               "enabled": true
             },
@@ -623,7 +623,7 @@
               "id": "5-1-4",
               "title": "Zread",
               "href": "https://zread.ai/",
-              "description": "zread.ai是智谱AI推出的基于大模型的Github智能阅读平台，为用户提供高效、智能的阅读体验",
+              "description": "智谱AI驱动的GitHub智能阅读",
               "icon": "/assets/zread.ico",
               "enabled": true
             }
@@ -658,7 +658,7 @@
               "id": "6-1-2",
               "title": "Epic",
               "href": "https://store.epicgames.com/zh-CN/",
-              "description": "游戏界的善人，无需多言",
+              "description": "免费游戏领取平台，限时独占大作",
               "icon": "/assets/epic.ico",
               "enabled": true
             },
@@ -724,7 +724,7 @@
               "id": "6-3-2",
               "title": "crowdin",
               "href": "https://zh.crowdin.com/",
-              "description": "Crowdin是一款面向团队和企业的本地化软件，主要提供多语言内容管理和自动化翻译服务",
+              "description": "团队本地化翻译管理平台",
               "icon": "/assets/crowdin.ico",
               "enabled": true
             },
@@ -732,7 +732,7 @@
               "id": "6-3-3",
               "title": "忧郁的loli",
               "href": "https://www.ttloli.com/",
-              "description": "国内丰富的Galgame资源站，为站长的无私奉献致以崇高的敬意",
+              "description": "Galgame资源分享平台",
               "icon": "/assets/galgame.ico",
               "enabled": true
             }
@@ -767,7 +767,7 @@
               "id": "7-1-2",
               "title": "TMDB",
               "href": "https://www.themoviedb.org/",
-              "description": "国际独立非营利性的公共影视数据库网站",
+              "description": "国际影视数据库，免费API服务",
               "icon": "/assets/tmdb.ico",
               "enabled": true
             },
@@ -775,7 +775,7 @@
               "id": "7-1-3",
               "title": "Bangumi",
               "href": "https://bgm.tv/",
-              "description": "Bangumi是专注于动漫、音乐、游戏领域，帮助你分享、发现与结识同好的ACGN网络",
+              "description": "ACGN社区，分享发现同好",
               "icon": "/assets/bangumi.ico",
               "enabled": true
             }
@@ -792,7 +792,7 @@
               "id": "7-2-1",
               "title": "爱恋动漫",
               "href": "https://www.kisssub.org/",
-              "description": "",
+              "description": "动漫资源下载站点",
               "icon": "",
               "enabled": true
             },
@@ -800,7 +800,7 @@
               "id": "7-2-2",
               "title": "蜜柑计划",
               "href": "https://mikanime.tv/",
-              "description": "",
+              "description": "动漫资源下载站点",
               "icon": "",
               "enabled": true
             },
@@ -808,7 +808,7 @@
               "id": "7-2-3",
               "title": "VCB-Studio",
               "href": "https://vcb-s.com/",
-              "description": "",
+              "description": "动漫资源下载站点",
               "icon": "",
               "enabled": true
             }
