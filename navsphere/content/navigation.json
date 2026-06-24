@@ -383,6 +383,14 @@
               "description": "一站式云服务与解决方案提供商",
               "icon": "/assets/tengxunyun.ico",
               "enabled": true
+            },
+            {
+              "id": "3-1-3",
+              "title": "火山引擎",
+              "href": "https://www.volcengine.com/",
+              "description": "字节跳动云服务平台，企业级云端智能服务",
+              "icon": "/assets/volcengine.ico",
+              "enabled": true
             }
           ]
         },
