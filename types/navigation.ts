@@ -3,14 +3,12 @@ export interface NavigationSubItem {
   title: string
   href: string
   description?: string
-  icon?: string
   enabled: boolean
 }
 
 export interface NavigationCategory {
   id: string
   title: string
-  icon?: string
   description?: string
   parentId?: string
   items?: NavigationSubItem[]
@@ -21,7 +19,6 @@ export interface NavigationItem {
   id: string
   title: string
   description?: string
-  icon?: string
   items?: NavigationSubItem[]
   subCategories?: NavigationCategory[]
   enabled?: boolean
@@ -57,7 +54,6 @@ export function resolveIconPath(icon?: string): string | undefined {
     'search': '/icons/search.svg',
     'user': '/icons/user.svg',
     'linecons-desktop': '/icons/desktop.svg',
-    // 添加更多常见图标的映射
   }
 
   // 如果是预定义的图标名称，使用映射

@@ -3,29 +3,26 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogFooter, 
-  DialogDescription, 
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogDescription,
 } from "@/components/ui/dialog"
 import { useToast } from "@/components/ui/use-toast"
 import { AddNavigationForm } from './AddNavigationForm'
 import { Draggable } from "@hello-pangea/dnd"
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
 import { NavigationItem } from '@/types/navigation'
-import { navigationIcons, type IconType } from '@/lib/icons'
-import { 
-  Folder, 
-  FolderOpen, 
-  List, 
-  Image, 
-  Pencil, 
-  Trash, 
-  ChevronsUp, 
-  ChevronsDown 
+import {
+  FolderOpen,
+  List,
+  Pencil,
+  Trash,
+  ChevronsUp,
+  ChevronsDown
 } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import { Badge } from "@/components/ui/badge"
@@ -40,8 +37,8 @@ interface NavigationCardProps {
   showMoveToBottom?: boolean
 }
 
-export function NavigationCard({ 
-  item, 
+export function NavigationCard({
+  item,
   index,
   onUpdate,
   onMoveToTop,
@@ -53,13 +50,10 @@ export function NavigationCard({
   const { toast } = useToast()
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
-  
-  const Icon = item.icon && navigationIcons[item.icon as IconType] ? navigationIcons[item.icon as IconType] : navigationIcons.Folder
 
-  const handleEdit = async (values: { 
-    title: string; 
-    description?: string; 
-    icon: string;
+  const handleEdit = async (values: {
+    title: string;
+    description?: string;
     enabled: boolean;
   }) => {
     try {
@@ -70,7 +64,6 @@ export function NavigationCard({
           ...item,
           title: values.title,
           description: values.description,
-          icon: values.icon,
           enabled: values.enabled
         })
       })
@@ -127,16 +120,15 @@ export function NavigationCard({
           }`}
         >
           <div className="flex items-center space-x-4">
-            <Icon className="h-6 w-6 text-muted-foreground" />
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <h3 className="text-sm font-medium">{item.title}</h3>
-                <Badge 
+                <Badge
                   variant={(item.enabled ?? true) ? "default" : "secondary"}
                   className={cn(
                     "text-xs",
                     (item.enabled ?? true)
-                      ? "bg-green-100 text-green-800 hover:bg-green-100" 
+                      ? "bg-green-100 text-green-800 hover:bg-green-100"
                       : "bg-gray-100 text-gray-600 hover:bg-gray-100"
                   )}
                 >
@@ -254,7 +246,6 @@ export function NavigationCard({
                 defaultValues={{
                   title: item.title,
                   description: item.description || '',
-                  icon: item.icon || '',
                   enabled: item.enabled ?? true
                 }}
                 onSubmit={handleEdit}

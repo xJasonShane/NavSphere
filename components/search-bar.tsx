@@ -145,19 +145,6 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
                         onSelect={() => handleItemSelect(item)}
                         className="flex items-center gap-3 py-3 px-3 cursor-pointer hover:bg-accent/50"
                       >
-                        <div className="flex-shrink-0 w-8 h-8">
-                          {item.icon && (
-                            <img
-                              src={item.icon}
-                              alt={`${item.title} icon`}
-                              className="w-full h-full object-contain rounded"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement
-                                target.style.display = 'none'
-                              }}
-                            />
-                          )}
-                        </div>
                         <div className="flex flex-col flex-1 gap-1">
                           <span className="text-sm font-medium">
                             {highlightText(item.title)}
@@ -182,19 +169,6 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
                             onSelect={() => handleItemSelect(item)}
                             className="flex items-center gap-3 py-3 px-3 cursor-pointer hover:bg-accent/50"
                           >
-                            <div className="flex-shrink-0 w-8 h-8">
-                              {item.icon && (
-                                <img
-                                  src={item.icon}
-                                  alt={`${item.title} icon`}
-                                  className="w-full h-full object-contain rounded"
-                                  onError={(e) => {
-                                    const target = e.target as HTMLImageElement
-                                    target.style.display = 'none'
-                                  }}
-                                />
-                              )}
-                            </div>
                             <div className="flex flex-col flex-1 gap-1">
                               <span className="text-sm font-medium">
                                 {highlightText(item.title)}

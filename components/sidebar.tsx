@@ -40,26 +40,6 @@ export function Sidebar({ className, navigationData, siteInfo, onClose }: Sideba
     }
   }
 
-  const renderIcon = (iconName?: string) => {
-    if (!iconName) return <LucideIcons.Folder className="h-4 w-4" />;
-
-    if (iconName.startsWith('/') || iconName.startsWith('http')) {
-      return (
-        <Image
-          src={iconName}
-          alt="icon"
-          width={16}
-          height={16}
-          className="h-4 w-4"
-        />
-      );
-    }
-
-    // Convert icon name to match Lucide icon component name
-    const IconComponent = (LucideIcons as any)[iconName] || LucideIcons.Folder;
-    return <IconComponent className="h-4 w-4" />;
-  }
-
   // 使用对象存储每个分类的展开状态
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>(() => {
     return navigationData.navigationItems.reduce((acc, category) => {
@@ -117,7 +97,6 @@ export function Sidebar({ className, navigationData, siteInfo, onClose }: Sideba
                   className="flex-1 justify-start gap-2 font-medium text-muted-foreground hover:text-foreground cursor-pointer"
                   onClick={() => handleCategoryClick(category.id)}
                 >
-                  {renderIcon(category.icon)}
                   <span>{category.title}</span>
                 </Button>
 

@@ -7,16 +7,14 @@ import type { NavigationSubItem } from '@/types/navigation'
 interface NavigationItemProps {
   id: string
   title: string
-  icon?: string
   items?: NavigationSubItem[]
 }
 
-export function NavigationItem({ id, title, icon, items = [] }: NavigationItemProps) {
+export function NavigationItem({ id, title, items = [] }: NavigationItemProps) {
   if (!items?.length) {
     return (
       <li>
         <NavigationLink href={`#${id}`}>
-          <i className={icon}></i>
           <span>{title}</span>
         </NavigationLink>
       </li>
@@ -25,7 +23,7 @@ export function NavigationItem({ id, title, icon, items = [] }: NavigationItemPr
 
   return (
     <li>
-      <NavigationToggle icon={icon} title={title}>
+      <NavigationToggle title={title}>
         <ul>
           {items.map(subItem => (
             <li key={subItem.href}>
@@ -38,4 +36,4 @@ export function NavigationItem({ id, title, icon, items = [] }: NavigationItemPr
       </NavigationToggle>
     </li>
   )
-} 
+}
