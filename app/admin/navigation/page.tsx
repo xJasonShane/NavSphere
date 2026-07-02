@@ -40,7 +40,6 @@ import {
   Sparkles,
   Eye,
   ExternalLink,
-  ImagePlus,
   Loader2,
   ArrowUpDown,
   Check,
@@ -92,9 +91,7 @@ function SiteFormDialog({
   const [url, setUrl] = useState('')
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
-  const [icon, setIcon] = useState('')
   const [enabled, setEnabled] = useState(true)
-  const [isUploading, setIsUploading] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [target, setTarget] = useState<{
     navigationId: string
@@ -106,7 +103,6 @@ function SiteFormDialog({
     onSuccess: (metadata) => {
       if (!title) setTitle(metadata.title)
       if (!description) setDescription(metadata.description)
-      if (!icon && metadata.icon) setIcon(metadata.icon)
       toast({ title: '成功', description: '已自动获取网站信息' })
     },
     onError: () => {
@@ -119,7 +115,6 @@ function SiteFormDialog({
     setUrl('')
     setTitle('')
     setDescription('')
-    setIcon('')
     setEnabled(true)
     setTarget(null)
     setExpandedNavs({})
@@ -135,7 +130,6 @@ function SiteFormDialog({
       setUrl(editItem.href)
       setTitle(editItem.title)
       setDescription(editItem.description || '')
-      setIcon(editItem.icon || '')
       setEnabled(editItem.enabled)
       setTarget({
         navigationId: defaultNavId || '',
@@ -170,7 +164,7 @@ function SiteFormDialog({
         title,
         href: url,
         description,
-        icon,
+        icon: '',
         enabled,
       }
       await onSave(item, target.navigationId, target.categoryId)
@@ -283,7 +277,7 @@ function SiteFormDialog({
                   {isFetching ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
                 </Button>
               </div>
-              <p className="text-xs text-muted-foreground">输入链接后将自动获取网站标题、描述和图标</p>
+              <p className="text-xs text-muted-foreground">输入链接后将自动获取网站标题和描述</p>
             </div>
             <div className="space-y-2">
               <label className="text-sm font-medium">网站标题</label>
@@ -318,21 +312,12 @@ function SiteFormDialog({
         {step === 'preview' && (
           <div className="space-y-4">
             <div className="rounded-lg border bg-muted/30 p-4">
-              <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg border bg-background flex items-center justify-center overflow-hidden">
-                  {icon ? (
-                    <img src={icon} alt={title} className="w-8 h-8 object-contain" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
-                  ) : (
-                    <Globe className="h-6 w-6 text-muted-foreground" />
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-medium text-sm">{title}</h3>
-                  <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{description || '暂无描述'}</p>
-                  <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline mt-1">
-                    {url} <ExternalLink className="h-3 w-3" />
-                  </a>
-                </div>
+              <div className="space-y-2">
+                <h3 className="font-medium text-sm">{title}</h3>
+                <p className="text-xs text-muted-foreground line-clamp-2">{description || '暂无描述'}</p>
+                <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
+                  {url} <ExternalLink className="h-3 w-3" />
+                </a>
               </div>
             </div>
 
@@ -340,45 +325,10 @@ function SiteFormDialog({
             <div>
               <p className="text-xs text-muted-foreground mb-2 flex items-center gap-1"><Eye className="h-3 w-3" /> 卡片预览效果</p>
               <div className="rounded-lg border bg-card p-3 max-w-xs">
-                <div className="flex items-start gap-3">
-                  {icon && <div className="flex-shrink-0 w-8 h-8"><img src={icon} alt={title} className="w-full h-full object-contain" /></div>}
-                  <div>
-                    <p className="text-sm font-medium">{title}</p>
-                    {description && <p className="text-xs text-muted-foreground line-clamp-1">{description}</p>}
-                  </div>
+                <div>
+                  <p className="text-sm font-medium">{title}</p>
+                  {description && <p className="text-xs text-muted-foreground line-clamp-1">{description}</p>}
                 </div>
-              </div>
-            </div>
-
-            {/* 图标编辑 */}
-            <div className="space-y-2">
-              <label className="text-sm font-medium">图标</label>
-              <div className="flex items-center gap-2">
-                <div className="flex-1 relative">
-                  <Input placeholder="图标URL" value={icon} onChange={(e) => setIcon(e.target.value)} />
-                  {icon && <div className="absolute right-3 top-1/2 -translate-y-1/2"><img src={icon} alt="icon" className="w-4 h-4 object-contain" /></div>}
-                </div>
-                <Button type="button" variant="outline" disabled={isUploading} onClick={() => document.getElementById('visual-icon-upload')?.click()}>
-                  {isUploading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <ImagePlus className="mr-2 h-4 w-4" />}
-                  上传
-                </Button>
-                <input id="visual-icon-upload" type="file" accept="image/*" className="hidden" onChange={async (e) => {
-                  const file = e.target.files?.[0]
-                  if (!file) return
-                  try {
-                    setIsUploading(true)
-                    const base64 = await new Promise<string>((resolve, reject) => {
-                      const reader = new FileReader()
-                      reader.onload = () => resolve(reader.result as string)
-                      reader.onerror = reject
-                      reader.readAsDataURL(file)
-                    })
-                    const res = await fetch('/api/resource', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ image: base64 }) })
-                    if (!res.ok) throw new Error('上传失败')
-                    const data = await res.json()
-                    if (data.imageUrl) setIcon(data.imageUrl)
-                  } catch { toast({ title: '错误', description: '图标上传失败', variant: 'destructive' }) } finally { setIsUploading(false) }
-                }} />
               </div>
             </div>
 
@@ -1023,7 +973,6 @@ export default function NavigationManagerPage() {
                                 <ChevronDown className="h-3 w-3" />
                               </Button>
                             </div>
-                            {item.icon && <img src={item.icon} alt="" className="w-4 h-4 object-contain flex-shrink-0" />}
                             <span className="text-sm flex-1 min-w-0 truncate">{item.title}</span>
                             <span className="text-xs text-muted-foreground hidden sm:inline max-w-[200px] truncate">{item.href}</span>
                             <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -1070,7 +1019,6 @@ export default function NavigationManagerPage() {
                                     <ChevronDown className="h-3 w-3" />
                                   </Button>
                                 </div>
-                                {item.icon && <img src={item.icon} alt="" className="w-4 h-4 object-contain flex-shrink-0" />}
                                 <span className="text-sm flex-1 min-w-0 truncate">{item.title}</span>
                                 <span className="text-xs text-muted-foreground hidden sm:inline max-w-[200px] truncate">{item.href}</span>
                                 <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">

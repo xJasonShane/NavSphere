@@ -98,8 +98,6 @@ export default function SiteListPage() {
   const [isEditingSubmitting, setIsEditingSubmitting] = useState(false)
   const [showDeleteSiteDialog, setShowDeleteSiteDialog] = useState(false)
   const [deletingSite, setDeletingSite] = useState<Site | null>(null)
-  const [isUploadingAddIcon, setIsUploadingAddIcon] = useState(false)
-  const [isUploadingEditIcon, setIsUploadingEditIcon] = useState(false)
   const [isBatchDeleting, setIsBatchDeleting] = useState(false)
   const [isFetchingAddMetadata, setIsFetchingAddMetadata] = useState(false)
   const [isFetchingEditMetadata, setIsFetchingEditMetadata] = useState(false)
@@ -109,7 +107,6 @@ export default function SiteListPage() {
     name: '',
     url: '',
     description: '',
-    icon: '',
     categoryId: '',
     subCategoryId: ''
   })
@@ -117,7 +114,6 @@ export default function SiteListPage() {
     name: '',
     url: '',
     description: '',
-    icon: '',
     categoryId: '',
     subCategoryId: ''
   })
@@ -476,7 +472,7 @@ export default function SiteListPage() {
         title: newSite.name,
         href: newSite.url,
         description: newSite.description,
-        icon: newSite.icon,
+        icon: '',
         enabled: true
       }
 
@@ -521,7 +517,6 @@ export default function SiteListPage() {
         name: '',
         url: '',
         description: '',
-        icon: '',
         categoryId: '',
         subCategoryId: ''
       })
@@ -567,7 +562,7 @@ export default function SiteListPage() {
         title: editSite.name,
         href: editSite.url,
         description: editSite.description,
-        icon: editSite.icon,
+        icon: '',
         enabled: true
       }
 
@@ -682,7 +677,6 @@ export default function SiteListPage() {
         name: '',
         url: '',
         description: '',
-        icon: '',
         categoryId: '',
         subCategoryId: ''
       })
@@ -706,17 +700,15 @@ export default function SiteListPage() {
   const openEditDialog = (site: Site) => {
     setEditingSite(site)
 
-    // Find the category and subcategory for this site, and get the icon
+    // Find the category and subcategory for this site
     let categoryId = ''
     let subCategoryId = ''
-    let icon = ''
 
     for (const category of navigationData) {
       // Check main category items
       const mainItem = category.items?.find(item => item.id === site.id)
       if (mainItem) {
         categoryId = category.id
-        icon = mainItem.icon || ''
         break
       }
       // Check subcategory items
@@ -726,7 +718,6 @@ export default function SiteListPage() {
           if (subItem) {
             categoryId = category.id
             subCategoryId = subCategory.id
-            icon = subItem.icon || ''
             break
           }
         }
@@ -738,7 +729,6 @@ export default function SiteListPage() {
       name: site.name,
       url: site.url,
       description: site.description || '',
-      icon: icon,
       categoryId,
       subCategoryId
     })
@@ -884,15 +874,12 @@ export default function SiteListPage() {
       if (forceUpdate || !site.description) {
         updates.description = metadata.description
       }
-      if ((forceUpdate || !site.icon) && metadata.icon) {
-        updates.icon = metadata.icon
-      }
 
       if (Object.keys(updates).length > 0) {
         setSite({ ...site, ...updates })
         toast({
           title: "成功",
-          description: "已自动获取网站信息"
+          description: "已自动获取网站标题和描述"
         })
       } else {
         toast({
@@ -914,60 +901,6 @@ export default function SiteListPage() {
     setTimeout(() => {
       setFetching(false)
     }, 0)
-  }
-
-  const handleIconUpload = async (file: File, isEdit: boolean = false) => {
-    const setUploading = isEdit ? setIsUploadingEditIcon : setIsUploadingAddIcon
-    const setSite = isEdit ? setEditSite : setNewSite
-    const site = isEdit ? editSite : newSite
-
-    try {
-      setUploading(true)
-
-      // 将文件转换为 base64
-      const base64 = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader()
-        reader.onload = () => resolve(reader.result as string)
-        reader.onerror = reject
-        reader.readAsDataURL(file)
-      })
-
-      const response = await fetch('/api/resource', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          image: base64
-        }),
-      })
-
-      if (!response.ok) {
-        throw new Error(`上传失败: ${response.status} ${response.statusText}`)
-      }
-
-      const data = await response.json()
-
-      if (data.imageUrl) {
-        setSite({ ...site, icon: data.imageUrl })
-        toast({
-          title: "成功",
-          description: "图标上传成功",
-        })
-      } else {
-        throw new Error('未获取到上传后的图片URL')
-      }
-
-    } catch (error) {
-      console.error('上传失败:', error)
-      toast({
-        title: "错误",
-        description: error instanceof Error ? error.message : '上传失败，请重试',
-        variant: "destructive"
-      })
-    } finally {
-      setUploading(false)
-    }
   }
 
   return (
@@ -1083,7 +1016,6 @@ export default function SiteListPage() {
                   name: '',
                   url: '',
                   description: '',
-                  icon: '',
                   categoryId: '',
                   subCategoryId: ''
                 })
@@ -1136,7 +1068,7 @@ export default function SiteListPage() {
                       </Button>
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      输入完整的网站链接后，系统将自动获取网站标题、描述和图标
+                      输入完整的网站链接后，系统将自动获取网站标题和描述
                     </div>
                   </div>
                   <div className="grid gap-2">
@@ -1148,75 +1080,6 @@ export default function SiteListPage() {
                       placeholder="站点名称（可自动获取）"
                       disabled={isAddingSubmitting}
                     />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="icon">站点图标</Label>
-                    <div className="flex items-center space-x-2">
-                      <div className="flex-1 relative">
-                        <Input
-                          id="icon"
-                          value={newSite.icon}
-                          onChange={(e) => setNewSite({ ...newSite, icon: e.target.value })}
-                          placeholder="图标URL（可自动获取）"
-                          disabled={isAddingSubmitting}
-                        />
-                        {newSite.icon && (
-                          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                            <img
-                              src={newSite.icon}
-                              alt="图标预览"
-                              className="w-4 h-4 object-contain"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement
-                                target.style.display = 'none'
-                              }}
-                            />
-                          </div>
-                        )}
-                      </div>
-                      <Button
-                        type="button"
-                        variant="outline"
-                        className="relative"
-                        disabled={isAddingSubmitting || isUploadingAddIcon}
-                        onClick={() => {
-                          const fileInput = document.getElementById('add-icon-upload')
-                          fileInput?.click()
-                        }}
-                      >
-                        {isUploadingAddIcon ? (
-                          <>
-                            <Icons.loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            上传中...
-                          </>
-                        ) : (
-                          <>
-                            <Icons.upload className="mr-2 h-4 w-4" />
-                            上传图片
-                          </>
-                        )}
-                        <input
-                          id="add-icon-upload"
-                          type="file"
-                          accept="image/*"
-                          onChange={async (e) => {
-                            const file = e.target.files?.[0]
-                            if (file) {
-                              await handleIconUpload(file, false)
-                              // 清空文件输入
-                              const fileInput = document.getElementById('add-icon-upload') as HTMLInputElement
-                              if (fileInput) {
-                                fileInput.value = ''
-                              }
-                            }
-                          }}
-                          className="hidden"
-                        />
-                      </Button>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      系统会自动获取网站图标，也可手动输入URL或上传本地图片
-                    </div>
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="category">分类 *</Label>
@@ -1337,7 +1200,7 @@ export default function SiteListPage() {
                       </Button>
                     </div>
                     <div className="text-xs text-muted-foreground">
-                      输入完整的网站链接后，系统将自动获取网站标题、描述和图标
+                      输入完整的网站链接后，系统将自动获取网站标题和描述
                     </div>
                   </div>
                   <div className="grid gap-2">
@@ -1349,75 +1212,6 @@ export default function SiteListPage() {
                       placeholder="站点名称（可自动获取）"
                       disabled={isEditingSubmitting}
                     />
-                  </div>
-                  <div className="grid gap-2">
-                    <Label htmlFor="edit-icon">站点图标</Label>
-                    <div className="flex items-center space-x-2">
-                      <div className="flex-1 relative">
-                        <Input
-                          id="edit-icon"
-                          value={editSite.icon}
-                          onChange={(e) => setEditSite({ ...editSite, icon: e.target.value })}
-                          placeholder="图标URL（可自动获取）"
-                          disabled={isEditingSubmitting}
-                        />
-                        {editSite.icon && (
-                          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                            <img
-                              src={editSite.icon}
-                              alt="图标预览"
-                              className="w-4 h-4 object-contain"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement
-                                target.style.display = 'none'
-                              }}
-                            />
-                          </div>
-                        )}
-                      </div>
-                      <Button
-                        type="button"
-                        variant="outline"
-                        className="relative"
-                        disabled={isEditingSubmitting || isUploadingEditIcon}
-                        onClick={() => {
-                          const fileInput = document.getElementById('edit-icon-upload')
-                          fileInput?.click()
-                        }}
-                      >
-                        {isUploadingEditIcon ? (
-                          <>
-                            <Icons.loader2 className="mr-2 h-4 w-4 animate-spin" />
-                            上传中...
-                          </>
-                        ) : (
-                          <>
-                            <Icons.upload className="mr-2 h-4 w-4" />
-                            上传图片
-                          </>
-                        )}
-                        <input
-                          id="edit-icon-upload"
-                          type="file"
-                          accept="image/*"
-                          onChange={async (e) => {
-                            const file = e.target.files?.[0]
-                            if (file) {
-                              await handleIconUpload(file, true)
-                              // 清空文件输入
-                              const fileInput = document.getElementById('edit-icon-upload') as HTMLInputElement
-                              if (fileInput) {
-                                fileInput.value = ''
-                              }
-                            }
-                          }}
-                          className="hidden"
-                        />
-                      </Button>
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      系统会自动获取网站图标，也可手动输入URL或上传本地图片
-                    </div>
                   </div>
                   <div className="grid gap-2">
                     <Label htmlFor="edit-category">分类 *</Label>
