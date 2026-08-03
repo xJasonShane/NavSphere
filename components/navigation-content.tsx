@@ -49,7 +49,7 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
       // 搜索子分类下的项目（只搜索启用的）
       const subResults: Array<{
         title: string
-        items: (NavigationItem | NavigationSubItem)[]
+        items: NavigationSubItem[]
       }> = []
 
       if (category.subCategories) {
