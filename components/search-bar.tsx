@@ -13,10 +13,10 @@ interface SearchBarProps {
   onSearch: (query: string) => void
   searchResults: Array<{
     category: NavigationItem
-    items: (NavigationItem | NavigationSubItem)[]
+    items: NavigationSubItem[]
     subCategories: Array<{
       title: string
-      items: (NavigationItem | NavigationSubItem)[]
+      items: NavigationSubItem[]
     }>
   }>
   searchQuery: string
@@ -71,25 +71,18 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
     setIsFocused(true)
   }
 
-  const handleItemSelect = (item: NavigationItem | NavigationSubItem) => {
-    const itemWithHref = item as NavigationSubItem
-    if (itemWithHref.href) {
-      const linkTarget = siteConfig?.navigation?.linkTarget || '_blank'
-      if (linkTarget === '_self') {
-        window.location.href = itemWithHref.href
-      } else {
-        window.open(itemWithHref.href, linkTarget)
-      }
-    }
-    onSearch('')
-    setIsFocused(false)
-  }
-
   const clearSearch = () => {
     onSearch('')
     setIsFocused(false)
     inputRef.current?.focus()
   }
+
+  const handleSelect = () => {
+    onSearch('')
+    setIsFocused(false)
+  }
+
+  const linkTarget = siteConfig?.navigation?.linkTarget || '_blank'
 
   const showResults = isFocused && searchQuery.trim().length > 0
 
@@ -124,7 +117,7 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
 
       {showResults && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-background border rounded-lg shadow-xl z-50 max-h-[70vh] overflow-hidden">
-          <Command className="border-0 shadow-none">
+          <Command className="border-0 shadow-none" shouldFilter={false}>
             <CommandList className="max-h-[70vh] overflow-y-auto">
               {searchResults.length === 0 ? (
                 <div className="py-8 text-center">
@@ -141,20 +134,27 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
                     {result.items.map((item) => (
                       <CommandItem
                         key={item.id}
-                        value={item.title}
-                        onSelect={() => handleItemSelect(item)}
-                        className="flex items-center gap-3 py-3 px-3 cursor-pointer hover:bg-accent/50"
+                        value={item.id}
+                        onSelect={handleSelect}
+                        className="p-0"
                       >
-                        <div className="flex flex-col flex-1 gap-1">
-                          <span className="text-sm font-medium">
-                            {highlightText(item.title)}
-                          </span>
-                          {item.description && (
-                            <span className="text-xs text-muted-foreground line-clamp-1">
-                              {highlightText(item.description)}
+                        <a
+                          href={item.href}
+                          target={linkTarget}
+                          rel="noopener noreferrer"
+                          className="flex w-full items-center gap-3 py-3 px-3 rounded-sm hover:bg-accent/50"
+                        >
+                          <div className="flex flex-col flex-1 gap-1">
+                            <span className="text-sm font-medium">
+                              {highlightText(item.title)}
                             </span>
-                          )}
-                        </div>
+                            {item.description && (
+                              <span className="text-xs text-muted-foreground line-clamp-1">
+                                {highlightText(item.description)}
+                              </span>
+                            )}
+                          </div>
+                        </a>
                       </CommandItem>
                     ))}
                     {result.subCategories.map((sub) => (
@@ -165,20 +165,27 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
                         {sub.items.map((item) => (
                           <CommandItem
                             key={item.id}
-                            value={item.title}
-                            onSelect={() => handleItemSelect(item)}
-                            className="flex items-center gap-3 py-3 px-3 cursor-pointer hover:bg-accent/50"
+                            value={item.id}
+                            onSelect={handleSelect}
+                            className="p-0"
                           >
-                            <div className="flex flex-col flex-1 gap-1">
-                              <span className="text-sm font-medium">
-                                {highlightText(item.title)}
-                              </span>
-                              {item.description && (
-                                <span className="text-xs text-muted-foreground line-clamp-1">
-                                  {highlightText(item.description)}
+                            <a
+                              href={item.href}
+                              target={linkTarget}
+                              rel="noopener noreferrer"
+                              className="flex w-full items-center gap-3 py-3 px-3 rounded-sm hover:bg-accent/50"
+                            >
+                              <div className="flex flex-col flex-1 gap-1">
+                                <span className="text-sm font-medium">
+                                  {highlightText(item.title)}
                                 </span>
-                              )}
-                            </div>
+                                {item.description && (
+                                  <span className="text-xs text-muted-foreground line-clamp-1">
+                                    {highlightText(item.description)}
+                                  </span>
+                                )}
+                              </div>
+                            </a>
                           </CommandItem>
                         ))}
                       </div>
