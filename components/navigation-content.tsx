@@ -30,10 +30,10 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
 
     const results: Array<{
       category: NavigationItem
-      items: (NavigationItem | NavigationSubItem)[]
+      items: NavigationSubItem[]
       subCategories: Array<{
         title: string
-        items: (NavigationItem | NavigationSubItem)[]
+        items: NavigationSubItem[]
       }>
     }> = []
 
