@@ -786,6 +786,14 @@
               "description": "ACGN社区，分享发现同好",
               "icon": "/assets/bangumi.ico",
               "enabled": true
+            },
+            {
+              "id": "7-1-4",
+              "title": "小红书",
+              "href": "https://www.xiaohongshu.com/explore",
+              "description": "年轻人的生活方式平台，分享美食、旅行、穿搭与好物笔记",
+              "icon": "/assets/xiaohongshu.ico",
+              "enabled": true
             }
           ]
         },
