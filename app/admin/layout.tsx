@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   title: 'NavSphere Admin',
   description: 'NavSphere Admin Dashboard',
   icons: {
-    icon: '/assets/images/favicon.webp',
-    shortcut: '/assets/images/favicon.webp',
-    apple: '/assets/images/favicon.webp',
+    icon: '/favicon.webp',
+    shortcut: '/favicon.webp',
+    apple: '/favicon.webp',
   }
 }
 

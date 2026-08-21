@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   description: 'A modern navigation platform',
   icons: {
-    icon: '/favicon.ico'
+    icon: '/favicon.webp'
   }
 }
 
