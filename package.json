@@ -61,7 +61,6 @@
     "embla-carousel": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "input-otp": "^1.4.1",
-    "iron-session": "^8.0.4",
     "lucide-react": "^0.462.0",
     "monaco-editor": "^0.52.2",
     "next": "15.5.19",

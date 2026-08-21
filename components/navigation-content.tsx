@@ -8,11 +8,10 @@ import { Sidebar } from '@/components/sidebar'
 import { SearchBar } from '@/components/search-bar'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Footer } from '@/components/footer'
-import { Github, HelpCircle, Puzzle, Settings } from 'lucide-react'
+import { Github, HelpCircle, Menu, Settings } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-import { Menu } from 'lucide-react'
 
 interface NavigationContentProps {
   navigationData: NavigationData
@@ -119,7 +118,6 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
           <div className="flex items-center gap-3">
             <div className="flex-1">
               <SearchBar
-                navigationData={navigationData}
                 onSearch={handleSearch}
                 searchResults={searchResults}
                 searchQuery={searchQuery}

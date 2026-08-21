@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
@@ -19,8 +18,6 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export function Sidebar({ className, navigationData, siteInfo, onClose }: SidebarProps) {
-  const pathname = usePathname()
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
     if (element) {

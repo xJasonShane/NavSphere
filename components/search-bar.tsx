@@ -5,11 +5,10 @@ import { Input } from '@/components/ui/input'
 import { Command, CommandList, CommandGroup } from '@/components/ui/command'
 import { Search, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import type { NavigationData, NavigationItem, NavigationSubItem } from '@/types/navigation'
+import type { NavigationItem, NavigationSubItem } from '@/types/navigation'
 import type { SiteConfig } from '@/types/site'
 
 interface SearchBarProps {
-  navigationData: NavigationData
   onSearch: (query: string) => void
   searchResults: Array<{
     category: NavigationItem

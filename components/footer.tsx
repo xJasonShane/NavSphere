@@ -1,5 +1,3 @@
-import Link from 'next/link'
-import { Icons } from '@/components/icons'
 import type { SiteConfig } from '@/types/site'
 
 interface FooterProps {
