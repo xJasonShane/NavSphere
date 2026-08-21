@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Input } from '@/components/ui/input'
-import { Command, CommandList, CommandGroup, CommandItem } from '@/components/ui/command'
+import { Command, CommandList, CommandGroup } from '@/components/ui/command'
 import { Search, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import type { NavigationData, NavigationItem, NavigationSubItem } from '@/types/navigation'
@@ -132,30 +132,25 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
                 searchResults.map((result) => (
                   <CommandGroup key={result.category.id} heading={result.category.title}>
                     {result.items.map((item) => (
-                      <CommandItem
+                      <a
                         key={item.id}
-                        value={item.id}
-                        onSelect={handleSelect}
-                        className="p-0"
+                        href={item.href}
+                        target={linkTarget}
+                        rel="noopener noreferrer"
+                        onClick={handleSelect}
+                        className="flex w-full items-center gap-3 py-3 px-3 rounded-sm hover:bg-accent/50 outline-none focus-visible:bg-accent/50"
                       >
-                        <a
-                          href={item.href}
-                          target={linkTarget}
-                          rel="noopener noreferrer"
-                          className="flex w-full items-center gap-3 py-3 px-3 rounded-sm hover:bg-accent/50"
-                        >
-                          <div className="flex flex-col flex-1 gap-1">
-                            <span className="text-sm font-medium">
-                              {highlightText(item.title)}
+                        <div className="flex flex-col flex-1 gap-1">
+                          <span className="text-sm font-medium text-foreground">
+                            {highlightText(item.title)}
+                          </span>
+                          {item.description && (
+                            <span className="text-xs text-muted-foreground line-clamp-1">
+                              {highlightText(item.description)}
                             </span>
-                            {item.description && (
-                              <span className="text-xs text-muted-foreground line-clamp-1">
-                                {highlightText(item.description)}
-                              </span>
-                            )}
-                          </div>
-                        </a>
-                      </CommandItem>
+                          )}
+                        </div>
+                      </a>
                     ))}
                     {result.subCategories.map((sub) => (
                       <div key={sub.title}>
@@ -163,30 +158,25 @@ export function SearchBar({ onSearch, searchResults, searchQuery, siteConfig }: 
                           {result.category.title} / {sub.title}
                         </div>
                         {sub.items.map((item) => (
-                          <CommandItem
+                          <a
                             key={item.id}
-                            value={item.id}
-                            onSelect={handleSelect}
-                            className="p-0"
+                            href={item.href}
+                            target={linkTarget}
+                            rel="noopener noreferrer"
+                            onClick={handleSelect}
+                            className="flex w-full items-center gap-3 py-3 px-3 rounded-sm hover:bg-accent/50 outline-none focus-visible:bg-accent/50"
                           >
-                            <a
-                              href={item.href}
-                              target={linkTarget}
-                              rel="noopener noreferrer"
-                              className="flex w-full items-center gap-3 py-3 px-3 rounded-sm hover:bg-accent/50"
-                            >
-                              <div className="flex flex-col flex-1 gap-1">
-                                <span className="text-sm font-medium">
-                                  {highlightText(item.title)}
+                            <div className="flex flex-col flex-1 gap-1">
+                              <span className="text-sm font-medium text-foreground">
+                                {highlightText(item.title)}
+                              </span>
+                              {item.description && (
+                                <span className="text-xs text-muted-foreground line-clamp-1">
+                                  {highlightText(item.description)}
                                 </span>
-                                {item.description && (
-                                  <span className="text-xs text-muted-foreground line-clamp-1">
-                                    {highlightText(item.description)}
-                                  </span>
-                                )}
-                              </div>
-                            </a>
-                          </CommandItem>
+                              )}
+                            </div>
+                          </a>
                         ))}
                       </div>
                     ))}
