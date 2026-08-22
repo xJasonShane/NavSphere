@@ -76,6 +76,14 @@
               "description": "小米自研大模型，1M超长上下文",
               "icon": "/assets/mimo.ico",
               "enabled": true
+            },
+            {
+              "id": "1-1-9",
+              "title": "商汤大模型",
+              "href": "https://www.sensenova.cn/",
+              "description": "商汤科技SenseNova大模型与多模态能力平台",
+              "icon": "",
+              "enabled": true
             }
           ]
         },
