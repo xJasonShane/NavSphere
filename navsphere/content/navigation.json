@@ -567,6 +567,14 @@
               "description": "阿里巴巴矢量图标库",
               "icon": "/assets/iconfont.ico",
               "enabled": true
+            },
+            {
+              "id": "4-2-2",
+              "title": "微信表情开放平台",
+              "href": "https://sticker.weixin.qq.com/",
+              "description": "微信官方表情设计、制作与发布平台",
+              "icon": "/assets/wechat.ico",
+              "enabled": true
             }
           ]
         },
