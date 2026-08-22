@@ -319,6 +319,23 @@
           ]
         },
         {
+          "id": "2-4",
+          "title": "技术社区",
+          "icon": "Users",
+          "description": "网络安全、逆向与软件技术交流社区",
+          "enabled": true,
+          "items": [
+            {
+              "id": "2-4-1",
+              "title": "吾爱破解论坛",
+              "href": "https://www.52pojie.cn/index.php",
+              "description": "专注软件破解、逆向分析与安全技术研究的知名技术社区，同时分享大量实用软件资源",
+              "icon": "",
+              "enabled": true
+            }
+          ]
+        },
+        {
           "id": "2-3",
           "title": "编程语言",
           "icon": "FileCode",
