@@ -1,8 +1,42 @@
 # NavSphere
 
-AI 驱动的精选资源导航站，收录优质 AI 工具、开发资源、开源项目与效率神器。
+<p align="center">
+  <img src="public/assets/images/alogo.png" alt="NavSphere Logo" width="120" />
+</p>
 
-基于 **Next.js 15** + **React 18** + **TypeScript** + **Tailwind CSS v4** 构建，采用 **GitHub 仓库作为数据存储后端**，无需数据库即可实现内容的持久化与管理。
+<p align="center">
+  AI 驱动的精选资源导航站，收录优质 AI 工具、开发资源、开源项目与效率神器。<br />
+  基于 <strong>Next.js 15</strong> + <strong>React 18</strong> + <strong>TypeScript</strong> + <strong>Tailwind CSS v4</strong> 构建，<br />
+  采用 <strong>GitHub 仓库作为数据存储后端</strong>，无需数据库即可实现内容的持久化与管理。
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/xJasonShane/NavSphere?style=flat-square&color=blue" alt="License"></a>
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js" alt="Next.js"></a>
+  <a href="https://react.dev/"><img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=black" alt="React"></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.1-3178C6?style=flat-square&logo=typescript" alt="TypeScript"></a>
+  <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=flat-square&logo=tailwind-css" alt="Tailwind CSS"></a>
+  <img src="https://img.shields.io/badge/Node.js-%3E%3D20.0.0-339933?style=flat-square&logo=node.js" alt="Node.js">
+  <a href="#docker-部署"><img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=flat-square&logo=docker" alt="Docker"></a>
+  <a href="#cloudflare-pages"><img src="https://img.shields.io/badge/Cloudflare_Pages-Ready-F38020?style=flat-square&logo=cloudflarepages" alt="Cloudflare Pages"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/xJasonShane/NavSphere"><strong>🌐 在线预览</strong></a> ·
+  <a href="#快速开始"><strong>🚀 快速开始</strong></a> ·
+  <a href="#部署"><strong>📦 部署指南</strong></a> ·
+  <a href="#功能特性"><strong>✨ 功能特性</strong></a>
+</p>
+
+---
+
+## 📸 预览
+
+| 首页（亮色模式） | 首页（暗黑模式） | 管理后台 |
+| :---: | :---: | :---: |
+| ![Home Light](docs/screenshots/home-light.png) | ![Home Dark](docs/screenshots/home-dark.png) | ![Admin](docs/screenshots/admin-dashboard.png) |
+
+> **提示**：截图文件需存放在仓库 `docs/screenshots/` 目录下，或替换为实际可用的图片链接。
 
 ---
 
