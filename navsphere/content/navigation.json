@@ -125,6 +125,14 @@
               "description": "中文提示词创作，精准视觉转化",
               "icon": "/assets/jimeng.ico",
               "enabled": true
+            },
+            {
+              "id": "1-2-5",
+              "title": "Pavo AI",
+              "href": "https://app.pavo-ai.cn/",
+              "description": "AI图像与视频创作平台，创意内容一键生成",
+              "icon": "",
+              "enabled": true
             }
           ]
         },
