@@ -4,37 +4,45 @@ AI 驱动的精选资源导航站，收录优质 AI 工具、开发资源、开�
 
 基于 **Next.js 15** + **React 18** + **TypeScript** + **Tailwind CSS v4** 构建，采用 **GitHub 仓库作为数据存储后端**，无需数据库即可实现内容的持久化与管理。
 
----
+***
 
 ## 功能特性
 
 - **多层级分类导航** — 支持一级/二级分类，灵活组织海量网站资源
+
 - **实时搜索** — 支持按标题、描述全文检索，快速定位目标站点
+
 - **响应式布局** — 适配桌面端与移动端，侧边栏 + 主内容区双栏布局
+
 - **暗黑 / 亮色主题** — 基于 `next-themes`，支持系统偏好自动切换
+
 - **管理后台** — 开发环境下提供完整的可视化后台：站点设置、导航 CRUD、分类排序、拖拽管理
+
 - **GitHub 数据持久化** — 所有导航数据通过 GitHub API 读写，版本可控、无需数据库
+
 - **GitHub OAuth 登录** — 基于 NextAuth v5，安全便捷的认证体系
+
 - **浏览器扩展支持** — 提供扩展 API，支持 Chrome / Firefox 插件集成
+
 - **Docker / Cloudflare Pages 多平台部署**
 
----
+***
 
 ## 技术栈
 
-| 领域 | 技术 |
-|------|------|
-| 框架 | [Next.js 15](https://nextjs.org/) (App Router) |
-| 语言 | [TypeScript](https://www.typescriptlang.org/) |
-| 样式 | [Tailwind CSS v4](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) |
-| 状态管理 | [TanStack Query](https://tanstack.com/query) / [SWR](https://swr.vercel.app/) |
-| 认证 | [NextAuth.js v5 (beta)](https://authjs.dev/) + GitHub OAuth |
-| 表单 | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) |
-| 数据存储 | GitHub API (JSON 文件) |
-| 图标 | [Lucide React](https://lucide.dev/) |
-| 部署 | Docker / Cloudflare Pages / Vercel |
+| 领域   | 技术                                                                                |
+| ---- | --------------------------------------------------------------------------------- |
+| 框架   | [Next.js 15](https://nextjs.org/) (App Router)                                    |
+| 语言   | [TypeScript](https://www.typescriptlang.org/)                                     |
+| 样式   | [Tailwind CSS v4](https://tailwindcss.com/) + [shadcn/ui](https://ui.shadcn.com/) |
+| 状态管理 | [TanStack Query](https://tanstack.com/query) / [SWR](https://swr.vercel.app/)     |
+| 认证   | [NextAuth.js v5 (beta)](https://authjs.dev/) + GitHub OAuth                       |
+| 表单   | [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)         |
+| 数据存储 | GitHub API (JSON 文件)                                                              |
+| 图标   | [Lucide React](https://lucide.dev/)                                               |
+| 部署   | Docker / Cloudflare Pages / Vercel                                                |
 
----
+***
 
 ## 项目结构
 
@@ -69,13 +77,14 @@ NavSphere/
 └── middleware.ts               # 路由中间件（生产环境屏蔽后台）
 ```
 
----
+***
 
 ## 快速开始
 
 ### 环境要求
 
 - [Node.js](https://nodejs.org/) >= 20.0.0
+
 - [pnpm](https://pnpm.io/)（推荐）或 npm
 
 ### 安装依赖
@@ -112,11 +121,11 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
 pnpm dev
 ```
 
-打开 [http://localhost:3000](http://localhost:3000) 即可访问。
+打开 <http://localhost:3000> 即可访问。
 
 开发环境下，点击页面右上角的 **设置按钮** 或访问 `/admin` 进入管理后台。
 
----
+***
 
 ## 部署
 
@@ -148,18 +157,21 @@ npx wrangler pages deploy .vercel/output/static
 
 直接导入 GitHub 仓库即可自动部署，记得在控制台配置环境变量。
 
----
+***
 
 ## 数据管理
 
 本项目采用 **GitHub 仓库作为无数据库后端**：
 
 - 所有导航数据以 JSON 文件形式存储在 `navsphere/content/` 目录
+
 - 生产环境下，数据读写通过 GitHub API 直接操作目标仓库
+
 - 本地开发时，可通过 `/admin` 后台可视化编辑，修改后自动同步到 GitHub
+
 - 支持版本回溯、多人协作、冲突合并（基于 Git 天然优势）
 
----
+***
 
 ## 常用命令
 
@@ -171,14 +183,15 @@ pnpm lint         # 运行 ESLint 检查
 pnpm clean        # 清理 .next 构建缓存
 ```
 
----
+***
 
 ## 许可证
 
 [MIT](LICENSE)
 
----
+***
 
 ## 相关链接
 
 - 作者主页：[xshan.top](https://www.xshan.top/)
+
