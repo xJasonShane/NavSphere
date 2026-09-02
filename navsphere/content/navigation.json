@@ -562,7 +562,7 @@
             {
               "id": "4-1-1",
               "title": "Notion",
-              "href": "https://www.notion.so/",
+              "href": "https://app.notion.com/",
               "description": "全平台工作空间，笔记协作一体化",
               "icon": "/assets/notion.ico",
               "enabled": true
