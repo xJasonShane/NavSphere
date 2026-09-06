@@ -95,14 +95,6 @@
           "enabled": true,
           "items": [
             {
-              "id": "1-2-3",
-              "title": "RunningHub",
-              "href": "https://www.runninghub.cn/",
-              "description": "云端ComfyUI创作平台，强大算力支撑",
-              "icon": "/assets/runninghub.ico",
-              "enabled": true
-            },
-            {
               "id": "1-2-5",
               "title": "Pavo AI",
               "href": "https://app.pavo-ai.cn/",
@@ -252,6 +244,116 @@
         }
       ],
       "description": "AI相关的大模型、绘画、平台与模型服务",
+      "enabled": true
+    },
+    {
+      "id": "8",
+      "title": "AI绘图",
+      "icon": "Image",
+      "items": [],
+      "subCategories": [
+        {
+          "id": "8-1",
+          "title": "模型站",
+          "icon": "Database",
+          "description": "AI绘图模型下载与分享站点",
+          "enabled": true,
+          "items": [
+            {
+              "id": "8-1-1",
+              "title": "Civitai",
+              "href": "https://civitai.com/",
+              "description": "全球最大的AI模型分享社区",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "8-1-2",
+              "title": "Civarchive",
+              "href": "https://civarchive.com/",
+              "description": "AI模型存档与资源查找站点",
+              "icon": "",
+              "enabled": true
+            },
+            {
+              "id": "8-1-3",
+              "title": "吐司",
+              "href": "https://tusi.cn/",
+              "description": "AI模型分享社区，在线运行平台",
+              "icon": "/assets/tusi.ico",
+              "enabled": true
+            },
+            {
+              "id": "8-1-4",
+              "title": "哩布哩布AI",
+              "href": "https://www.liblib.art/",
+              "description": "中国领先的AI创作平台",
+              "icon": "/assets/liblib.ico",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "8-2",
+          "title": "提示词",
+          "icon": "Wand2",
+          "description": "AI绘图提示词分享与创作",
+          "enabled": true,
+          "items": [
+            {
+              "id": "8-2-1",
+              "title": "OpenNana",
+              "href": "https://opennana.com/",
+              "description": "开放AI提示词分享社区",
+              "icon": "",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "8-3",
+          "title": "画师串",
+          "icon": "Palette",
+          "description": "AI画师作品展示与风格参考",
+          "enabled": true,
+          "items": [
+            {
+              "id": "8-3-1",
+              "title": "AnimaDex",
+              "href": "https://animadex.net/",
+              "description": "AI画师作品与风格索引数据库",
+              "icon": "",
+              "enabled": true
+            }
+          ]
+        },
+        {
+          "id": "8-4",
+          "title": "生成平台",
+          "icon": "MonitorPlay",
+          "description": "AI绘图在线生成与创作平台",
+          "enabled": true,
+          "items": [
+            {
+              "id": "8-4-1",
+              "title": "即梦AI",
+              "href": "https://jimeng.jianying.com/ai-tool/home/",
+              "description": "中文提示词创作，精准视觉转化",
+              "icon": "/assets/jimeng.ico",
+              "enabled": true
+            },
+            {
+              "id": "8-4-2",
+              "title": "RunningHub",
+              "href": "https://www.runninghub.cn/",
+              "description": "云端ComfyUI创作平台，强大算力支撑",
+              "icon": "/assets/runninghub.ico",
+              "enabled": true
+            }
+          ]
+        }
+      ],
+      "description": "AI绘图模型、提示词与画师资源",
       "enabled": true
     },
     {
@@ -882,99 +984,6 @@
         }
       ],
       "description": "影视、动漫、番剧相关的资源和资讯",
-      "enabled": true
-    },
-    {
-      "id": "8",
-      "title": "AI绘图",
-      "icon": "Image",
-      "items": [],
-      "subCategories": [
-        {
-          "id": "8-1",
-          "title": "模型站",
-          "icon": "Database",
-          "description": "AI绘图模型下载与分享站点",
-          "enabled": true,
-          "items": [
-            {
-              "id": "8-1-1",
-              "title": "Civitai",
-              "href": "https://civitai.com/",
-              "description": "全球最大的AI模型分享社区",
-              "icon": "",
-              "enabled": true
-            },
-            {
-              "id": "8-1-2",
-              "title": "Civarchive",
-              "href": "https://civarchive.com/",
-              "description": "AI模型存档与资源查找站点",
-              "icon": "",
-              "enabled": true
-            },
-            {
-              "id": "8-1-3",
-              "title": "吐司",
-              "href": "https://tusi.cn/",
-              "description": "AI模型分享社区，在线运行平台",
-              "icon": "/assets/tusi.ico",
-              "enabled": true
-            },
-            {
-              "id": "8-1-4",
-              "title": "哩布哩布AI",
-              "href": "https://www.liblib.art/",
-              "description": "中国领先的AI创作平台",
-              "icon": "/assets/liblib.ico",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "8-2",
-          "title": "提示词",
-          "icon": "Wand2",
-          "description": "AI绘图提示词分享与创作",
-          "enabled": true,
-          "items": [
-            {
-              "id": "8-2-1",
-              "title": "OpenNana",
-              "href": "https://opennana.com/",
-              "description": "开放AI提示词分享社区",
-              "icon": "",
-              "enabled": true
-            },
-            {
-              "id": "8-2-2",
-              "title": "即梦AI",
-              "href": "https://jimeng.jianying.com/ai-tool/home/",
-              "description": "中文提示词创作，精准视觉转化",
-              "icon": "/assets/jimeng.ico",
-              "enabled": true
-            }
-          ]
-        },
-        {
-          "id": "8-3",
-          "title": "画师串",
-          "icon": "Palette",
-          "description": "AI画师作品展示与风格参考",
-          "enabled": true,
-          "items": [
-            {
-              "id": "8-3-1",
-              "title": "AnimaDex",
-              "href": "https://animadex.net/",
-              "description": "AI画师作品与风格索引数据库",
-              "icon": "",
-              "enabled": true
-            }
-          ]
-        }
-      ],
-      "description": "AI绘图模型、提示词与画师资源",
       "enabled": true
     }
   ]
