@@ -792,6 +792,14 @@
               "description": "Galgame资源分享平台",
               "icon": "/assets/galgame.ico",
               "enabled": true
+            },
+            {
+              "id": "6-3-4",
+              "title": "模之屋",
+              "href": "https://www.aplaybox.com/",
+              "description": "次世代3D模型分享下载平台，海量MMD与游戏模型资源",
+              "icon": "/assets/aplaybox.ico",
+              "enabled": true
             }
           ]
         }
