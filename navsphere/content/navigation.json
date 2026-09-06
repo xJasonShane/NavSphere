@@ -93,16 +93,7 @@
           "icon": "Image",
           "description": "AI图像生成和绘图工具",
           "enabled": true,
-          "items": [
-            {
-              "id": "1-2-5",
-              "title": "Pavo AI",
-              "href": "https://app.pavo-ai.cn/",
-              "description": "AI图像与视频创作平台，创意内容一键生成",
-              "icon": "",
-              "enabled": true
-            }
-          ]
+          "items": []
         },
         {
           "id": "1-3",
@@ -307,6 +298,14 @@
               "description": "开放AI提示词分享社区",
               "icon": "",
               "enabled": true
+            },
+            {
+              "id": "8-2-2",
+              "title": "GenurArt",
+              "href": "https://genur.art/",
+              "description": "AI绘图提示词分享与创作",
+              "icon": "",
+              "enabled": true
             }
           ]
         },
@@ -348,6 +347,14 @@
               "href": "https://www.runninghub.cn/",
               "description": "云端ComfyUI创作平台，强大算力支撑",
               "icon": "/assets/runninghub.ico",
+              "enabled": true
+            },
+            {
+              "id": "8-4-3",
+              "title": "Pavo AI",
+              "href": "https://app.pavo-ai.cn/",
+              "description": "AI图像与视频创作平台，创意内容一键生成",
+              "icon": "",
               "enabled": true
             }
           ]
