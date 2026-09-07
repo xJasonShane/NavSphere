@@ -89,21 +89,13 @@
         },
         {
           "id": "1-2",
-          "title": "AI绘画",
-          "icon": "Image",
-          "description": "AI图像生成和绘图工具",
-          "enabled": true,
-          "items": []
-        },
-        {
-          "id": "1-3",
           "title": "AI平台",
           "icon": "Layers",
           "description": "综合性AI服务平台与AI插件市场",
           "enabled": true,
           "items": [
             {
-              "id": "1-3-1",
+              "id": "1-2-1",
               "title": "ima",
               "href": "https://ima.qq.com/",
               "description": "腾讯AI工作台",
@@ -111,7 +103,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-2",
+              "id": "1-2-2",
               "title": "秒哒",
               "href": "https://www.miaoda.cn/",
               "description": "百度无代码应用搭建平台",
@@ -119,7 +111,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-3",
+              "id": "1-2-3",
               "title": "扣子空间",
               "href": "https://space.coze.cn/",
               "description": "AI办公助手",
@@ -127,7 +119,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-4",
+              "id": "1-2-4",
               "title": "Latent Box",
               "href": "https://latentbox.com/zh",
               "description": "ai、创意和艺术领域的精选合集",
@@ -135,7 +127,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-5",
+              "id": "1-2-5",
               "title": "AIGODLIKE",
               "href": "https://www.aigodlike.com/",
               "description": "开源AI冒险社区",
@@ -143,7 +135,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-6",
+              "id": "1-2-6",
               "title": "Datawhale",
               "href": "https://www.datawhale.cn/",
               "description": "AI学习社区，共建成长圈子",
@@ -151,7 +143,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-7",
+              "id": "1-2-7",
               "title": "openrouter",
               "href": "https://openrouter.ai/",
               "description": "综合AI大模型API平台",
@@ -159,7 +151,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-8",
+              "id": "1-2-8",
               "title": "skill0",
               "href": "https://skill0.io/zh",
               "description": "AI技能市场",
@@ -167,7 +159,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-9",
+              "id": "1-2-9",
               "title": "Agent skills 市场",
               "href": "https://skillsmp.com/zh",
               "description": "Agent 技能交易平台",
@@ -175,7 +167,7 @@
               "enabled": true
             },
             {
-              "id": "1-3-10",
+              "id": "1-2-10",
               "title": "观猹",
               "href": "https://watcha.cn/",
               "description": "AI 工具发现与评测社区，汇聚前沿 AI 产品",
@@ -185,14 +177,14 @@
           ]
         },
         {
-          "id": "1-4",
+          "id": "1-3",
           "title": "模型服务",
           "icon": "Server",
           "description": "AI模型API平台与开源模型社区",
           "enabled": true,
           "items": [
             {
-              "id": "1-4-1",
+              "id": "1-3-1",
               "title": "硅基流动",
               "href": "https://www.siliconflow.cn/",
               "description": "全球领先的AI能力与模型提供商",
@@ -200,7 +192,7 @@
               "enabled": true
             },
             {
-              "id": "1-4-2",
+              "id": "1-3-2",
               "title": "Hugging Face",
               "href": "https://huggingface.co/",
               "description": "全球最大的ML模型社区与开源模型库",
@@ -208,7 +200,7 @@
               "enabled": true
             },
             {
-              "id": "1-4-3",
+              "id": "1-3-3",
               "title": "HF-Mirror",
               "href": "https://hf-mirror.com/",
               "description": "Hugging Face国内镜像",
@@ -216,7 +208,7 @@
               "enabled": true
             },
             {
-              "id": "1-4-4",
+              "id": "1-3-4",
               "title": "魔搭社区",
               "href": "https://www.modelscope.cn/",
               "description": "阿里达摩院开源AI大模型社区",
@@ -224,7 +216,7 @@
               "enabled": true
             },
             {
-              "id": "1-4-5",
+              "id": "1-3-5",
               "title": "阿里云百炼",
               "href": "https://bailian.console.aliyun.com/cn-beijing/#/home",
               "description": "企业级大模型服务与平台开发",
