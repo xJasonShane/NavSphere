@@ -22,6 +22,14 @@
               "enabled": true
             },
             {
+              "id": "1-1-10",
+              "title": "ChatGPT",
+              "href": "https://chatgpt.com/",
+              "description": "OpenAI 开发的AI对话助手，全球领先的通用大模型",
+              "icon": "/assets/chatgpt.ico",
+              "enabled": true
+            },
+            {
               "id": "1-1-2",
               "title": "MiniMax",
               "href": "https://chat.minimaxi.com/",
