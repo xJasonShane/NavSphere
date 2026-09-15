@@ -3,13 +3,11 @@
     {
       "id": "1",
       "title": "AI 工具",
-      "icon": "Brain",
       "items": [],
       "subCategories": [
         {
           "id": "1-1",
           "title": "大模型对话",
-          "icon": "MessageSquare",
           "description": "国内外主流 AI 大模型，一站式对话体验",
           "enabled": true,
           "items": [
@@ -18,7 +16,6 @@
               "title": "DeepSeek | 深度求索",
               "href": "https://www.deepseek.com/",
               "description": "前沿AI大模型，探索智能边界",
-              "icon": "/assets/deepseek.ico",
               "enabled": true
             },
             {
@@ -26,7 +23,6 @@
               "title": "ChatGPT",
               "href": "https://chatgpt.com/",
               "description": "OpenAI 开发的AI对话助手，全球领先的通用大模型",
-              "icon": "/assets/chatgpt.ico",
               "enabled": true
             },
             {
@@ -34,7 +30,6 @@
               "title": "MiniMax",
               "href": "https://chat.minimaxi.com/",
               "description": "开源混合架构大模型，免费商用",
-              "icon": "/assets/minimax.ico",
               "enabled": true
             },
             {
@@ -42,7 +37,6 @@
               "title": "豆包",
               "href": "https://www.doubao.com/chat/",
               "description": "字节跳动AI助手，多场景智能交互",
-              "icon": "/assets/doubao.ico",
               "enabled": true
             },
             {
@@ -50,7 +44,6 @@
               "title": "Kimi",
               "href": "https://www.kimi.com/",
               "description": "Moonshot AI打造，支持超长上下文与多模态推理的智能助手",
-              "icon": "/assets/kimi.ico",
               "enabled": true
             },
             {
@@ -58,7 +51,6 @@
               "title": "讯飞星火",
               "href": "https://xinghuo.xfyun.cn/desk",
               "description": "科大讯飞认知大模型，对标ChatGPT的AI对话助手",
-              "icon": "/assets/xunfei.ico",
               "enabled": true
             },
             {
@@ -66,7 +58,6 @@
               "title": "阿里千问",
               "href": "https://chat.qwen.ai/",
               "description": "阿里巴巴AI助手，体验Qwen大模型的智能对话能力",
-              "icon": "/assets/qwen.ico",
               "enabled": true
             },
             {
@@ -74,7 +65,6 @@
               "title": "智谱AI",
               "href": "https://open.bigmodel.cn/",
               "description": "国产大模型开放平台，提供API与应用开发",
-              "icon": "/assets/zhipu.ico",
               "enabled": true
             },
             {
@@ -82,7 +72,6 @@
               "title": "小米MiMo",
               "href": "https://mimo.xiaomi.com/zh",
               "description": "小米自研大模型，1M超长上下文",
-              "icon": "/assets/mimo.ico",
               "enabled": true
             },
             {
@@ -90,7 +79,6 @@
               "title": "商汤大模型",
               "href": "https://www.sensenova.cn/",
               "description": "商汤科技SenseNova大模型与多模态能力平台",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -98,7 +86,6 @@
         {
           "id": "1-2",
           "title": "AI平台",
-          "icon": "Layers",
           "description": "综合性AI服务平台与AI插件市场",
           "enabled": true,
           "items": [
@@ -107,7 +94,6 @@
               "title": "ima",
               "href": "https://ima.qq.com/",
               "description": "腾讯AI工作台",
-              "icon": "/assets/ima.ico",
               "enabled": true
             },
             {
@@ -115,7 +101,6 @@
               "title": "秒哒",
               "href": "https://www.miaoda.cn/",
               "description": "百度无代码应用搭建平台",
-              "icon": "/assets/miaoda.ico",
               "enabled": true
             },
             {
@@ -123,7 +108,6 @@
               "title": "扣子空间",
               "href": "https://space.coze.cn/",
               "description": "AI办公助手",
-              "icon": "/assets/coze.ico",
               "enabled": true
             },
             {
@@ -131,7 +115,6 @@
               "title": "Latent Box",
               "href": "https://latentbox.com/zh",
               "description": "ai、创意和艺术领域的精选合集",
-              "icon": "/assets/latentbox.ico",
               "enabled": true
             },
             {
@@ -139,7 +122,6 @@
               "title": "AIGODLIKE",
               "href": "https://www.aigodlike.com/",
               "description": "开源AI冒险社区",
-              "icon": "/assets/aigodlike.ico",
               "enabled": true
             },
             {
@@ -147,7 +129,6 @@
               "title": "Datawhale",
               "href": "https://www.datawhale.cn/",
               "description": "AI学习社区，共建成长圈子",
-              "icon": "/assets/datawhale.ico",
               "enabled": true
             },
             {
@@ -155,7 +136,6 @@
               "title": "openrouter",
               "href": "https://openrouter.ai/",
               "description": "综合AI大模型API平台",
-              "icon": "/assets/openrouter.ico",
               "enabled": true
             },
             {
@@ -163,7 +143,6 @@
               "title": "skill0",
               "href": "https://skill0.io/zh",
               "description": "AI技能市场",
-              "icon": "",
               "enabled": true
             },
             {
@@ -171,7 +150,6 @@
               "title": "Agent skills 市场",
               "href": "https://skillsmp.com/zh",
               "description": "Agent 技能交易平台",
-              "icon": "",
               "enabled": true
             },
             {
@@ -179,7 +157,6 @@
               "title": "观猹",
               "href": "https://watcha.cn/",
               "description": "AI 工具发现与评测社区，汇聚前沿 AI 产品",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -187,7 +164,6 @@
         {
           "id": "1-3",
           "title": "模型服务",
-          "icon": "Server",
           "description": "AI模型API平台与开源模型社区",
           "enabled": true,
           "items": [
@@ -196,7 +172,6 @@
               "title": "硅基流动",
               "href": "https://www.siliconflow.cn/",
               "description": "全球领先的AI能力与模型提供商",
-              "icon": "/assets/siliconflow.ico",
               "enabled": true
             },
             {
@@ -204,7 +179,6 @@
               "title": "Hugging Face",
               "href": "https://huggingface.co/",
               "description": "全球最大的ML模型社区与开源模型库",
-              "icon": "/assets/huggingface.ico",
               "enabled": true
             },
             {
@@ -212,7 +186,6 @@
               "title": "HF-Mirror",
               "href": "https://hf-mirror.com/",
               "description": "Hugging Face国内镜像",
-              "icon": "/assets/huggingface.ico",
               "enabled": true
             },
             {
@@ -220,7 +193,6 @@
               "title": "魔搭社区",
               "href": "https://www.modelscope.cn/",
               "description": "阿里达摩院开源AI大模型社区",
-              "icon": "/assets/modelscope.ico",
               "enabled": true
             },
             {
@@ -228,7 +200,6 @@
               "title": "阿里云百炼",
               "href": "https://bailian.console.aliyun.com/cn-beijing/#/home",
               "description": "企业级大模型服务与平台开发",
-              "icon": "/assets/bailian.ico",
               "enabled": true
             }
           ]
@@ -240,13 +211,11 @@
     {
       "id": "8",
       "title": "AI绘图",
-      "icon": "Image",
       "items": [],
       "subCategories": [
         {
           "id": "8-1",
           "title": "模型站",
-          "icon": "Database",
           "description": "AI绘图模型下载与分享站点",
           "enabled": true,
           "items": [
@@ -255,7 +224,6 @@
               "title": "Civitai",
               "href": "https://civitai.com/",
               "description": "全球最大的AI模型分享社区",
-              "icon": "",
               "enabled": true
             },
             {
@@ -263,7 +231,6 @@
               "title": "Civarchive",
               "href": "https://civarchive.com/",
               "description": "AI模型存档与资源查找站点",
-              "icon": "",
               "enabled": true
             },
             {
@@ -271,7 +238,6 @@
               "title": "吐司",
               "href": "https://tusi.cn/",
               "description": "AI模型分享社区，在线运行平台",
-              "icon": "/assets/tusi.ico",
               "enabled": true
             },
             {
@@ -279,7 +245,6 @@
               "title": "哩布哩布AI",
               "href": "https://www.liblib.art/",
               "description": "中国领先的AI创作平台",
-              "icon": "/assets/liblib.ico",
               "enabled": true
             }
           ]
@@ -287,7 +252,6 @@
         {
           "id": "8-2",
           "title": "提示词",
-          "icon": "Wand2",
           "description": "AI绘图提示词分享与创作",
           "enabled": true,
           "items": [
@@ -296,7 +260,6 @@
               "title": "OpenNana",
               "href": "https://opennana.com/",
               "description": "开放AI提示词分享社区",
-              "icon": "",
               "enabled": true
             },
             {
@@ -304,7 +267,6 @@
               "title": "GenurArt",
               "href": "https://genur.art/",
               "description": "AI绘图提示词分享与创作",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -312,7 +274,6 @@
         {
           "id": "8-3",
           "title": "画师串",
-          "icon": "Palette",
           "description": "AI画师作品展示与风格参考",
           "enabled": true,
           "items": [
@@ -321,7 +282,6 @@
               "title": "AnimaDex",
               "href": "https://animadex.net/",
               "description": "AI画师作品与风格索引数据库",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -329,7 +289,6 @@
         {
           "id": "8-4",
           "title": "生成平台",
-          "icon": "MonitorPlay",
           "description": "AI绘图在线生成与创作平台",
           "enabled": true,
           "items": [
@@ -338,7 +297,6 @@
               "title": "即梦AI",
               "href": "https://jimeng.jianying.com/ai-tool/home/",
               "description": "中文提示词创作，精准视觉转化",
-              "icon": "/assets/jimeng.ico",
               "enabled": true
             },
             {
@@ -346,7 +304,6 @@
               "title": "RunningHub",
               "href": "https://www.runninghub.cn/",
               "description": "云端ComfyUI创作平台，强大算力支撑",
-              "icon": "/assets/runninghub.ico",
               "enabled": true
             },
             {
@@ -354,7 +311,6 @@
               "title": "Pavo AI",
               "href": "https://app.pavo-ai.cn/",
               "description": "AI图像与视频创作平台，创意内容一键生成",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -366,13 +322,11 @@
     {
       "id": "2",
       "title": "开发编程",
-      "icon": "Code",
       "items": [],
       "subCategories": [
         {
           "id": "2-1",
           "title": "版本管理",
-          "icon": "GitBranch",
           "description": "代码版本控制和管理工具",
           "enabled": true,
           "items": [
@@ -381,7 +335,6 @@
               "title": "Github",
               "href": "https://github.com/",
               "description": "全球最大代码托管与协作平台",
-              "icon": "/assets/github.ico",
               "enabled": true
             },
             {
@@ -389,7 +342,6 @@
               "title": "Git",
               "href": "https://git-scm.com/",
               "description": "分布式版本控制系统，高效项目管理",
-              "icon": "/assets/git.ico",
               "enabled": true
             },
             {
@@ -397,7 +349,6 @@
               "title": "腾讯云CNB",
               "href": "https://cnb.cool/",
               "description": "云原生构建平台，AI代码助手助力开发",
-              "icon": "/assets/cnb.ico",
               "enabled": true
             }
           ]
@@ -405,7 +356,6 @@
         {
           "id": "2-2",
           "title": "开发工具",
-          "icon": "Wrench",
           "description": "提高编程效率的辅助工具和实用软件",
           "enabled": true,
           "items": [
@@ -414,7 +364,6 @@
               "title": "shields.io",
               "href": "https://shields.io/",
               "description": "自定义个性徽章，提升文档实用性和美观性",
-              "icon": "/assets/shields.ico",
               "enabled": true
             },
             {
@@ -422,7 +371,6 @@
               "title": "WakaTime",
               "href": "https://wakatime.com/",
               "description": "自动编程时间追踪，提升效率",
-              "icon": "/assets/wakatime.ico",
               "enabled": true
             }
           ]
@@ -430,7 +378,6 @@
         {
           "id": "2-4",
           "title": "技术社区",
-          "icon": "Users",
           "description": "网络安全、逆向与软件技术交流社区",
           "enabled": true,
           "items": [
@@ -439,7 +386,6 @@
               "title": "吾爱破解论坛",
               "href": "https://www.52pojie.cn/index.php",
               "description": "专注软件破解、逆向分析与安全技术研究的知名技术社区，同时分享大量实用软件资源",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -447,7 +393,6 @@
         {
           "id": "2-3",
           "title": "编程语言",
-          "icon": "FileCode",
           "description": "各种编程语言的官方网站和学习资源",
           "enabled": true,
           "items": [
@@ -456,7 +401,6 @@
               "title": "Python",
               "href": "https://www.python.org/",
               "description": "Python编程语言官方网站",
-              "icon": "/assets/python.ico",
               "enabled": true
             },
             {
@@ -464,7 +408,6 @@
               "title": "Java",
               "href": "https://www.java.com/",
               "description": "Java编程语言官方网站",
-              "icon": "/assets/java.ico",
               "enabled": true
             },
             {
@@ -472,7 +415,6 @@
               "title": "微信开发者",
               "href": "https://developers.weixin.qq.com/platform?aibot=1&utm_source=community",
               "description": "微信开发者平台，提供微信相关的开发文档、工具和资源",
-              "icon": "/assets/wechat.ico",
               "enabled": true
             }
           ]
@@ -484,13 +426,11 @@
     {
       "id": "3",
       "title": "云服务网络",
-      "icon": "Cloud",
       "items": [],
       "subCategories": [
         {
           "id": "3-1",
           "title": "云服务商",
-          "icon": "CloudCog",
           "description": "各类云计算平台和服务",
           "enabled": true,
           "items": [
@@ -499,7 +439,6 @@
               "title": "阿里云",
               "href": "https://www.aliyun.com/",
               "description": "计算，为了无法计算的价值",
-              "icon": "/assets/aliyun.ico",
               "enabled": true
             },
             {
@@ -507,7 +446,6 @@
               "title": "腾讯云",
               "href": "https://cloud.tencent.com/",
               "description": "一站式云服务与解决方案提供商",
-              "icon": "/assets/tengxunyun.ico",
               "enabled": true
             },
             {
@@ -515,7 +453,6 @@
               "title": "火山引擎",
               "href": "https://www.volcengine.com/",
               "description": "字节跳动云服务平台，企业级云端智能服务",
-              "icon": "/assets/volcengine.ico",
               "enabled": true
             }
           ]
@@ -523,7 +460,6 @@
         {
           "id": "3-2",
           "title": "托管部署",
-          "icon": "Rocket",
           "description": "网站、程序托管相关的优质服务和工具",
           "enabled": true,
           "items": [
@@ -532,7 +468,6 @@
               "title": "Cloudflare",
               "href": "https://www.cloudflare-cn.com/",
               "description": "全球领先的网站安全与CDN加速服务",
-              "icon": "/assets/cloudflare.ico",
               "enabled": true
             },
             {
@@ -540,7 +475,6 @@
               "title": "EdgeOne",
               "href": "https://console.tencentcloud.com/edgeone",
               "description": "腾讯边缘安全加速平台，一站式防护",
-              "icon": "/assets/tengxunyun.ico",
               "enabled": true
             },
             {
@@ -548,7 +482,6 @@
               "title": "ESA",
               "href": "https://esa.console.aliyun.com/",
               "description": "阿里云边缘安全加速，全球3200+节点",
-              "icon": "/assets/aliyun.ico",
               "enabled": true
             },
             {
@@ -556,7 +489,6 @@
               "title": "Vercel",
               "href": "https://vercel.com/",
               "description": "Next.js首选托管平台，自动构建部署",
-              "icon": "/assets/vercel.ico",
               "enabled": true
             },
             {
@@ -564,7 +496,6 @@
               "title": "Netlify",
               "href": "https://www.netlify.com/",
               "description": "静态网站托管与自动化部署平台",
-              "icon": "/assets/netlify.ico",
               "enabled": true
             }
           ]
@@ -572,7 +503,6 @@
         {
           "id": "3-3",
           "title": "网络工具",
-          "icon": "Network",
           "description": "精选各类优质的在线服务和工具",
           "enabled": true,
           "items": [
@@ -581,7 +511,6 @@
               "title": "jsDelivr",
               "href": "https://www.jsdelivr.com/",
               "description": "免费开源CDN，静态资源全球加速",
-              "icon": "/assets/jsdelivr.ico",
               "enabled": true
             },
             {
@@ -589,7 +518,6 @@
               "title": "ITDOG",
               "href": "https://www.itdog.cn/",
               "description": "站长工具合集，Ping/DNS/测速一站式",
-              "icon": "/assets/itdog.ico",
               "enabled": true
             }
           ]
@@ -597,7 +525,6 @@
         {
           "id": "3-4",
           "title": "域名服务",
-          "icon": "Globe",
           "description": "域名注册、管理和相关服务",
           "enabled": true,
           "items": [
@@ -606,7 +533,6 @@
               "title": "EU.org",
               "href": "https://nic.eu.org/",
               "description": "免费子域名服务，非营利性组织专用",
-              "icon": "/assets/euorg.ico",
               "enabled": true
             },
             {
@@ -614,7 +540,6 @@
               "title": "DNSHE",
               "href": "https://my.dnshe.com/",
               "description": "国外稳定的DNS和域名注册服务商",
-              "icon": "/assets/dnshe.ico",
               "enabled": true
             },
             {
@@ -622,7 +547,6 @@
               "title": "domain",
               "href": "https://domain.digitalplat.org/",
               "description": "A Free name for everyone",
-              "icon": "/assets/domain.ico",
               "enabled": true
             }
           ]
@@ -634,13 +558,11 @@
     {
       "id": "4",
       "title": "效率工具",
-      "icon": "Zap",
       "items": [],
       "subCategories": [
         {
           "id": "4-1",
           "title": "笔记知识",
-          "icon": "BookMarked",
           "description": "各类笔记应用和知识管理工具",
           "enabled": true,
           "items": [
@@ -649,7 +571,6 @@
               "title": "Notion",
               "href": "https://app.notion.com/",
               "description": "全平台工作空间，笔记协作一体化",
-              "icon": "/assets/notion.ico",
               "enabled": true
             },
             {
@@ -657,7 +578,6 @@
               "title": "Obsidian",
               "href": "https://obsidian.md/",
               "description": "强大、免费且开源的知识管理和笔记应用",
-              "icon": "/assets/obsidian.ico",
               "enabled": true
             }
           ]
@@ -665,7 +585,6 @@
         {
           "id": "4-2",
           "title": "设计素材",
-          "icon": "Palette",
           "description": "设计资源与素材工具",
           "enabled": true,
           "items": [
@@ -674,7 +593,6 @@
               "title": "iconfont",
               "href": "https://www.iconfont.cn/",
               "description": "阿里巴巴矢量图标库",
-              "icon": "/assets/iconfont.ico",
               "enabled": true
             },
             {
@@ -682,7 +600,6 @@
               "title": "微信表情开放平台",
               "href": "https://sticker.weixin.qq.com/",
               "description": "微信官方表情设计、制作与发布平台",
-              "icon": "/assets/wechat.ico",
               "enabled": true
             }
           ]
@@ -690,7 +607,6 @@
         {
           "id": "4-3",
           "title": "实用工具",
-          "icon": "Tool",
           "description": "各类实用的在线工具和服务",
           "enabled": true,
           "items": [
@@ -699,7 +615,6 @@
               "title": "IT Tools",
               "href": "https://it-tools.tech/",
               "description": "IT工作者的瑞士军刀",
-              "icon": "/assets/ittools.ico",
               "enabled": true
             },
             {
@@ -707,7 +622,6 @@
               "title": "Green Video",
               "href": "https://greenvideo.cc/",
               "description": "全球网站视频解析下载服务",
-              "icon": "/assets/greenvideo.ico",
               "enabled": true
             },
             {
@@ -715,7 +629,6 @@
               "title": "IAutodraw",
               "href": "https://www.iautodraw.com/",
               "description": "工程师流程绘图与模拟软件",
-              "icon": "/assets/iautodraw.ico",
               "enabled": true
             }
           ]
@@ -727,13 +640,11 @@
     {
       "id": "5",
       "title": "开源精选",
-      "icon": "Github",
       "items": [],
       "subCategories": [
         {
           "id": "5-1",
           "title": "精选推荐",
-          "icon": "Star",
           "description": "精选的优质开源项目和工具",
           "enabled": true,
           "items": [
@@ -742,7 +653,6 @@
               "title": "Cloudreve网盘",
               "href": "https://docs.cloudreve.org/zh/",
               "description": "快速搭建公私兼备的网盘系统",
-              "icon": "/assets/cloudreve.ico",
               "enabled": true
             },
             {
@@ -750,7 +660,6 @@
               "title": "Xget URL 转换器",
               "href": "https://xuc.xi-xu.me/",
               "description": "将支持平台的 URL 转换为加速的 Xget 格式",
-              "icon": "/assets/xget.ico",
               "enabled": true
             },
             {
@@ -758,7 +667,6 @@
               "title": "AlternativeTo",
               "href": "https://alternativeto.net/",
               "description": "国际优质的同类软件平替查找平台",
-              "icon": "/assets/alternativeto.ico",
               "enabled": true
             },
             {
@@ -766,7 +674,6 @@
               "title": "Zread",
               "href": "https://zread.ai/",
               "description": "智谱AI驱动的GitHub智能阅读",
-              "icon": "/assets/zread.ico",
               "enabled": true
             }
           ]
@@ -778,13 +685,11 @@
     {
       "id": "6",
       "title": "游戏世界",
-      "icon": "Gamepad",
       "items": [],
       "subCategories": [
         {
           "id": "6-1",
           "title": "游戏平台",
-          "icon": "MonitorPlay",
           "description": "综合性游戏平台和门户网站",
           "enabled": true,
           "items": [
@@ -793,7 +698,6 @@
               "title": "Steam",
               "href": "https://store.steampowered.com/",
               "description": "全球最大综合性游戏发行平台",
-              "icon": "/assets/steam.ico",
               "enabled": true
             },
             {
@@ -801,7 +705,6 @@
               "title": "Epic",
               "href": "https://store.epicgames.com/zh-CN/",
               "description": "免费游戏领取平台，限时独占大作",
-              "icon": "/assets/epic.ico",
               "enabled": true
             },
             {
@@ -809,7 +712,6 @@
               "title": "蒸汽游戏宝库",
               "href": "https://www.steambk.com/",
               "description": "玩家自制的单机游戏资源平台",
-              "icon": "/assets/steambk.ico",
               "enabled": true
             }
           ]
@@ -817,7 +719,6 @@
         {
           "id": "6-2",
           "title": "游戏百科",
-          "icon": "BookOpen",
           "description": "游戏相关的百科全书和资料库",
           "enabled": true,
           "items": [
@@ -826,7 +727,6 @@
               "title": "MC百科",
               "href": "https://www.mcmod.cn/",
               "description": "最大的Minecraft中文MOD百科",
-              "icon": "/assets/mcwiki.ico",
               "enabled": true
             },
             {
@@ -834,7 +734,6 @@
               "title": "中文 Minecraft Wiki",
               "href": "https://zh.minecraft.wiki/",
               "description": "最大的Minecraft中文百科",
-              "icon": "/assets/minecraftwiki.ico",
               "enabled": true
             },
             {
@@ -842,7 +741,6 @@
               "title": "GAMEKEE",
               "href": "https://www.gamekee.com/",
               "description": "国内外多端游戏wiki平台",
-              "icon": "/assets/gamekee.ico",
               "enabled": true
             }
           ]
@@ -850,7 +748,6 @@
         {
           "id": "6-3",
           "title": "游戏资源",
-          "icon": "Package",
           "description": "提供游戏资源下载和素材的网站",
           "enabled": true,
           "items": [
@@ -859,7 +756,6 @@
               "title": "GameBanana",
               "href": "https://gamebanana.com/",
               "description": "全球最大的游戏模组创作平台",
-              "icon": "/assets/gamebanana.ico",
               "enabled": true
             },
             {
@@ -867,7 +763,6 @@
               "title": "crowdin",
               "href": "https://zh.crowdin.com/",
               "description": "团队本地化翻译管理平台",
-              "icon": "/assets/crowdin.ico",
               "enabled": true
             },
             {
@@ -875,7 +770,6 @@
               "title": "忧郁的loli",
               "href": "https://www.ttloli.com/",
               "description": "Galgame资源分享平台",
-              "icon": "/assets/galgame.ico",
               "enabled": true
             },
             {
@@ -883,7 +777,6 @@
               "title": "模之屋",
               "href": "https://www.aplaybox.com/",
               "description": "次世代3D模型分享下载平台，海量MMD与游戏模型资源",
-              "icon": "/assets/aplaybox.ico",
               "enabled": true
             }
           ]
@@ -895,13 +788,11 @@
     {
       "id": "7",
       "title": "影视动漫",
-      "icon": "Clapperboard",
       "items": [],
       "subCategories": [
         {
           "id": "7-1",
           "title": "影视资讯",
-          "icon": "Newspaper",
           "description": "影视评分、资讯与数据库网站",
           "enabled": true,
           "items": [
@@ -910,7 +801,6 @@
               "title": "豆瓣",
               "href": "https://www.douban.com/",
               "description": "记录电影、书籍、音乐，发现同好",
-              "icon": "/assets/douban.ico",
               "enabled": true
             },
             {
@@ -918,7 +808,6 @@
               "title": "TMDB",
               "href": "https://www.themoviedb.org/",
               "description": "国际影视数据库，免费API服务",
-              "icon": "/assets/tmdb.ico",
               "enabled": true
             },
             {
@@ -926,7 +815,6 @@
               "title": "Bangumi",
               "href": "https://bgm.tv/",
               "description": "ACGN社区，分享发现同好",
-              "icon": "/assets/bangumi.ico",
               "enabled": true
             },
             {
@@ -934,7 +822,6 @@
               "title": "小红书",
               "href": "https://www.xiaohongshu.com/explore",
               "description": "年轻人的生活方式平台，分享美食、旅行、穿搭与好物笔记",
-              "icon": "/assets/xiaohongshu.ico",
               "enabled": true
             },
             {
@@ -942,7 +829,6 @@
               "title": "Instagram",
               "href": "https://www.instagram.com/",
               "description": "全球流行的图片与视频分享社交平台",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -950,7 +836,6 @@
         {
           "id": "7-2",
           "title": "动漫番剧",
-          "icon": "Tv",
           "description": "动漫番剧资源下载网站",
           "enabled": true,
           "items": [
@@ -959,7 +844,6 @@
               "title": "爱恋动漫",
               "href": "https://www.kisssub.org/",
               "description": "动漫资源下载站点",
-              "icon": "",
               "enabled": true
             },
             {
@@ -967,7 +851,6 @@
               "title": "蜜柑计划",
               "href": "https://mikanime.tv/",
               "description": "动漫资源下载站点",
-              "icon": "",
               "enabled": true
             },
             {
@@ -975,7 +858,6 @@
               "title": "VCB-Studio",
               "href": "https://vcb-s.com/",
               "description": "动漫资源下载站点",
-              "icon": "",
               "enabled": true
             }
           ]
@@ -983,7 +865,6 @@
         {
           "id": "7-3",
           "title": "影视资源",
-          "icon": "Film",
           "description": "影视资源下载和分享站点",
           "enabled": true,
           "items": [
@@ -992,7 +873,6 @@
               "title": "SeedHub",
               "href": "https://www.seedhub.cc/",
               "description": "电影&动漫资源下载网站",
-              "icon": "/assets/seedhub.ico",
               "enabled": true
             }
           ]

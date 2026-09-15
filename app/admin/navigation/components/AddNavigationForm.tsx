@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 
-import { IconSelector } from './IconSelector'
 import {
   Form,
   FormControl,
@@ -22,7 +21,6 @@ import { useToast } from "@/components/ui/use-toast"
 
 const formSchema = z.object({
   title: z.string().min(2, { message: "标题至少需要2个字符" }),
-  icon: z.string().min(1, { message: "请选择图标" }),
   description: z.string().optional(),
   enabled: z.boolean().default(true)
 })
@@ -30,13 +28,11 @@ const formSchema = z.object({
 interface AddNavigationFormProps {
   onSubmit: (values: { 
     title: string; 
-    icon: string; 
     description?: string;
     enabled: boolean;
   }) => void
   defaultValues?: {
     title: string
-    icon: string
     description?: string
     enabled: boolean
   }
@@ -53,7 +49,6 @@ export function AddNavigationForm({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues || {
       title: "",
-      icon: "FolderKanban",
       description: "",
       enabled: true
     }
@@ -65,7 +60,6 @@ export function AddNavigationForm({
     try {
       await onSubmit({
         title: values.title,
-        icon: values.icon,
         description: values.description,
         enabled: values.enabled
       })
@@ -95,22 +89,6 @@ export function AddNavigationForm({
               <FormControl>
                 <Input placeholder="输入导航标题" {...field} />
               </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="icon"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>图标</FormLabel>
-              <FormControl>
-                <IconSelector value={field.value} onChange={field.onChange} />
-              </FormControl>
-              <FormDescription>
-                从 Lucide 图标库中选择一个图标
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

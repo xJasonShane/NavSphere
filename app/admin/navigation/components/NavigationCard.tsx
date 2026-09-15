@@ -16,12 +16,9 @@ import { AddNavigationForm } from './AddNavigationForm'
 import { Draggable } from "@hello-pangea/dnd"
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/components/ui/tooltip"
 import { NavigationItem } from '@/types/navigation'
-import { navigationIcons, type IconType } from '@/lib/icons'
 import { 
-  Folder, 
   FolderOpen, 
   List, 
-  Image, 
   Pencil, 
   Trash, 
   ChevronsUp, 
@@ -54,12 +51,9 @@ export function NavigationCard({
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
   
-  const Icon = item.icon && navigationIcons[item.icon as IconType] ? navigationIcons[item.icon as IconType] : navigationIcons.Folder
-
   const handleEdit = async (values: { 
     title: string; 
     description?: string; 
-    icon: string;
     enabled: boolean;
   }) => {
     try {
@@ -70,7 +64,6 @@ export function NavigationCard({
           ...item,
           title: values.title,
           description: values.description,
-          icon: values.icon,
           enabled: values.enabled
         })
       })
@@ -127,7 +120,6 @@ export function NavigationCard({
           }`}
         >
           <div className="flex items-center space-x-4">
-            <Icon className="h-6 w-6 text-muted-foreground" />
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 <h3 className="text-sm font-medium">{item.title}</h3>
@@ -254,7 +246,6 @@ export function NavigationCard({
                 defaultValues={{
                   title: item.title,
                   description: item.description || '',
-                  icon: item.icon || '',
                   enabled: item.enabled ?? true
                 }}
                 onSubmit={handleEdit}

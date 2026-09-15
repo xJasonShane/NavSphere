@@ -24,7 +24,6 @@ export function NavigationSidebar({ navigationItems }: NavigationSidebarProps) {
                     key={item.id}
                     id={item.id}
                     title={item.title}
-                    icon={item.icon}
                     items={item.items}
                   />
                 ))}
