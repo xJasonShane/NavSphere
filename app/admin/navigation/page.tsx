@@ -21,7 +21,6 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import { useWebsiteMetadata } from '@/hooks/useWebsiteMetadata'
-import { IconSelector } from './components/IconSelector'
 import type {
   NavigationData,
   NavigationItem,
@@ -164,7 +163,6 @@ function SiteFormDialog({
         title,
         href: url,
         description,
-        icon: '',
         enabled,
       }
       await onSave(item, target.navigationId, target.categoryId)
@@ -407,13 +405,12 @@ interface CategoryFormDialogProps {
   open: boolean
   onOpenChange: (open: boolean) => void
   editItem?: NavigationItem | null
-  onSave: (values: { title: string; icon: string; description?: string; enabled: boolean }) => Promise<void>
+  onSave: (values: { title: string; description?: string; enabled: boolean }) => Promise<void>
 }
 
 function CategoryFormDialog({ open, onOpenChange, editItem, onSave }: CategoryFormDialogProps) {
   const { toast } = useToast()
   const [title, setTitle] = useState('')
-  const [icon, setIcon] = useState('FolderKanban')
   const [description, setDescription] = useState('')
   const [enabled, setEnabled] = useState(true)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -421,12 +418,10 @@ function CategoryFormDialog({ open, onOpenChange, editItem, onSave }: CategoryFo
   useEffect(() => {
     if (open && editItem) {
       setTitle(editItem.title)
-      setIcon(editItem.icon || 'FolderKanban')
       setDescription(editItem.description || '')
       setEnabled(editItem.enabled ?? true)
     } else if (open) {
       setTitle('')
-      setIcon('FolderKanban')
       setDescription('')
       setEnabled(true)
     }
@@ -436,7 +431,7 @@ function CategoryFormDialog({ open, onOpenChange, editItem, onSave }: CategoryFo
     if (!title) { toast({ title: '提示', description: '请填写标题', variant: 'destructive' }); return }
     setIsSubmitting(true)
     try {
-      await onSave({ title, icon, description, enabled })
+      await onSave({ title, description, enabled })
       onOpenChange(false)
     } catch (error) {
       toast({ title: '错误', description: (error as Error).message, variant: 'destructive' })
@@ -456,11 +451,6 @@ function CategoryFormDialog({ open, onOpenChange, editItem, onSave }: CategoryFo
           <div className="space-y-2">
             <label className="text-sm font-medium">标题</label>
             <Input placeholder="输入分类标题" value={title} onChange={(e) => setTitle(e.target.value)} />
-          </div>
-          <div className="space-y-2">
-            <label className="text-sm font-medium">图标</label>
-            <IconSelector value={icon} onChange={setIcon} />
-            <p className="text-xs text-muted-foreground">从 Lucide 图标库中选择一个图标</p>
           </div>
           <div className="space-y-2">
             <label className="text-sm font-medium">描述</label>
@@ -661,11 +651,10 @@ export default function NavigationManagerPage() {
 
   // ========== 分类操作 ==========
 
-  const handleAddCategory = async (values: { title: string; icon: string; description?: string; enabled: boolean }) => {
+  const handleAddCategory = async (values: { title: string; description?: string; enabled: boolean }) => {
     const newItem: NavigationItem = {
       id: crypto.randomUUID(),
       title: values.title,
-      icon: values.icon,
       description: values.description,
       enabled: values.enabled,
       items: [],
@@ -675,7 +664,7 @@ export default function NavigationManagerPage() {
     toast({ title: '成功', description: `分类「${values.title}」已添加` })
   }
 
-  const handleEditCategory = async (values: { title: string; icon: string; description?: string; enabled: boolean }) => {
+  const handleEditCategory = async (values: { title: string; description?: string; enabled: boolean }) => {
     if (!editingCategory) return
     const newData = {
       navigationItems: data.navigationItems.map((item) =>

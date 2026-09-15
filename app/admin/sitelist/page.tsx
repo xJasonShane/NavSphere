@@ -59,14 +59,12 @@ import { NavigationSubItem } from '@/types/navigation'
 interface SubCategory {
   id: string
   title: string
-  icon?: string
   items: NavigationSubItem[]
 }
 
 interface Category {
   id: string
   title: string
-  icon?: string
   items: NavigationSubItem[]
   subCategories?: SubCategory[]
 }
@@ -472,7 +470,6 @@ export default function SiteListPage() {
         title: newSite.name,
         href: newSite.url,
         description: newSite.description,
-        icon: '',
         enabled: true
       }
 
@@ -562,7 +559,6 @@ export default function SiteListPage() {
         title: editSite.name,
         href: editSite.url,
         description: editSite.description,
-        icon: '',
         enabled: true
       }
 

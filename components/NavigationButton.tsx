@@ -6,20 +6,18 @@ import Link from 'next/link'
 interface NavigationButtonProps {
   id: string
   title: string
-  icon: string
   items?: Array<{
     title: string
     href: string
   }>
 }
 
-export function NavigationButton({ id, title, icon, items }: NavigationButtonProps) {
+export function NavigationButton({ id, title, items }: NavigationButtonProps) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   if (!items?.length) {
     return (
       <Link href={`#${id}`} className="flex items-center w-full">
-        <i className={icon}></i>
         <span>{title}</span>
       </Link>
     )
@@ -32,7 +30,6 @@ export function NavigationButton({ id, title, icon, items }: NavigationButtonPro
         className="flex items-center w-full"
       >
         <div className="menu-title">
-          <i className={icon}></i>
           <span>{title}</span>
         </div>
         <i className={`fas fa-angle-${isExpanded ? 'down' : 'right'} menu-arrow`}></i>

@@ -92,7 +92,6 @@ export function AddItemForm({ onSubmit, onCancel, defaultValues }: AddItemFormPr
             title: data.title,
             href: data.href,
             description: data.description,
-            icon: '',
             enabled: data.enabled
           }
           await onSubmit(values)
