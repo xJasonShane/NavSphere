@@ -16,13 +16,17 @@ AI 驱动的精选资源导航站，收录优质 AI 工具、开发资源、开�
 
 - **暗黑 / 亮色主题** — 基于 `next-themes`，支持系统偏好自动切换
 
-- **管理后台** — 开发环境下提供完整的可视化后台：站点设置、导航 CRUD、分类排序、拖拽管理
+- **管理后台** — 开发环境下提供完整的可视化后台：站点设置、导航 CRUD、分类排序、拖拽管理、资源管理
+
+- **网站元数据自动抓取** — 后台添加网站时，自动抓取页面标题、描述与图标，并上传到 GitHub 仓库
 
 - **GitHub 数据持久化** — 所有导航数据通过 GitHub API 读写，版本可控、无需数据库
 
 - **GitHub OAuth 登录** — 基于 NextAuth v5，安全便捷的认证体系
 
-- **浏览器扩展支持** — 提供扩展 API，支持 Chrome / Firefox 插件集成
+- **浏览器扩展支持** — 提供扩展 API（`/api/extension/[id]`），支持 Chrome / Firefox 插件直接写入导航数据
+
+- **健康检查** — 内置 `/api/health` Edge API，便于各平台部署探活
 
 - **Docker / Cloudflare Pages 多平台部署**
 
@@ -53,28 +57,39 @@ NavSphere/
 │   ├── admin/                  # 管理后台（开发环境可用）
 │   │   ├── page.tsx            # 控制台仪表盘
 │   │   ├── navigation/         # 导航管理（CRUD、排序、拖拽）
-│   │   ├── resources/          # 资源管理
+│   │   ├── resources/          # 资源管理（含下载资源）
+│   │   ├── sitelist/           # 站点列表管理
+│   │   ├── data/               # 数据管理
 │   │   └── site/               # 站点设置
 │   └── api/                    # API 路由
 │       ├── auth/[...nextauth]  # NextAuth 认证
-│       ├── navigation/         # 导航数据读写（GitHub 同步）
-│       ├── local/navigation    # 本地开发 API（仅限开发环境）
-│       └── admin/stats         # 后台统计数据
+│       ├── navigation/         # 导航数据读写（含 reorder / restore / check-default）
+│       ├── extension/[id]      # 浏览器扩展写入 API
+│       ├── website-metadata/   # 网站元数据抓取（标题/描述/图标）
+│       ├── favicon/            # 站点图标代理
+│       ├── site/               # 站点配置读写
+│       ├── resource/           # 资源数据读写
+│       ├── admin/stats         # 后台统计数据
+│       ├── health/             # 健康检查
+│       └── local/navigation    # 本地开发 API（仅限开发环境）
 ├── components/                 # React 组件
 │   ├── ui/                     # shadcn/ui 组件库（50+ 组件）
 │   ├── navigation-content.tsx  # 导航主内容区
 │   ├── sidebar.tsx             # 侧边栏导航
 │   ├── search-bar.tsx          # 搜索栏
 │   └── ...
+├── services/                   # 业务服务层（资源、站点配置）
+├── hooks/                      # React Hooks（导航数据、元数据抓取）
 ├── navsphere/content/          # 本地 JSON 数据源
 │   ├── navigation.json         # 导航数据
+│   ├── navigation-default.json # 导航默认数据（用于恢复）
 │   ├── site.json               # 站点配置
 │   └── resource-metadata.json  # 资源元数据
 ├── types/                      # TypeScript 类型定义
-├── lib/                        # 工具函数（auth、utils、api 等）
+├── lib/                        # 工具函数（auth、github、utils 等）
 ├── public/                     # 静态资源（图标、字体、图片）
 ├── config/site.ts              # 站点默认配置
-└── middleware.ts               # 路由中间件（生产环境屏蔽后台）
+└── middleware.ts               # 路由中间件（生产环境屏蔽后台与本地 API）
 ```
 
 ***
@@ -169,6 +184,8 @@ npx wrangler pages deploy .vercel/output/static
 
 - 本地开发时，可通过 `/admin` 后台可视化编辑，修改后自动同步到 GitHub
 
+- 内置默认数据备份（`navigation-default.json`），可通过 `/api/navigation/restore` 一键恢复
+
 - 支持版本回溯、多人协作、冲突合并（基于 Git 天然优势）
 
 ***
@@ -176,11 +193,18 @@ npx wrangler pages deploy .vercel/output/static
 ## 常用命令
 
 ```bash
-pnpm dev          # 启动开发服务器
-pnpm build        # 构建生产版本
-pnpm start        # 启动生产服务器
-pnpm lint         # 运行 ESLint 检查
-pnpm clean        # 清理 .next 构建缓存
+pnpm dev           # 启动开发服务器
+pnpm build         # 构建生产版本
+pnpm start         # 启动生产服务器
+pnpm lint          # 运行 ESLint 检查
+pnpm clean         # 清理 .next 构建缓存
+
+# Docker 相关
+pnpm docker:build  # 构建 Docker 镜像
+pnpm docker:dev    # 开发环境启动
+pnpm docker:prod   # 生产环境启动
+pnpm docker:stop   # 停止容器
+pnpm docker:logs   # 查看容器日志
 ```
 
 ***
